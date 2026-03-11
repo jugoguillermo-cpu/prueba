@@ -1,0 +1,3 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="Canal1" tvg-name="Nombre del Canal" tvg-logo="https://url-de-la-imagen.png" group-title="Mi Lista",Nombre del Canal
+https://stream.arcast.ar/canal8mdp/ngrp:canal8mdp_all/playlist.m3u8?wowzatokenendtime=1773258288&wowzatokenstarttime=0&wowzatokenhash=Aw1Hks-qYcMgLva8DDvsgHZrdEJQXhNom8EijZO9pPU=
