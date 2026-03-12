@@ -1,0 +1,63 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="cb12KmMMDJA" tvg-logo="https://i.ytimg.com/vi/cb12KmMMDJA/maxresdefault.jpg" group-title="Jupyter_Scraper", TN EN VIVO - SEGUÍ LA TRANSMISIÓN EN VIVO DE TODO NOTICIAS 2026-03-12 14:20
+https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1773357638/ei/5vWyaYiVKdTn1sQPu9vHuQw/ip/2803:9800:9995:83b6:a94f:95b8:942e:2208/id/cb12KmMMDJA.3/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr4---sn-jup-x1xk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AVNa5-yyC2m0YXB-fAKAVfryLoljfqwe4ewrGabHv87keKwbDXLY__yR8Lke5ke8c78nxfHnsj7v45Er/spc/6dlaFEzVoai-unVE63vEOV90C1_aPNgdOWXDSnR9rtcZn_nkJ7pruvjgM0qe8ZhA-nE/vprv/1/ns/KnBcdkQ0dap0g4DIC50AAn0T/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/2712500/met/1773336049,/mh/o5/mm/44/mn/sn-jup-x1xk/ms/lva/mv/m/mvi/4/pl/48/rmhost/rr5---sn-jup-x1xk.googlevideo.com/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51565682,51791334/n/X24WMmyYXvu6ZJQjuKu/mt/1773335572/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,reg,playlist_type/sig/AHEqNM4wRQIhAK4ujd2E7CbUMYzANTVjHS-NgF_j504tNALaXHleZ334AiAP7Nrqx3EVWJx-YtL-tCiKBS6pdveRiRH6076bEs36xg%3D%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rmhost,rms/lsig/APaTxxMwRgIhAMkiTf0u1o96UxQBncMRdlRR9dXY72S5GAagQVT126e5AiEAx4qPVXweBOij8D82oocyMdn2rsS4QErDdablB_usPkE%3D/playlist/index.m3u8
+#EXTINF:-1, Canal 1 - 70
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/47vpt.m3u8?s=U4bLGRzJG5pQrzJmKvTqlA&e=1773357664
+#EXTINF:-1, Canal 2 - 71
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/lf445b.m3u8?s=1crFoKfXObTJV8xkHRBRUg&e=1773357669
+#EXTINF:-1, Canal 3 - 72
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/eflb8gathr4gtu.m3u8?s=XxMwEC7ceieEw7Nzd7RD-w&e=1773357675
+#EXTINF:-1, Canal 4 - 73
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/80yp1j.m3u8?s=ne62_-vVZ3C9A7KXa3QDDw&e=1773357681
+#EXTINF:-1, Canal 5 - 74
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/qj1k9kfmaipv.m3u8?s=UNmC-JPu-DJEJiwRj-ubCg&e=1773357686
+#EXTINF:-1, Canal 6 - 75
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=GkgrEfYzw3dHO4lj4bVBiQ&e=1773357696
+#EXTINF:-1, Canal 7 - 76
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=q1NxlGqIiQLkSjMYiRUNSA&e=1773357703
+#EXTINF:-1, Canal 8 - 77
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=VXDv-7RXaknC0OQDYaaQ5Q&e=1773357708
+#EXTINF:-1, Canal 9 - 78
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=LlkVp1RchudFDOdMtX970A&e=1773357714
+#EXTINF:-1, Canal 10 - 79
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=-_YO5S86zXvOn_jiS84xwg&e=1773357719
+#EXTINF:-1, Canal 11 - 80
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=5u6MOlGI8LnlQf6xTLKqNQ&e=1773357724
+#EXTINF:-1, Canal 12 - 81
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/wwcujo0oiatyw93.m3u8?s=xuzWLfirFWglgFe6Nte-MA&e=1773357732
+#EXTINF:-1, Canal 13 - 82
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/l99bacdw776ns.m3u8?s=42c8Hl7vNCq6Gcf_XTrIuA&e=1773357738
+#EXTINF:-1, Canal 14 - 83
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xzgyn9ofmet.m3u8?s=SP2_VneZ2KoKwLPPEOozIA&e=1773357747
+#EXTINF:-1, Canal 15 - 84
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/x3hh2e9pop.m3u8?s=7zRNFXPDoRzNA3XZ3kq1Kg&e=1773357757
