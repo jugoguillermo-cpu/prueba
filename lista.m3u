@@ -282,63 +282,419 @@ https://backend.energeek.cl/webtv/pridetvweb/index.m3u8?token=D3m0M3UCLWeb&Playl
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1773362190/ei/rgezaeP9BdejobIPv9OUoQs/ip/2803:9800:9995:83b6:a94f:95b8:942e:2208/id/cb12KmMMDJA.3/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-jup-x1xd.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AVNa5-yAH-OTm--tRG-y7WMTkzDllw60VaMUwDBoHLdLtaE6w_nkf22jCFNqUP9kK4pAZoe9qZVqwuoJ/spc/6dlaFOFctBRyeAMaVkYCRRZM8xbZm6F3lk2YRpAs8XEGreYAL7dRpK5FfHn7aJj3skg/vprv/1/ns/iPV4Bx_b97m8PC-DLUeU6psT/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/2206250/met/1773340591,/mh/o5/mm/44/mn/sn-jup-x1xd/ms/lva/mv/m/mvi/1/pl/48/rms/lva,lva/smhost/rr5---sn-jup-x1xk.googlevideo.com/dover/11/pacing/0/keepalive/yes/fexp/51565115,51565681,51791334/n/48qcF7Gw2IshFTEA3Os/mt/1773340131/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,reg,playlist_type/sig/AHEqNM4wRQIgR_DJd4ErY3k53BlW96knoeooqTj2N5EH34Vs54JJ334CIQDKr0sCnTruvs-d7_eOn04rNfRUa8wHIfsUW7DE0CG0WA%3D%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms,smhost/lsig/APaTxxMwRAIgGdNJskcL_JrOzMslTmbDnlBTPW5DteVVSM5096EfX9gCIFdkF9xO6modoOjrEvaoPkwszDuqXCS4VV0P2qL7FfvY/playlist/index.m3u8
 #EXTINF:-1 tvg-id="ArKbAx1K-2U" tvg-logo="https://i.ytimg.com/vi/ArKbAx1K-2U/maxresdefault.jpg" group-title="Jupyter_Scraper", 🟥 A24 EN VIVO | Noticias de Argentina y el mundo las 24 horas 2026-03-12 15:36
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1773362194/ei/sgezaY_REaCb-LAP9tG6yQ8/ip/2803:9800:9995:83b6:a94f:95b8:942e:2208/id/ArKbAx1K-2U.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-ja5gv5g-hq9e.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AVNa5-xr4NhsoL85x-6240VTov29mjispFnQeMskGwA1r-wZjbI3hBN8A0QLO3isrV0fPIjwXVoxOvMP/spc/6dlaFCk7MurDpPteRc_qW176gnSBfwjYDWom_5dJ60djWLkmiktyIPRJUNm_k3PgauQ/vprv/1/ns/8SLLwIlaIOnZcCmCDsIziXwT/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/1998750/met/1773340595,/mh/C8/mm/44/mn/sn-ja5gv5g-hq9e/ms/lva/mv/m/mvi/1/pl/48/rms/lva,lva/smhost/rr2---sn-ja5gv5g-hq9l.googlevideo.com/dover/11/pacing/0/keepalive/yes/fexp/51565115,51565682,51791334/n/1vg059fNjU9u2NLtvT5/mt/1773340131/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,reg,playlist_type/sig/AHEqNM4wRgIhALSa7-vbDNsJoGSFVzpoZRw1E2Jogxo--IMxL6xf-cTjAiEAwtN7wrQy9bJsBBPYLnU1eeUP04FN3liOXol0mshC52w%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms,smhost/lsig/APaTxxMwRgIhALpeZeS3YFfn3ZYy3jy_0JNeLT_MKfwd8NUbLrdperNTAiEAyqOzR_st0mQKpr4UpyQvPZq34PwPK1WmnpCzAR33y8E%3D/playlist/index.m3u8
-#EXTINF:-1, Canal 1 - 70
+#EXTINF:-1 tvg-logo="https://bestleague.world/img/espnpr.webp",beIN SPORT 1
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/47vpt.m3u8?s=GTYl87EpaBsDFXnur4fNRQ&e=1773365845
-#EXTINF:-1, Canal 2 - 71
+https://d8vgvfuq.39564828.net:8443/hls/zj52139k3.m3u8?s=1JoXgsEhm1KYq-C_8izJjQ&e=1773372788
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b9/TNT_Sports_Logo.png",beIN SPORT 2
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/lf445b.m3u8?s=0jqRFeOo8qlSgfRiZtwvwA&e=1773365849
-#EXTINF:-1, Canal 3 - 72
+https://d8vgvfuq.39564828.net:8443/hls/b4zuyw944nsi.m3u8?s=DdmHX-xsWR0y8I4XAZRW1g&e=1773372791
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/eflb8gathr4gtu.m3u8?s=ba1MTc42nSv5QU6ei2AvbQ&e=1773365853
-#EXTINF:-1, Canal 4 - 73
+https://d8vgvfuq.39564828.net:8443/hls/63r8g0nw7pt1.m3u8?s=KKYjW7vRJhzOqlvJIKHaxw&e=1773372795
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 4
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/80yp1j.m3u8?s=b1_oo4FVuBQJpcMqBtd1UQ&e=1773365857
-#EXTINF:-1, Canal 5 - 74
+https://d8vgvfuq.39564828.net:8443/hls/f2wyt4a.m3u8?s=UhZ2eivhzqkV1e5Hxxxjlg&e=1773372799
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 5
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/qj1k9kfmaipv.m3u8?s=WjvM1qw5b4Fgy08waxdg0A&e=1773365860
-#EXTINF:-1, Canal 6 - 75
+https://d8vgvfuq.39564828.net:8443/hls/j8zrwjsk.m3u8?s=w5AE4uJ9g8ja8YVJ9kNdyA&e=1773372803
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 6
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=ROZ5G3YnMYID8qa4WKeQpg&e=1773365871
-#EXTINF:-1, Canal 7 - 76
+https://d8vgvfuq.39564828.net:8443/hls/9ju7q.m3u8?s=oge7bK7KhDQzALUfRGzDrg&e=1773372808
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 7
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=O71l6zE-_FMGzSwLfHYpgA&e=1773365878
-#EXTINF:-1, Canal 8 - 77
+https://d8vgvfuq.39564828.net:8443/hls/yefayaj8ur40kp.m3u8?s=4bGTw67GHVA2vLcNcY1q-Q&e=1773372812
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 8
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=ZxKwR1ooDOOmE0WEH23iMQ&e=1773365881
-#EXTINF:-1, Canal 9 - 78
+https://d8vgvfuq.39564828.net:8443/hls/3gm3g6duc.m3u8?s=F-WOU1sWYQFEJm93V69QIA&e=1773372823
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 9
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=QYAvB8BfRtWgGIyJ8sCjFQ&e=1773365885
-#EXTINF:-1, Canal 10 - 79
+https://d8vgvfuq.39564828.net:8443/hls/clp38tyr7pqyd6j.m3u8?s=C7vl3spX606hH5xEEKbitA&e=1773372827
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT max 10
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=bbMtLAKF9Tmjg802XHgU2g&e=1773365902
-#EXTINF:-1, Canal 11 - 80
+https://d8vgvfuq.39564828.net:8443/hls/301al75rx.m3u8?s=zf0HyxxDhumFElsyjhSb2Q&e=1773372831
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=wByFILdljvWkcbcYDXdllQ&e=1773365905
-#EXTINF:-1, Canal 12 - 81
+https://d8vgvfuq.39564828.net:8443/hls/icg3mqh61qxdj0.m3u8?s=Npw7YiqnbOYo2ojMOImndQ&e=1773372837
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/wwcujo0oiatyw93.m3u8?s=jI3hfeLsU8xljV95RoG30w&e=1773365909
-#EXTINF:-1, Canal 13 - 82
+https://d8vgvfuq.39564828.net:8443/hls/x2k23kaildkzt.m3u8?s=NUkbgnzKSNrh5QvwyOWxCQ&e=1773372844
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/l99bacdw776ns.m3u8?s=D52QYv8AXDntc-lYS71gLg&e=1773365913
-#EXTINF:-1, Canal 14 - 83
+https://d8vgvfuq.39564828.net:8443/hls/zyzgjq6ase.m3u8?s=fqsvsG55RBqPP5XIV_MOQw&e=1773372850
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/xzgyn9ofmet.m3u8?s=h5f0AWxAGIOVsfsPmShI5g&e=1773365916
-#EXTINF:-1, Canal 15 - 84
+https://d8vgvfuq.39564828.net:8443/hls/ns8mv9eppyr.m3u8?s=fEkTfCn7Ri277xaomDj_TQ&e=1773372856
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
 #EXTVLCOPT:http-referrer=https://increasecattle.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/x3hh2e9pop.m3u8?s=swx9ggPgPAqlZsGGKY942g&e=1773365921
+https://d8vgvfuq.39564828.net:8443/hls/90n66c8y5.m3u8?s=MKA9h86rRf78714EAzBIxw&e=1773372867
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/o0gww6.m3u8?s=g9DyyNi76AqRcmqCkgpjjg&e=1773372870
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jpsvrnx.m3u8?s=CacdMvvsZ9lOek60OAfyQA&e=1773372874
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/v1pwltx.m3u8?s=oWR_n8Kzn67ooDZsWjF9WQ&e=1773372878
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ybb3zhxw89dl.m3u8?s=2cGJN-Qb8vKctw1n-mrVPA&e=1773372882
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/yckisf.m3u8?s=-hL8CA7haXXNkqWvB1xZwQ&e=1773372890
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/h56dzi5pckuytzw.m3u8?s=Nmfut8KdxNb9g2iG-XFQWw&e=1773372901
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ws1b52zxvw.m3u8?s=QsGDoTWK4L-u32_WsE2vjg&e=1773372906
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/btogndo536pve0.m3u8?s=a2y3jR_nDlsxHiCTATOuAQ&e=1773372919
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/3tczny5mnro.m3u8?s=wyDQvXzmPdnzb0tdjtesyg&e=1773372922
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/e98jixgts.m3u8?s=Y9wMkvGfRZXezzspoj6Xew&e=1773372927
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/aiicaxid5dej.m3u8?s=5uMH3Ca6H-urNjI-t4vtSg&e=1773372931
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/vtympgq8o09z.m3u8?s=yk0po04ARgQXsUmAniMX_A&e=1773372934
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/nid5m8.m3u8?s=GkwoMS3Cnu2SWt9IHeM3aQ&e=1773372941
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jnzqza6.m3u8?s=HEoLycAdeLXxeFQqVK29dw&e=1773372945
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/hlzed0k8zk5kzr.m3u8?s=NJ97l_dHrKIc9r5BHcbkYQ&e=1773372957
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ggjv8.m3u8?s=XKlbRRJJI07k0WSxBkS0pQ&e=1773372973
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/y7zwuu.m3u8?s=DlmFXMTmrtq65qs-lmj91g&e=1773372977
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/p7xjwvpcqz3.m3u8?s=UL2QwubrbBmjUT1bwl9BNA&e=1773372982
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/j0rer.m3u8?s=0IVCZ4mZZDRxaZbziHL2vw&e=1773372986
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/lhy6dc.m3u8?s=8rJ0U0VQ38tNDCknTKKLvw&e=1773372991
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xbsuh69qp.m3u8?s=0IjXckvTYOTTQgo8_kMCsw&e=1773372996
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/9klnwk6ez7pi.m3u8?s=88o5MTKjnAOUrSyBSvqq0A&e=1773372999
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xjtgq0z6zll7.m3u8?s=1tLtyj-3VHFxUuDVJyFRuw&e=1773373004
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/a9w0hjgq0d.m3u8?s=ERch6YS692Rj4I-bvu4UEA&e=1773373010
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/uu9o8pfna60s6n6.m3u8?s=DyNmOBbBifJgIBurRDFw2A&e=1773373015
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/wnoso.m3u8?s=lS1H85RvsJLN3-y426QgMw&e=1773373019
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/msz603vlaunn.m3u8?s=THnzoc25xXF0CTX1_IyCOw&e=1773373032
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/e4dj6uwg5eb6s1g.m3u8?s=cddoF2z7umBpcEnXjVVMFQ&e=1773373036
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/kp3izxr3bxb4o.m3u8?s=oDWYVRbVdeLRfgloMIQ3Lg&e=1773373048
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/5m7p1ahiuu.m3u8?s=ZthD35SwXnolK8RNQ-z5Wg&e=1773373055
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/oyrmfbqf8k058.m3u8?s=1opfo_53RiL1bUukvxBKkw&e=1773373059
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/dog0emvzq68.m3u8?s=CmT6wN__oajyFj1hMxGUaA&e=1773373064
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/dop1rfinyl9b.m3u8?s=OUsjOPO-yVllwUuODxFrsA&e=1773373068
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/w5ujxpxue.m3u8?s=aHU8VQFDe8nJ_0G_2K3S-g&e=1773373072
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/96kc5nlurcv.m3u8?s=7ilZnn1zXfdTOVNPq-ZenA&e=1773373076
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/5k7zb7n.m3u8?s=6xQc4xwdFJMIQHhZfLqwLw&e=1773373089
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xd0i1.m3u8?s=8U-32yYvi5kMulhkbAS6nA&e=1773373094
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/s6kdue.m3u8?s=l1cvRwjaILSBSBi7c_lkKQ&e=1773373098
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jkannnm7b1d.m3u8?s=ESzgAbbfYhaKHM4RhCDwNQ&e=1773373102
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/0nx8e5.m3u8?s=Umv3lt-FuhSwzKG1X8mpgQ&e=1773373111
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/pz65xpc.m3u8?s=qj_cOsSBCoWXnU7PLIrqsg&e=1773373128
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/yh3o7p7.m3u8?s=mubrNwh8WKjb5-4tqRT5-Q&e=1773373140
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/uybh9ztgwiw1cgz.m3u8?s=WUMjsRGMn3PweDP2ivzYOw&e=1773373149
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/hmsa6df9.m3u8?s=E6DfTAaeokWe2fLbFMs4GA&e=1773373159
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/vuiel9gd34kos6.m3u8?s=OH8ysZbKf0Sc0yU6mnzM3Q&e=1773373177
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/00ui0v.m3u8?s=WAVbw5ZSsTem5BXdR2-_bg&e=1773373185
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/efw4k296.m3u8?s=CBs4h8FiV7TeVwurY10rvg&e=1773373205
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/hzsw0yityofp0y.m3u8?s=rj0rR6Rp4d8SmQ-_9UtFBw&e=1773373212
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/m4kcoozqga6.m3u8?s=Z2yWRpz0peMSe2BLzL6U4g&e=1773373220
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/gx5tpkvb00kq.m3u8?s=uXvKPssIQGVtfa_X20XtOA&e=1773373237
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ud9rsutobknz1um.m3u8?s=ZeDx-bW_SmTA0uOLw9n6HA&e=1773373251
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ii3hr0p2u.m3u8?s=c41hrqt7RevIPdOX5atyrQ&e=1773373276
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/oga0ahtwrbbgpd.m3u8?s=QWuIHeIN8xnFYzOfm6ZIOQ&e=1773373284
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/47vpt.m3u8?s=odqzPq78Sp9RB0sg1bnkkw&e=1773373290
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/lf445b.m3u8?s=QkJ3y20IyL84xOJ5rBGY3g&e=1773373296
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/eflb8gathr4gtu.m3u8?s=hAcEprjq6YVYlq47tbFd4A&e=1773373301
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/80yp1j.m3u8?s=JsK6rDcNl1eipyy6qRIa5A&e=1773373308
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/qj1k9kfmaipv.m3u8?s=-R8NDPeQPInxk7Y-rZPuQw&e=1773373313
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=IBd2FkUF7HPDOqzWnz7zEA&e=1773373324
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=l_OF__rNApastUU5ctFX6A&e=1773373338
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=fZzNLrABBpgfAkf4lIb2Dg&e=1773373343
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=b3LBZXN-h4zj_RBa4Mn89A&e=1773373347
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=WjRjTQCGjiNJqZUzIaggrw&e=1773373353
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=Vn6WrZgmeZAtTyMKTH0OnA&e=1773373360
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/wwcujo0oiatyw93.m3u8?s=uTg09lTYtKPYpvbsqXFaIg&e=1773373364
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/l99bacdw776ns.m3u8?s=WQwPqytOD503lIF_JJ8O_w&e=1773373368
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/xzgyn9ofmet.m3u8?s=nFL_GT_AZQvP4vbJC8o3Gw&e=1773373373
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/x3hh2e9pop.m3u8?s=U4h_hOp9vgW-vDbVweJ_5g&e=1773373378
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/gj2nue0.m3u8?s=Gnc1JmiFLe1I88JRy3dIJA&e=1773373382
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/robqzyh3cy.m3u8?s=z6H2TxyYF_ohj0uG_eIerw&e=1773373387
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/a31q9.m3u8?s=mujD-OTqXDWX_1PhtuFsLw&e=1773373391
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/pu1sgwiscq0e.m3u8?s=nq0qrGg5aliCXI2I1CuxGA&e=1773373395
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/wlloso4ptv7ory.m3u8?s=4mkEEm_eIcja0lOPEHqZXA&e=1773373400
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jv27oczy7c.m3u8?s=DJxiEs4eQtY5cnNlsVLyjQ&e=1773373404
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/mr8x6tqp6c4d.m3u8?s=fE1kcqgxIH2zNsUQPNjLaA&e=1773373409
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/rls67qifmmmh88.m3u8?s=NL5gGMKETh2q67dmcSUCTw&e=1773373413
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/en8640r.m3u8?s=zP-vZpQ0DvBoGy1wDtln8w&e=1773373417
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/4jva7tj642f9b.m3u8?s=nnvDE-v1UxZYRd_T5GuxXw&e=1773373422
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/bfh36g.m3u8?s=otVA_QCnuRqci3MspF44rg&e=1773373426
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/5sdw4li.m3u8?s=MkX_sgh6US9SmQDdBULMQA&e=1773373431
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/g6auvbu66y.m3u8?s=gFSu6AG_1duBF7Mxsi1j5w&e=1773373442
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/22hothctx.m3u8?s=MSHXD3rMi8A4oKRvuKtOog&e=1773373447
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/nrdfvp7hk3.m3u8?s=yU_GQCPtYhkE_aYHJv5xcw&e=1773373450
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/yy8u716.m3u8?s=gKSnAqLW2yRNDIfQnrMnxA&e=1773373453
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/3a25f0ns5g62a.m3u8?s=mmXrrVOK-Cd-4bbcu--0ew&e=1773373458
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/26i4kzq7gle.m3u8?s=JtDgaOl4c83oD8CO2k3Uaw&e=1773373465
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/pzhcs.m3u8?s=QZaXq50dfn8jRzXlgnBdjw&e=1773373469
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/u65n7ni11.m3u8?s=k_M3fiPz3SgNotKLI9BzyQ&e=1773373480
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",beIN SPORT 3
+#EXTVLCOPT:http-referrer=https://increasecattle.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/zblep9768pn5f.m3u8?s=G_a6Ta-uTJEBVGKkKbVHXg&e=1773373484
