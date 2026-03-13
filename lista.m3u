@@ -3,32 +3,35 @@
 #EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://bestleague.world/img/espnpr.webp",TYC SPORT ARGENTINA
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=kKsPbyUHuKP_EUVuJsY9vg&e=1773455515
+https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=yUqtOtgTe5CdGdhQJlIFxA&e=1773456365
 
 #EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b9/TNT_Sports_Logo.png",TNT SPORT ARGENTINA
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=mFsItVlAVEnXuhsSZWJebw&e=1773455519
+https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=OdXEv0D3FTTmhz0rm6Xg6A&e=1773456371
 
 #EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",ESPN PREMIUM ARGENTINA
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=aCYNfduxK7UK3d1EGN5s4Q&e=1773455524
+https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=tZpdWAqQjsARjESQreJOEA&e=1773456377
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 1 AR
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=FsNo2cSJiY2iC9e7TjiRUg&e=1773455529
+https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=iwq69Mumtt-lEQ3BwHbr2A&e=1773456382
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 2 AR
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=S0HF0ZwrkT1Ct8Y-m6TVNg&e=1773455533
+https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=a2pozNlCZ53balnQVe_j8w&e=1773456387
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 3 AR
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=fc9WQvJYkmxQMRpF0BmLRw&e=1773455539
+https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=BWplOmMRRTTt68LMpkiJuw&e=1773456392
+
+#EXTINF:-1 group-title="VARIOS" tvg-id="156" tvg-name="+ tick" tvg-logo="https://cdn.m3u.cl/logo/156___Listas_en_M3U_CL.png", + Listas en M3U.CL ✪ | CL
+https://www.youtube.com/watch?v=XhAYcYpPzTc
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-MARIA.png" group-title="ARGENTINA",Maria - 88.5 TV - CABA FM - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA_88.5_MARIA_____
