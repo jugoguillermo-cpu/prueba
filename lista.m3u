@@ -3,32 +3,47 @@
 #EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://bestleague.world/img/espnpr.webp",TYC SPORT ARGENTINA
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=VqlCA5bi6tokCoWxgL0Grg&e=1773457184
+https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=iUNLeS5FvBG7vNe1dDJM8Q&e=1773458736
 
 #EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b9/TNT_Sports_Logo.png",TNT SPORT ARGENTINA
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=IXwL9lDO7OOYs1lHMeV0tw&e=1773457188
+https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=WNuRP7ry6Rk6Ls2x058t8g&e=1773458743
 
 #EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",ESPN PREMIUM ARGENTINA
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=TwtLHrD6xKLhVSZby6kUpw&e=1773457191
+https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=IxhFjFiKwopAJgAPVZ7D8Q&e=1773458748
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 1 AR
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=Cjy90j3tHM90WSpX41QYEw&e=1773457195
+https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=1gXyez-aEtds4dhkYTJK2w&e=1773458759
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 2 AR
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=8b2YVUnUWS0Z4W8F-z1-CQ&e=1773457200
+https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=DTd5AYgaDfCb8JY4DKGSLg&e=1773458763
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 3 AR
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=OwgH5Rzde4g_rPyyEv2ODg&e=1773457215
+https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=fBJyI4XlY1YDqeyMX9OzhQ&e=1773458767
+
+#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv
+#EXTVLCOPT:http-referrer=https://goalwagon.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+https://d8vgvfuq.39564828.net:8443/hls/4jva7tj642f9b.m3u8?s=ns6l43Fj68ALXZORMVqdrw&e=1773458771
+
+#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv 2
+#EXTVLCOPT:http-referrer=https://goalwagon.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+https://d8vgvfuq.39564828.net:8443/hls/bfh36g.m3u8?s=D2NrC7-vI2LIftdflq-HEQ&e=1773458775
+
+#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv+
+#EXTVLCOPT:http-referrer=https://goalwagon.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+https://d8vgvfuq.39564828.net:8443/hls/5sdw4li.m3u8?s=VNzhj0W6X676o1kx-w2Xwg&e=1773458779
 
 #EXTINF:-1 tvg-name="A24com" tvg-logo="https://i.ytimg.com/vi_webp/ArKbAx1K-2U/maxresdefault_live.webp" group-title="ARGENTINA", A24com
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1773457107/ei/c3q0aYP7Irqe-LAPpJK4oQc/ip/2803:9800:9995:83b6:4cda:1529:7229:d012/id/ArKbAx1K-2U.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr3---sn-jup-x1xk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AVNa5-xsvJNNj768QKgWLhdAeDCyhVCmc8P3jsiuGwJRBrYx32dPLn8-1Bb_qg6dvm7TTKIwUNIuvJah/spc/6dlaFN9QaSOcfLJlWlQI_BDqQYmKQguTuJDk_CcEnT2dICHI9JwscvR-dju8ZB2j/vprv/1/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/2620000/met/1773435508,/mh/C8/mm/44/mn/sn-jup-x1xk/ms/lva/mv/m/mvi/3/pcm2cms/yes/pl/48/rmhost/rr2---sn-jup-x1xk.googlevideo.com/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51565682,51791334/mt/1773434926/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AHEqNM4wRQIgF-hhVKH2fwwfbI19WbN8yLvwcQp3TRGLADivK-kcHX8CIQCusHCYT2Y24u6YsofRM0VhrCJgOj45wjEq0NbR7alYDA%3D%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pcm2cms,pl,rmhost,rms/lsig/APaTxxMwRQIhAML7qNP_GGjrU0W9zeEStE1uB8uTQvrFl91RVNFMh1E4AiB6a37oqzZpluuj_aM8cnBexZYsRolN__2HR2dyfbt82w%3D%3D/playlist/index.m3u8
