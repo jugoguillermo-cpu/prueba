@@ -282,15 +282,27 @@ https://backend.energeek.cl/webtv/pridetvweb/index.m3u8?token=D3m0M3UCLWeb&Playl
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1773362190/ei/rgezaeP9BdejobIPv9OUoQs/ip/2803:9800:9995:83b6:a94f:95b8:942e:2208/id/cb12KmMMDJA.3/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-jup-x1xd.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AVNa5-yAH-OTm--tRG-y7WMTkzDllw60VaMUwDBoHLdLtaE6w_nkf22jCFNqUP9kK4pAZoe9qZVqwuoJ/spc/6dlaFOFctBRyeAMaVkYCRRZM8xbZm6F3lk2YRpAs8XEGreYAL7dRpK5FfHn7aJj3skg/vprv/1/ns/iPV4Bx_b97m8PC-DLUeU6psT/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/2206250/met/1773340591,/mh/o5/mm/44/mn/sn-jup-x1xd/ms/lva/mv/m/mvi/1/pl/48/rms/lva,lva/smhost/rr5---sn-jup-x1xk.googlevideo.com/dover/11/pacing/0/keepalive/yes/fexp/51565115,51565681,51791334/n/48qcF7Gw2IshFTEA3Os/mt/1773340131/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,reg,playlist_type/sig/AHEqNM4wRQIgR_DJd4ErY3k53BlW96knoeooqTj2N5EH34Vs54JJ334CIQDKr0sCnTruvs-d7_eOn04rNfRUa8wHIfsUW7DE0CG0WA%3D%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms,smhost/lsig/APaTxxMwRAIgGdNJskcL_JrOzMslTmbDnlBTPW5DteVVSM5096EfX9gCIFdkF9xO6modoOjrEvaoPkwszDuqXCS4VV0P2qL7FfvY/playlist/index.m3u8
 #EXTINF:-1 tvg-id="ArKbAx1K-2U" tvg-logo="https://i.ytimg.com/vi/ArKbAx1K-2U/maxresdefault.jpg" group-title="Jupyter_Scraper", 🟥 A24 EN VIVO | Noticias de Argentina y el mundo las 24 horas 2026-03-12 15:36
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1773362194/ei/sgezaY_REaCb-LAP9tG6yQ8/ip/2803:9800:9995:83b6:a94f:95b8:942e:2208/id/ArKbAx1K-2U.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-ja5gv5g-hq9e.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AVNa5-xr4NhsoL85x-6240VTov29mjispFnQeMskGwA1r-wZjbI3hBN8A0QLO3isrV0fPIjwXVoxOvMP/spc/6dlaFCk7MurDpPteRc_qW176gnSBfwjYDWom_5dJ60djWLkmiktyIPRJUNm_k3PgauQ/vprv/1/ns/8SLLwIlaIOnZcCmCDsIziXwT/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/1998750/met/1773340595,/mh/C8/mm/44/mn/sn-ja5gv5g-hq9e/ms/lva/mv/m/mvi/1/pl/48/rms/lva,lva/smhost/rr2---sn-ja5gv5g-hq9l.googlevideo.com/dover/11/pacing/0/keepalive/yes/fexp/51565115,51565682,51791334/n/1vg059fNjU9u2NLtvT5/mt/1773340131/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,reg,playlist_type/sig/AHEqNM4wRgIhALSa7-vbDNsJoGSFVzpoZRw1E2Jogxo--IMxL6xf-cTjAiEAwtN7wrQy9bJsBBPYLnU1eeUP04FN3liOXol0mshC52w%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms,smhost/lsig/APaTxxMwRgIhALpeZeS3YFfn3ZYy3jy_0JNeLT_MKfwd8NUbLrdperNTAiEAyqOzR_st0mQKpr4UpyQvPZq34PwPK1WmnpCzAR33y8E%3D/playlist/index.m3u8
-#EXTINF:-1 tvg-logo="https://bestleague.world/img/espnpr.webp",beIN SPORT 1
+#EXTINF:-1 tvg-logo="https://bestleague.world/img/espnpr.webp",TYC SPORT
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=O2Yioqerg2FRqWrklMDwTA&e=1773435368
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b9/TNT_Sports_Logo.png",beIN SPORT 2
+https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=pUXhgqNdbmLt0KLvFI-4IQ&e=1773436720
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b9/TNT_Sports_Logo.png",TNT SPORT
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/neo2gy.m3u8?s=If8_MD4Gzzsn-PivlTBPlw&e=1773435373
-#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",TNT SPORT PREMIUM
+https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=dNlqaXrZAoR5yw3RUBl5Kw&e=1773436723
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",ESPN PREMIUM PREMIUM
 #EXTVLCOPT:http-referrer=https://goalwagon.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
-https://d8vgvfuq.39564828.net:8443/hls/xkvfhc3.m3u8?s=28LKlzYFm-TIEPwdaGCokg&e=1773435376
+https://d8vgvfuq.39564828.net:8443/hls/eka6jtsowcqgv6.m3u8?s=z5p8MZ8KgQLIAwOu1ZElLg&e=1773436727
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 1 AR
+#EXTVLCOPT:http-referrer=https://goalwagon.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/jablnuk6y1adx4v.m3u8?s=pydV6RQP_a4fr0vkV-Q4fA&e=1773436731
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 2 AR
+#EXTVLCOPT:http-referrer=https://goalwagon.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=eR9-VXe7njeiYkTzuWBTeg&e=1773436734
+#EXTINF:-1 tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 3 AR
+#EXTVLCOPT:http-referrer=https://goalwagon.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://d8vgvfuq.39564828.net:8443/hls/t7w70x7v57.m3u8?s=98pGT3BYwN_0AyD0non2yQ&e=1773436738
