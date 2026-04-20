@@ -1,49 +1,49 @@
 #EXTM3U
 
-#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://bestleague.world/img/espnpr.webp",TYC SPORT ARGENTINA
+#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFgQZxIkGMQC_R6cNc3RIy-oDC5BDUi2jkw&s",TYC SPORT ARGENTINA
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/neo2gy.m3u8?s=m89-95iMGJNzK0Nq7dHBmg&e=1776746231
+https://9pcjk5cj.04334746.net:8443/hls/neo2gy.m3u8?s=818Az9w-MxDoO8pDDnOw7Q&e=1776746389
 
-#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b9/TNT_Sports_Logo.png",TNT SPORT ARGENTINA
+#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFggfY7T3RJpOojMInWiCW8mWMi3WmSuFSfg&s",TNT SPORT ARGENTINA
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/xkvfhc3.m3u8?s=o0LVG6z7nUgUISlVKWSstw&e=1776746236
+https://9pcjk5cj.04334746.net:8443/hls/xkvfhc3.m3u8?s=p0wWjxV017vjaB7TpLlbmg&e=1776746394
 
-#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",ESPN PREMIUM ARGENTINA
+#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://bestleague.world/img/espnpr.webp",ESPN PREMIUM ARGENTINA
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/eka6jtsowcqgv6.m3u8?s=jjSB_ujYgK-rqjPfxT7Bhw&e=1776746241
+https://9pcjk5cj.04334746.net:8443/hls/eka6jtsowcqgv6.m3u8?s=4To-jYdnWnh68RYllSvxTw&e=1776746398
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 1 AR
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/jablnuk6y1adx4v.m3u8?s=J1OmVgF45HY_HMF6U1niGA&e=1776746245
+https://9pcjk5cj.04334746.net:8443/hls/jablnuk6y1adx4v.m3u8?s=x6d0KJONSArqFff1LJaMAg&e=1776746403
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 2 AR
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=heHBSBegONfFASbdhUhtdg&e=1776746250
+https://9pcjk5cj.04334746.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=ElJyeTJzZ0gNCen-CQI6Rw&e=1776746407
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 3 AR
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/t7w70x7v57.m3u8?s=HglP2kRpWwEZHXBFVEzmkA&e=1776746256
+https://9pcjk5cj.04334746.net:8443/hls/t7w70x7v57.m3u8?s=pzjbD5x_T-w5cMW4Ocf52w&e=1776746412
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/4jva7tj642f9b.m3u8?s=7ZM8JXwITyfIC1rS6P-SdQ&e=1776746262
+https://9pcjk5cj.04334746.net:8443/hls/4jva7tj642f9b.m3u8?s=YTDOPPOvecUShCkSMtsttw&e=1776746416
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv 2
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/bfh36g.m3u8?s=RcYygODwcPirCg5mi1476w&e=1776746266
+https://9pcjk5cj.04334746.net:8443/hls/bfh36g.m3u8?s=2RVvDTIR1wRAIKkJASVJSQ&e=1776746421
 
 #EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv+
 #EXTVLCOPT:http-referrer=https://clerkopera.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/5sdw4li.m3u8?s=28gdom7_tClOjcmHpJTYsw&e=1776746270
+https://9pcjk5cj.04334746.net:8443/hls/5sdw4li.m3u8?s=yzHtz6_U21At7QLCc1FIcQ&e=1776746426
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/TVE2.png" group-title="VARIOS",La 2
 https://d4g9wh8d4wiaw.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-crbrakk0yedqb/La2ES.m3u8
