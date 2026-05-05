@@ -1,50 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFgQZxIkGMQC_R6cNc3RIy-oDC5BDUi2jkw&s",TYC SPORT ARGENTINA
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/neo2gy.m3u8?s=PnA9BUpm4RoA9rIMKqihEg&e=1777526969
-
-#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFggfY7T3RJpOojMInWiCW8mWMi3WmSuFSfg&s",TNT SPORT ARGENTINA
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/xkvfhc3.m3u8?s=E3ExaMWlWSPDHPw2z2ctow&e=1777526974
-
-#EXTINF:-1 group-title="ARGENTINA" tvg-logo="https://bestleague.world/img/espnpr.webp",ESPN PREMIUM ARGENTINA
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/eka6jtsowcqgv6.m3u8?s=_U9unZ879Bg98Ln1BvgJtA&e=1777526977
-
-#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 1 AR
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/jablnuk6y1adx4v.m3u8?s=vBTIuioKj2UbGJPkRWsVHA&e=1777526982
-
-#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 2 AR
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=6PwiNCIeb6YF_kVMdpPvoQ&e=1777526987
-
-#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",FOX SPORT 3 AR
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/t7w70x7v57.m3u8?s=S4Aa6aRvb0ebwVT6xH9Xng&e=1777526992
-
-#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/4jva7tj642f9b.m3u8?s=HIo9J9CfCUxBijptFHsZRw&e=1777526996
-
-#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv 2
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/bfh36g.m3u8?s=E0gk5kO_GubIKddxVFddvw&e=1777527000
-
-#EXTINF:-1 group-title="VARIOS" tvg-logo="https://logodownload.org/wp-content/uploads/2018/11/tyc-sports-logo.png",directv+
-#EXTVLCOPT:http-referrer=https://weapontake.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
-https://9pcjk5cj.04334746.net:8443/hls/5sdw4li.m3u8?s=qKBYWZdPAvR4e5PgWA8Vjg&e=1777527005
-
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/CanalCBA.png" group-title="VARIOS",Canal de la Ciudad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
 #KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
@@ -117,7 +72,7 @@ https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8
 https://mblesmain01.telesur.ultrabase.net/mbliveMain/hd/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/1364_Retro_Magico.png" group-title="VARIOS",Retro Magico
-https://live20.bozztv.com/giatv/giatv-retromagico/retromagico/playlist.m3u8
+https://live20.bozztv.com/akamaissh101/ssh101/retromagicocnl/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/PequeradioTV.png" group-title="VARIOS",Pequeradio TV
 https://canadaremar2.todostreaming.es/live/peque-pequetv.m3u8
@@ -1449,9 +1404,6 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__34.1UNIVISIONL
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-GENTV.png" group-title="ARGENTINA",GenTV - 15.4TV - CABA TV TDA - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__15.4GENTV_____
 
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-CARAS.png" group-title="ARGENTINA",Caras TV - 21.1TV - CABA TV TDA - CD Cd Aut Bs As
-https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__21.1CARASTV___
-
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VILRL456.png" group-title="ARGENTINA",LRL456 Orbe 21 - 21.2TV - CABA TV TDA - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__21.2LRL456ORBE
 
@@ -1512,6 +1464,9 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA___WEBCANAL22___
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI---C72.png" group-title="ARGENTINA",Canal 72 - WebTV - CABA TV Web - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA___WEBCANAL72___
 
+#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-CARAS.png" group-title="ARGENTINA",Caras TV - WebTV - CABA TV Web - CD Cd Aut Bs As
+https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA___WEBCARASTV___
+
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIMAGICK.png" group-title="ARGENTINA",Magic Kids - WebTV - CABA TV Web - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA___WEBMAGICKIDS_
 
@@ -1529,9 +1484,6 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARGBFLORE__16.3QUANTICATV
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIOK1057.png" group-title="ARGENTINA",OK FM - 105.7 TV - Florencio Varela - GB Gran Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARGBFLORE105.7_OKFM______
-
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VITR1340.png" group-title="ARGENTINA",Tradicional - 1340 TV - Florida - GB Gran Bs As
-https://radiosargentina.com.ar/php/artvDI.php?id=ARGBFLORI_1340_TRADICIONA
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIFIVETV.png" group-title="ARGENTINA",Five TV - 16.1TV - G de Laferrere - GB Gran Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARGBG_DE___16.1FIVETV____
@@ -1553,9 +1505,6 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARGBLANUS___WEBRADIODETOD
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIRC1470.png" group-title="ARGENTINA",Cadena - 1470 TV - Lanus - GB Gran Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARGBLANUS_1470_CADENA____
-
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIANTE91.png" group-title="ARGENTINA",Antena 91 - 90.9 TV - Lomas de Zamora - GB Gran Bs As
-https://radiosargentina.com.ar/php/artvDI.php?id=ARGBLOMAS_90.9_ANTENA91__
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-TVPMP.png" group-title="ARGENTINA",TVP Marcos Paz - 19.1 TV - Marcos Paz - GB Gran Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARGBMARCO_19.1_TVPMARCOSP
@@ -1583,9 +1532,6 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARGBSAN_F___20_SIONTV____
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI--UNLM.png" group-title="ARGENTINA",LRI427 Universidad - 89.1 TV - San Justo - GB Gran Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARGBSAN_J_89.1_LRI427UNIV
-
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VISKYLSJ.png" group-title="ARGENTINA",Skylab - 99.7 TV - San Justo - GB Gran Bs As
-https://radiosargentina.com.ar/php/artvDI.php?id=ARGBSAN_J_99.7_SKYLAB____
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI----C4.png" group-title="ARGENTINA",C4 Teleaire - 4 TV - San Martín - GB Gran Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARGBSAN_M____4_C4TELEAIRE
@@ -2088,6 +2034,9 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARFOFORMO___WEBSUBLIMEGRA
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI--LT88.png" group-title="ARGENTINA",LT88 Lapacho 11 - 29.1TV - Formosa - FO Formosa
 https://radiosargentina.com.ar/php/artvDI.php?id=ARFOFORMO__29.1LT88LAPACH
 
+#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIPRE919.png" group-title="ARGENTINA",Premier - 91.9 TV - El Carmen - JU Jujuy
+https://radiosargentina.com.ar/php/artvDI.php?id=ARJUEL_CA_91.9_PREMIER___
+
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-4TVJU.png" group-title="ARGENTINA",Canal 4 - 4CTV - San S de Jujuy - JU Jujuy
 https://radiosargentina.com.ar/php/artvDI.php?id=ARJUSAN_S____4CCANAL4____
 
@@ -2117,6 +2066,9 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARJUSAN_S___CAMCAMARA8CAN
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI--LW80.png" group-title="ARGENTINA",LW80 Canal 7 - 36.1TV - San S de Jujuy - JU Jujuy
 https://radiosargentina.com.ar/php/artvDI.php?id=ARJUSAN_S__36.1LW80CANAL7
+
+#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VILRK775.png" group-title="ARGENTINA",LRK775 Fiesta - 91.7 TV - San S de Jujuy - JU Jujuy
+https://radiosargentina.com.ar/php/artvDI.php?id=ARJUSAN_S_91.7_LRK775FIES
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIMAXSSJ.png" group-title="ARGENTINA",Maxima - 99.7 TV - San S de Jujuy - JU Jujuy
 https://radiosargentina.com.ar/php/artvDI.php?id=ARJUSAN_S_99.7_MAXIMA____
@@ -2343,9 +2295,6 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARSAGENER____7CMOSCONITVC
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIINFISA.png" group-title="ARGENTINA",Infinito - 96.5 TV - Salta - SA Salta
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSASALTA_96.5_INFINITO__
 
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI2SALTA.png" group-title="ARGENTINA",TV dos - 2 TV - Salta  TV - SA Salta
-https://radiosargentina.com.ar/php/artvDI.php?id=ARSASALTA____2_TVDOS_____
-
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VINEOXTV.png" group-title="ARGENTINA",Neox TV - 37 TV - Salta  TV - SA Salta
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSASALTA___37_NEOXTV____
 
@@ -2370,14 +2319,14 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARSASALTA___WEBPELICULA6_
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI7SALTA.png" group-title="ARGENTINA",Canal 7 - 28.1TV - Salta  TV - SA Salta
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSASALTA__28.1CANAL7____
 
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI9SALTA.png" group-title="ARGENTINA",Multivisión 9 - 35.1TV - Salta  TV - SA Salta
+#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI9SALTA.png" group-title="ARGENTINA",Multivision 9 - 35.1TV - Salta  TV - SA Salta
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSASALTA__35.1MULTIVISIO
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VISPACTV.png" group-title="ARGENTINA",LRK724 Spacio TV - 107.1 TV - San J de Metán - SA Salta
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSASAN_J107.1_LRK724SPAC
 
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIC12TAR.png" group-title="ARGENTINA",Canal 12 - 12 TV - Tartagal - SA Salta
-https://radiosargentina.com.ar/php/artvDI.php?id=ARSATARTA___12_CANAL12___
+#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI100TAR.png" group-title="ARGENTINA",La 100 - 90.9 TV - Tartagal - SA Salta
+https://radiosargentina.com.ar/php/artvDI.php?id=ARSATARTA_90.9_LA100_____
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIMUNICO.png" group-title="ARGENTINA",Municipal - 87.9 TV - Caleta Olivia - SC Santa Cruz
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSCCALET_87.9_MUNICIPAL_
