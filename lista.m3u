@@ -95,12 +95,6 @@ https://cdn7.zohanayaan.com:1686/hls/sabrouchespndeportes.m3u8?md5=ePmIqG3yDI9IP
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
 https://cdn5.zohanayaan.com:1686/hls/wsmkmlfeed71.m3u8?md5=mHhH7YZe8cAVZaznlbSwFg&expires=1781398268
 
-#EXTINF:-1 group-title="VARIOS",Bola Loca Stream 1
-http://localhost:5000/playlist/1.m3u8
-
-#EXTINF:-1 group-title="VARIOS",Bola Loca Stream 2
-http://localhost:5000/playlist/2.m3u8
-
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/CanalCBA.png" group-title="VARIOS",Canal de la Ciudad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
 #KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
