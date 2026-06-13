@@ -1,14 +1,14 @@
 #EXTM3U
 
 #EXTINF:-1 group-title="VARIOS", DIRECTV
-#EXTVLCOPT:http-referrer=https://la18hd.com/
+#EXTVLCOPT:http-referrer=https://capo7play.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://dglvz29s.fubo18.com/dsports/mono.m3u8?token=bc886db50fe0d8771611c0724823d3a0aac4997e-c6-1781394173-1781376173
+https://cdn1.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=evhv6nu1g5-Y4IwavIv7bw&expires=1781384885
 
-#EXTINF:-1 group-title="VARIOS", TYC SPORT
-#EXTVLCOPT:http-referrer=https://la18hd.com/vivo/canales.php?stream=tycsports
+#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 2
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://tvlibre-online.com/pc/ext/?r=https://ch11-04-11-tyc.vodgc.net/out/v1/1bcd1ee954894463b1793597891a25b6/index.m3u8%3Fheaders%3DeyJvcmlnaW4iOiJodHRwczovL3BsYXkudHljc3BvcnRzLmNvbSIsInJlZmVyZXIiOiJodHRwczovL3BsYXkudHljc3BvcnRzLmNvbS8ifQ%3D%3D
+https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=i0eQa9ixB-MC8g7AqOK1hA&e=1781399397
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/CanalCBA.png" group-title="VARIOS",Canal de la Ciudad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
