@@ -142,10 +142,20 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__27.1BRAVOTV___
 #EXTINF:-1 group-title="TV ABIERTA ARGENTINA" tvg-id="1736" tvg-name="Bravo TV" tvg-logo="https://cdn.m3u.cl/logo/1736_Bravo_TV.png",Bravo TV | AR (Opción 3)
 https://redirector.rudo.video/hls-video/c54ac2799874375c81c1672abb700870537c5223/bravo/bravo.smil/playlist.m3u8?PlaylistM3UCL
 
-#EXTINF:-1 tvg-id="TyCSports.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/TyC_Sports_logo.svg/960px-TyC_Sports_logo.svg.png" group-title="DEPORTES",TyC Sports (1080p)
+#EXTINF:-1 group-title="DEPORTES",TYC SPORT
+#EXTVLCOPT:http-referrer=https://capo8play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn10.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=ObvlS7HK-hRc0fG5eGnwKQ&expires=1781386148
+
+#EXTINF:-1 group-title="DEPORTES",TYC SPORT - Opción 2 (Opción 2)
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/neo2gy.m3u8?s=k1aUn0GTA0gGgDuKM3RcMA&e=1781400699
+
+#EXTINF:-1 tvg-id="TyCSports.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/TyC_Sports_logo.svg/960px-TyC_Sports_logo.svg.png" group-title="DEPORTES",TyC Sports (1080p) (Opción 3)
 https://amg26268-amg26268c14-freelivesports-emea-10267.playouts.now.amagi.tv/ts-us-e2-n2/playlist/amg26268-sportsstudio-tycsports-freelivesportsemea/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI---TYC.png" group-title="DEPORTES",TyC Sports - CTV - CABA TV Cable - CD Cd Aut Bs As (Opción 2)
+#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI---TYC.png" group-title="DEPORTES",TyC Sports - CTV - CABA TV Cable - CD Cd Aut Bs As (Opción 4)
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA_____CTYCSPORTS_
 
 #EXTINF:-1 group-title="DEPORTES",ESPN 2 HD
@@ -178,14 +188,34 @@ https://jmp2.uk/plu-5a74b8e1e22a61737979c6bf.m3u8
 #EXTINF:-1 group-title="DEPORTES",DIRECTV
 #EXTVLCOPT:http-referrer=https://capo7play.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://cdn9.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=va10RUxbUjzy6rUCVpOppw&expires=1781385301
+https://cdn9.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=YKVmSuWo41-fSE8u8vfNmg&expires=1781386162
 
 #EXTINF:-1 group-title="DEPORTES",DIRECTV - Opción 2 (Opción 2)
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=gvU_6NsOlQDpvam6Gg8hjQ&e=1781399782
+https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=wtP8MysQxOU7VNOMOfAhIA&e=1781400740
 
-#EXTINF:-1 tvg-id="DirecTVSports.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/DirecTV_Sports_Latin_America_%282018%29.png/960px-DirecTV_Sports_Latin_America_%282018%29.png" group-title="DEPORTES",DirecTV Sports (1080p) (Opción 3)
+#EXTINF:-1 group-title="DEPORTES",DIRECTV - Opción 3 (Opción 3)
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdndirector.dailymotion.com/cdn/live/video/xaeqvym.m3u8?sec=JXsvuUJOxcgGk6k0sam0lZbg-eR9hHauCK4h2onA1olDL-HIv9o352P5onQ6sf7PjuG8N6fAfQPt6kgnyeONnA&dmV1st=144ffcdc-f950-a5b4-e616-5d9452b07807&dmTs=871460
+
+#EXTINF:-1 group-title="DEPORTES",DIRECTV - Opción 4 (Opción 4)
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-720.m3u8
+
+#EXTINF:-1 group-title="DEPORTES",DIRECTV - Opción 5 (Opción 5)
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-240.m3u8
+
+#EXTINF:-1 group-title="DEPORTES",DIRECTV - Opción 6 (Opción 6)
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-480.m3u8
+
+#EXTINF:-1 tvg-id="DirecTVSports.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/DirecTV_Sports_Latin_America_%282018%29.png/960px-DirecTV_Sports_Latin_America_%282018%29.png" group-title="DEPORTES",DirecTV Sports (1080p) (Opción 7)
 https://latam-cache-sv2-cdn.latamlive.net/DS1_ENC_LIVE/index.mpd
 
 #EXTINF:-1 group-title="PELICULAS Y SERIES",Space HD
