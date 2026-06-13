@@ -1,5 +1,100 @@
 #EXTM3U
 
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM
+#EXTVLCOPT:http-referrer=https://capo7play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn7.zohanayaan.com:1686/hls/sabrouchtvespnpremiumarg.m3u8?md5=QQTs83LWUeG3fg0uV6o3mw&expires=1781388526
+
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM - Opción 2
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/eka6jtsowcqgv6.m3u8?s=3PWzFhY9Dp4aA7puZfT4_w&e=1781403015
+
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM - Opción 3
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdndirector.dailymotion.com/cdn/live/video/xaeqvym.m3u8?sec=JXsvuUJOxcgGk6k0sam0lSn_H2wqWOeokONxYzCSBLCbCTGC1iE449Ytz9JHWnijSpKYlmE97xWuvhsjLw_JeA&dmV1st=780ccb9d-e45f-6fb5-d153-1ea55a4e68cd&dmTs=523518
+
+#EXTINF:-1 group-title="VARIOS", TYC SPORT
+#EXTVLCOPT:http-referrer=https://la18hd.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://b2zmawnpyww.fubo18.com/tycsports/mono.m3u8?token=0f4521dfa846d6b37f8295d7d73d6f8aaa999d2d-31-1781398267-1781380267
+
+#EXTINF:-1 group-title="VARIOS", TYC SPORT - Opción 2
+#EXTVLCOPT:http-referrer=https://capo8play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn5.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=2YvGFzeJv6O86dsnB485hA&expires=1781388519
+
+#EXTINF:-1 group-title="VARIOS", DIRECTV
+#EXTVLCOPT:http-referrer=https://capo7play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn8.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=WVYLCgbh6G0LOcsJwYe3Ow&expires=1781397487
+
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM - Opción 4
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-480.m3u8
+
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM - Opción 5
+#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-240.m3u8
+
+#EXTINF:-1 group-title="VARIOS", DIRECTV 2
+#EXTVLCOPT:http-referrer=https://la18hd.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://a2lja3m.fubo18.com/dsports2/mono.m3u8?token=7d896e7289ede6fa772c6b9d13d60da4127630b9-b7-1781400367-1781382367
+
+#EXTINF:-1 group-title="VARIOS", FOX SPORT 1
+#EXTVLCOPT:http-referrer=https://capo8play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn9.zohanayaan.com:1686/hls/sabrouchtvfoxsp1arg.m3u8?md5=SgdOp6CtnAiLr9RaxTOWnw&expires=1781390867
+
+#EXTINF:-1 group-title="VARIOS", FOX SPORT 1 - Opción 2
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/jablnuk6y1adx4v.m3u8?s=BSQusf0rPPZ9jFF-vRRHLA&e=1781405364
+
+#EXTINF:-1 group-title="VARIOS", ESPN 2
+#EXTVLCOPT:http-referrer=https://la18hd.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://a2lja3m.fubo18.com/dsports2/mono.m3u8?token=da4bb55551e8a1bde47b38333143f1f436e0cb6e-12-1781407405-1781389405
+
+#EXTINF:-1 group-title="VARIOS", ESPN 1
+#EXTVLCOPT:http-referrer=https://capo7play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn7.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=ebp8iDtBgr1YiaC5jlvUAg&expires=1781397554
+
+#EXTINF:-1 group-title="VARIOS", ESPN 1 - Opción 2
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=jxWN9BMnLhnnaQTJoZnlcg&e=1781412080
+
+#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 2
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=WWh117KiOyjRE4O_9onjlg&e=1781411998
+
+#EXTINF:-1 group-title="VARIOS", TNT SPORT PREMIUM
+#EXTVLCOPT:http-referrer=https://capo8play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn3.zohanayaan.com:1686/hls/sabrouchtvtntsportarg.m3u8?md5=XGBqjRlDmXlDAty9N1t23A&expires=1781398061
+
+#EXTINF:-1 group-title="VARIOS", TNT SPORT PREMIUM - Opción 2
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/xkvfhc3.m3u8?s=2U7gsh4hsmCCM6SZVWBtRQ&e=1781412596
+
+#EXTINF:-1 group-title="VARIOS", ESPN DEPORTES
+#EXTVLCOPT:http-referrer=https://capo7play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn7.zohanayaan.com:1686/hls/sabrouchespndeportes.m3u8?md5=ePmIqG3yDI9IPujSoAS13w&expires=1781398121
+
+#EXTINF:-1 group-title="VARIOS", ESPN DEPORTES - Opción 2
+#EXTVLCOPT:http-referrer=https://hoca8.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn5.zohanayaan.com:1686/hls/wsmkmlfeed71.m3u8?md5=mHhH7YZe8cAVZaznlbSwFg&expires=1781398268
+
 #EXTINF:-1 group-title="VARIOS",Bola Loca Stream 1
 http://localhost:5000/playlist/1.m3u8
 
