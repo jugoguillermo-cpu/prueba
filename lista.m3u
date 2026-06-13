@@ -1,44 +1,29 @@
 #EXTM3U
 
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM
+#EXTVLCOPT:http-referrer=https://la18hd.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://dw5pdgvk.fubo18.com/espnpremium/mono.m3u8?token=89c6150d1b6548401f74caf02afb627d3e7e6456-56-1781397199-1781379199
+
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM - Opción 2
+#EXTVLCOPT:http-referrer=https://capo7play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn10.zohanayaan.com:1686/hls/sabrouchtvespnpremiumarg.m3u8?md5=zVyzKGYuP3KvqjA43grVSw&expires=1781387486
+
+#EXTINF:-1 group-title="VARIOS", ESPN PREMIUM - Opción 3
+#EXTVLCOPT:http-referrer=https://plantmorsel.net/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://9p441zo96v8m.78655371.net:8443/hls/eka6jtsowcqgv6.m3u8?s=rFCcc3FxHPi0rnB0qbs1gQ&e=1781402012
+
 #EXTINF:-1 group-title="VARIOS", TYC SPORT
 #EXTVLCOPT:http-referrer=https://capo8play.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://cdn10.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=ObvlS7HK-hRc0fG5eGnwKQ&expires=1781386148
+https://cdn7.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=eOmGUKymUBCzPvTv7-kz6Q&expires=1781387478
 
 #EXTINF:-1 group-title="VARIOS", TYC SPORT - Opción 2
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://9p441zo96v8m.78655371.net:8443/hls/neo2gy.m3u8?s=k1aUn0GTA0gGgDuKM3RcMA&e=1781400699
-
-#EXTINF:-1 group-title="VARIOS", DIRECTV
-#EXTVLCOPT:http-referrer=https://capo7play.com/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://cdn9.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=YKVmSuWo41-fSE8u8vfNmg&expires=1781386162
-
-#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 2
-#EXTVLCOPT:http-referrer=https://plantmorsel.net/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=wtP8MysQxOU7VNOMOfAhIA&e=1781400740
-
-#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 3
-#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://cdndirector.dailymotion.com/cdn/live/video/xaeqvym.m3u8?sec=JXsvuUJOxcgGk6k0sam0lZbg-eR9hHauCK4h2onA1olDL-HIv9o352P5onQ6sf7PjuG8N6fAfQPt6kgnyeONnA&dmV1st=144ffcdc-f950-a5b4-e616-5d9452b07807&dmTs=871460
-
-#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 4
-#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-720.m3u8
-
-#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 5
-#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-240.m3u8
-
-#EXTINF:-1 group-title="VARIOS", DIRECTV - Opción 6
-#EXTVLCOPT:http-referrer=https://geo.dailymotion.com/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://live2.eu-north-1b.cf.dmcdn.net/sec2(uvcSSM2RSCI5rRcadU7VtclU-GUqcGvV80b1-7G9ptXm6DqmydR8wYK5sDzFOIhXnswOCUdGzh0U5GFfeV03SbziPtw77l1dubvi2Vg2G-Es6bIhTBe6HgW8Me05Sd1n)/cloud/3/xaeqvym/s/live-480.m3u8
+https://9p441zo96v8m.78655371.net:8443/hls/neo2gy.m3u8?s=yRqZqu7MWSjgPdq_uDn67A&e=1781402019
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/CanalCBA.png" group-title="VARIOS",Canal de la Ciudad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
