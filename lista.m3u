@@ -1,14 +1,24 @@
 #EXTM3U
 
 #EXTINF:-1 group-title="VARIOS", TYC SPORTS
-#EXTVLCOPT:http-referrer=https://capo7play.com/
+#EXTVLCOPT:http-referrer=https://la18hd.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://cdn5.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=CRMS3TzDrReQKWWxcqsauQ&expires=1781382902
+https://c2nvdxq.fubo18.com/tycsports/mono.m3u8?token=0c8ebd0ec224e52cf6cc1c47d2338c08f9c87f1f-65-1781393202-1781375202
 
 #EXTINF:-1 group-title="VARIOS", TYC SPORTS - Opción 2
+#EXTVLCOPT:http-referrer=https://capo8play.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://cdn5.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=W3q2jL1wH9v-1tpUSIjETQ&expires=1781383321
+
+#EXTINF:-1 group-title="VARIOS", TYC SPORTS - Opción 3
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
-https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=cO6_YTQ_C1TF3CWXvWdN6w&e=1781397355
+https://9p441zo96v8m.78655371.net:8443/hls/neo2gy.m3u8?s=iQ4Y1glFu-_W8qdwUG3zxg&e=1781397795
+
+#EXTINF:-1 group-title="VARIOS", DIRECTV
+#EXTVLCOPT:http-referrer=https://la18hd.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0
+https://a2lja3m.fubo18.com/dsports/mono.m3u8?token=576b93d47125594fb80e77d4067f4aa6a7a1c6ce-93-1781393262-1781375262
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/CanalCBA.png" group-title="VARIOS",Canal de la Ciudad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
