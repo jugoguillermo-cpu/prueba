@@ -8,7 +8,7 @@ https://telefeviacom1.akamaized.net/hls/live/2037987/viacomINT/TOK/master.m3u8
 #EXTINF:-1 group-title="VARIOS",DIRECTV (OPCION EXTRA 4)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://stream-xhd.com/
-https://khala.skylivehd.com/global/dsports/index.m3u8?ip=181.116.43.46&token=71470204aceac61d2798d33b8e5c057849077236-aa-1781686167-1781632167
+https://khala.skylivehd.com/global/dsports/index.m3u8?ip=181.116.43.46&token=c8b314ee090f4470482a26eee24f69759fdd701c-d9-1781686832-1781632832
 
 #EXTINF:-1 group-title="VARIOS",TELEFE
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
@@ -23,7 +23,7 @@ https://b2zmawnpyww.fubo18.com/telefe/mono.m3u8?token=46bd006dac0f2b385c210d2269
 #EXTINF:-1 group-title="VARIOS",DIRECTV (OPCION EXTRA 1)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://la18hd.com/
-https://c2f2zq.fubo18.com/dsports/mono.m3u8?token=893939b7d6945fce28bd98ddf179087c6c97b31a-f7-1781658633-1781640633
+https://a2lja3m.fubo18.com/dsports/mono.m3u8?token=9226c3fc517a630550508d832b1a68ad6d25df8c-15-1781659006-1781641006
 
 #EXTINF:-1 group-title="VARIOS",TNT SPORT (OPCION 2)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
@@ -33,7 +33,7 @@ https://a2lja3m.fubo18.com/tntsports/mono.m3u8?token=f70eaf020eaa2cf8af0d428edec
 #EXTINF:-1 group-title="ARGENTINA",TYC SPORT ARGENTINA
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/neo2gy.m3u8?s=NVmIgUF62y8Q7TD_iQS0MA&e=1781663147
+https://9p441zo96v8m.78655371.net:8443/hls/neo2gy.m3u8?s=0lDAEudq48Auy7g5pdCSLg&e=1781663543
 
 #EXTINF:-1 group-title="VARIOS",TYC SPORT (OPCION 2)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
@@ -43,62 +43,62 @@ https://c2nvdxq.fubo18.com/tycsports/mono.m3u8?token=16bbbf2f7186143e53d12fb1015
 #EXTINF:-1 group-title="VARIOS",TYC SPORT (OPCION 3)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://capo8play.com/
-https://cdn3.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=h26SGVlfCysXZRiInzwOYw&expires=1781648786
+https://cdn7.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=xxJJfdHD4CTRdBAcKfNqKQ&expires=1781649179
 
 #EXTINF:-1 group-title="ARGENTINA",ESPN PREMIUM ARGENTINA
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/eka6jtsowcqgv6.m3u8?s=VRx1uf9V8CfyTcqFiXyiDw&e=1781663195
+https://9p441zo96v8m.78655371.net:8443/hls/eka6jtsowcqgv6.m3u8?s=EdmsBTgtHiPUhSojhbArQg&e=1781663588
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 3)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://capo8play.com/
-https://cdn3.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=h26SGVlfCysXZRiInzwOYw&expires=1781648786
+https://cdn7.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=xxJJfdHD4CTRdBAcKfNqKQ&expires=1781649179
 
 #EXTINF:-1 group-title="ARGENTINA",TNT SPORT ARGENTINA
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/xkvfhc3.m3u8?s=ulNdAzn514ROLLON3Ii7-g&e=1781663210
+https://9p441zo96v8m.78655371.net:8443/hls/xkvfhc3.m3u8?s=BRHMeAgccrE_h_fJ3Mvopw&e=1781663602
 
 #EXTINF:-1 group-title="VARIOS",TNT SPORT (OPCION 3)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://capo8play.com/
-https://cdn9.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=Dmo05IvRSPa6tbN1wRvooQ&expires=1781648818
+https://cdn3.zohanayaan.com:1686/hls/sabrouchtvtycarg.m3u8?md5=bL-VtpgBvmCa6S83ZT3ahA&expires=1781649209
 
 #EXTINF:-1 group-title="VARIOS",FOX SPORT 1 AR
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/jablnuk6y1adx4v.m3u8?s=kcOwT8M8Gs1711VvLVBhAA&e=1781663223
+https://9p441zo96v8m.78655371.net:8443/hls/jablnuk6y1adx4v.m3u8?s=SEBY-z6YZpBuVo7JJcpEig&e=1781663616
 
 #EXTINF:-1 group-title="VARIOS",FOX SPORT 2 AR
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=yvbnPCgGw34-8W_QPfIiWA&e=1781663229
+https://9p441zo96v8m.78655371.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=OtTa9QFOqae5vP_5dzh_ZQ&e=1781663658
 
 #EXTINF:-1 group-title="VARIOS",FOX SPORT 3 AR
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/t7w70x7v57.m3u8?s=z4Ga8OlHcVrvyGCx3igDpQ&e=1781663235
+https://9p441zo96v8m.78655371.net:8443/hls/t7w70x7v57.m3u8?s=NysJ-61ytpTfgbPgHhov2g&e=1781663675
 
 #EXTINF:-1 group-title="ARGENTINA",DIRECTV ARGENTINA
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=l0qc6xwdJRV9C4OAEk6Rmw&e=1781663242
+https://9p441zo96v8m.78655371.net:8443/hls/4jva7tj642f9b.m3u8?s=AkXbxOMdDH8qesN-Vqz_QA&e=1781663710
 
 #EXTINF:-1 group-title="VARIOS",DIRECTV 2
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/bfh36g.m3u8?s=5n0RIT4TxkBRtjW4anfjGQ&e=1781663248
+https://9p441zo96v8m.78655371.net:8443/hls/bfh36g.m3u8?s=1sX0u-Br19mGmBwvw95vmw&e=1781663724
 
 #EXTINF:-1 group-title="VARIOS",DIRECTV+
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://plantmorsel.net/
-https://9p441zo96v8m.78655371.net:8443/hls/5sdw4li.m3u8?s=HnagoPTNiOuMrhCimWZWZA&e=1781663255
+https://9p441zo96v8m.78655371.net:8443/hls/5sdw4li.m3u8?s=BtACYFSkUJxTBnPcykHTxg&e=1781663730
 
 #EXTINF:-1 group-title="VARIOS",DIRECTV (OPCION EXTRA 2)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://capo7play.com/
-https://cdn10.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=l8PYgBtZ_8Lr82SzGIkrPw&expires=1781648862
+https://cdn10.zohanayaan.com:1686/hls/sabrouchtvdirectvarg.m3u8?md5=oG7YqE4fZxyw581-4U0jKw&expires=1781649339
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 2)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
@@ -108,7 +108,7 @@ https://a2lja3m.fubo18.com/espnpremium/mono.m3u8?token=0109835ea352746198dd071d2
 #EXTINF:-1 group-title="VARIOS",Tv Publica
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://vmf.edge-apps.net/
-https://edgetvp.global.ssl.fastly.net/b16/ngrp:c7_vivo01_dai_source-20001_all/playlist.m3u8?hdnts=exp=1781677697~acl=181.116.43.46~hmac=0af0cd4ea08511c9da3fcf1a58b7962e23cb8490beb1194eecd71f1d9652bb9c
+https://edgetvp.global.ssl.fastly.net/b16/ngrp:c7_vivo01_dai_source-20001_all/playlist.m3u8?hdnts=exp=1781678173~acl=181.116.43.46~hmac=7c3bf014b80c4585af5736e6f0ad07e478ac79ad9d4865c8f75e6b629c5bdb77
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM PRUEBA
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
