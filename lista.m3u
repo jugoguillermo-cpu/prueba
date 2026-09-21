@@ -1,5 +1,45 @@
 #EXTM3U
 
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/eka6jtsowcqgv6.m3u8?s=MC-L8Tt5TF8nULd74jIRrA&e=1789972572
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORT
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/xkvfhc3.m3u8?s=PQJa3VbFf6ULce1LuIfkfw&e=1789972625
+
+#EXTINF:-1 group-title="VARIOS",DIRECTV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/4jva7tj642f9b.m3u8?s=wS1asvR7Ht-9m7NGlUQxsQ&e=1789972678
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORT 1 AR
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/jablnuk6y1adx4v.m3u8?s=zSXySCh_YVAoQyDmPXAhcQ&e=1789972797
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORT 2 AR
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/ffzigjlf1zu2xlk.m3u8?s=zeyvXCT5f5C_Wxc5u-_BHQ&e=1789972803
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORT 3 AR
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/t7w70x7v57.m3u8?s=pkLrC9kuiqZAKWj-tQZ_FQ&e=1789972809
+
+#EXTINF:-1 group-title="VARIOS",TYC SPORT
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://lunchup.net/
+https://9r70o1.l948728p57nx.net:8443/hls/neo2gy.m3u8?s=MFzdGZjOw_1tzf788o490Q&e=1789972514
+
+#EXTINF:-1 group-title="VARIOS",DIRECTV (OPCION 5)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.com/
+https://khala.futlivehd.com/global/dsports/index.m3u8?ip=181.116.43.46&token=e57c10ad1ab076522460d4294b1a256e5e1f8a6f-d9-1789996160-1789942160
+
 #EXTINF:-1 group-title="VARIOS", ESPN DEPORTES
 #EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=VHlDU3BvcnQ
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:156.0) Gecko/20100101 Firefox/156.0
