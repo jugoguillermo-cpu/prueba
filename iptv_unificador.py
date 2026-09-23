@@ -28,6 +28,18 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 
+# Páginas "fuente": UNA sola URL por canal, que lista varias opciones (botones)
+# que al hacer clic revelan un iframe con el reproductor. El script entra ahí,
+# clickea cada opción y arma automáticamente "NOMBRE (OPCION AUTO 1)", "(OPCION AUTO 2)", etc.
+# Agregá más canales acá con el mismo formato: "NOMBRE": "url_de_la_pagina_fuente"
+FUENTES_DEPORTES = {
+    "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
+}
+
+# Selector CSS de los botones de opciones en la página fuente (ajustalo si cambia el sitio)
+SELECTOR_BOTONES_OPCIONES = "a.btn-md"
+ESPERA_TRAS_CLICK_SEGUNDOS = 2
+
 # Canales deportivos a escanear con Playwright (ex script 2 - con opciones de respaldo)
 CANALES_DEPORTES = {
     "TYC SPORT": "https://bolaloca.my/player/3/77",
@@ -79,7 +91,95 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 1: ESCANEO CON PLAYWRIGHT (ex script 2)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL (páginas fuente)
+# ==========================================
+
+async def buscar_opciones_canal(page, nombre_canal, url_fuente):
+    """Entra a la página fuente de un canal, clickea cada botón de opción
+    y devuelve un dict {"NOMBRE (OPCION AUTO N)": url_iframe}."""
+    opciones = {}
+    enlaces_vistos = set()
+    try:
+        print(f"[*] [{nombre_canal}] Abriendo fuente: {url_fuente}")
+        await page.goto(url_fuente, wait_until="load", timeout=30000)
+
+        botones = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
+        cantidad_opciones = len(botones)
+        print(f"[*] [{nombre_canal}] Se encontraron {cantidad_opciones} opciones en la fuente.")
+
+        for i in range(cantidad_opciones):
+            # Re-localizar los botones en cada iteración (el DOM puede cambiar al clickear)
+            botones_actuales = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
+            if i >= len(botones_actuales):
+                break
+            boton = botones_actuales[i]
+
+            try:
+                print(f"[*] [{nombre_canal}] Cliqueando opción {i + 1}...")
+                await boton.evaluate("el => el.click()")  # clic forzado por JS, por si hay overlays
+            except Exception as e:
+                print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
+                continue
+
+            await asyncio.sleep(ESPERA_TRAS_CLICK_SEGUNDOS)
+
+            iframes = await page.locator("iframe").all()
+            for iframe in iframes:
+                src = await iframe.get_attribute("src")
+                if src and src not in enlaces_vistos:
+                    enlaces_vistos.add(src)
+                    nombre_opcion = f"{nombre_canal} (OPCION AUTO {len(enlaces_vistos)})"
+                    opciones[nombre_opcion] = src
+                    print(f"[+] [{nombre_canal}] Enlace encontrado: {src}")
+
+    except Exception as e:
+        print(f"[!] [{nombre_canal}] Error buscando opciones en la fuente: {e}")
+
+    return opciones
+
+
+async def buscar_todas_las_opciones(fuentes):
+    """Recorre FUENTES_DEPORTES y arma el diccionario de canales a escanear."""
+    if not fuentes:
+        return {}
+
+    print(f"--- FASE 0: Buscando links de opciones para {len(fuentes)} canal(es) fuente ---")
+    todas_opciones = {}
+
+    async with async_playwright() as p:
+        argumentos_lanzamiento = dict(
+            headless=EN_GITHUB_ACTIONS,
+            args=[
+                "--window-position=2000,2000",
+                "--window-size=400,300",
+                "--mute-audio"
+            ]
+        )
+        if not EN_GITHUB_ACTIONS:
+            argumentos_lanzamiento["channel"] = "chrome"
+        browser = await p.chromium.launch(**argumentos_lanzamiento)
+
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+
+        for nombre_canal, url_fuente in fuentes.items():
+            page = await context.new_page()
+            try:
+                opciones = await buscar_opciones_canal(page, nombre_canal, url_fuente)
+                todas_opciones.update(opciones)
+            finally:
+                await page.close()
+
+        await context.close()
+        await browser.close()
+
+    print(f"[***] FASE 0 completa: {len(todas_opciones)} links de opciones encontrados en total. [***]")
+    return todas_opciones
+
+
+# ==========================================
+# 3. FASE 1: ESCANEO CON PLAYWRIGHT (ex script 2)
 # ==========================================
 
 async def intentar_autoclick_play(page, nombre_canal):
@@ -231,7 +331,7 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
 
 
 # ==========================================
-# 3. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (ex script 1)
+# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (ex script 1)
 # ==========================================
 
 def procesar_y_categorizar(contenido, outfile):
@@ -309,7 +409,7 @@ def unificar_todo():
 
 
 # ==========================================
-# 4. FASE 3: SUBIR A GITHUB (ex script 1)
+# 5. FASE 3: SUBIR A GITHUB (ex script 1)
 # ==========================================
 
 def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
