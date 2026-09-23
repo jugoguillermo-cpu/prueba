@@ -13,55 +13,31 @@ nest_asyncio.apply()
 # ==========================================
 # 1. CONFIGURACIÓN
 # ==========================================
-# Detecta si corre en GitHub Actions (esa variable la setea GitHub automáticamente)
 EN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
 
-# GitHub - el token SIEMPRE se lee del entorno, nunca escrito acá.
-# - En GitHub Actions: lo toma del Secret configurado en el workflow.
-# - En tu PC: seteálo antes de correr, ej. (CMD) set GITHUB_TOKEN=tu_token
+# Token de GitHub: se lee automáticamente del entorno
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+# Repositorio y archivo destino
 GITHUB_REPO_NAME = "prueba"
 NOMBRE_ARCHIVO_GITHUB = "lista.m3u"
 
+# Si lo corres localmente en tu PC sin GITHUB_REPOSITORY, poné tu usuario de GitHub acá:
+USUARIO_GITHUB_LOCAL = "tu_usuario" 
+
 # Rutas Locales
 CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis listtas"
-ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
+ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"   # Generado por el escaneo Playwright
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 
-# Páginas "fuente": UNA sola URL por canal, que lista varias opciones (botones)
-# que al hacer clic revelan un iframe con el reproductor. El script entra ahí,
-# clickea cada opción y arma automáticamente "NOMBRE (OPCION AUTO 1)", "(OPCION AUTO 2)", etc.
-# Agregá más canales acá con el mismo formato: "NOMBRE": "url_de_la_pagina_fuente"
+# Fuentes a escanear
 FUENTES_DEPORTES = {
     "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
 }
 
-# Selector CSS de los botones de opciones en la página fuente (ajustalo si cambia el sitio)
+# Selector CSS de los botones de opciones
 SELECTOR_BOTONES_OPCIONES = "a.btn-md"
 ESPERA_TRAS_CLICK_SEGUNDOS = 2
-
-# Canales deportivos a escanear con Playwright (ex script 2 - con opciones de respaldo)
-CANALES_DEPORTES = {
-    "TYC SPORT": "https://tvlibreonline.st/html/fl/?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
-    "TYC SPORT (OPCION 2)": "https://la18hd.com/vivo/canales.php?stream=tycsports",
-    "TYC SPORT (OPCION 3)": "https://welivesports.cfd/embed/tycsportarg.php",
-    "ESPN PREMIUM": "https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
-    "ESPN PREMIUM (OPCION 2)": "https://la18hd.com/vivo/canales.php?stream=espnpremium",
-    "ESPN PREMIUM (OPCION 3)": "https://welivesports.cfd/embed/tycsportarg.php",
-    "TNT SPORT": "https://bolaloca.my/player/3/75",
-    "TNT SPORT (OPCION 2)": "https://la18hd.com/vivo/canales.php?stream=tntsports",
-    "TNT SPORT (OPCION 3)": "https://welivesports.cfd/embed/tycsportarg.php",
-    "DIRECTV": "https://bolaloca.my/player/3/94",
-    "DIRECTV (OPCION 2)": "https://la18hd.com/vivo/canales.php?stream=dsports",
-    "DIRECTV (OPCION 3)": "https://welivesports.cfd/embed/directvarg.php",
-    "DIRECTV (OPCION 4)": "https://streamtpday1.xyz/global1.php?stream=dsports",
-    "DIRECTV (OPCION 5)": "https://stream-xhd.com/live1.php?stream=dsports",
-    "TELEFE": "https://la18hd.com/vivo/canales.php?stream=telefe",
-    "TELEFE (OPCION 2)": "https://bestleague.top/tok.html?get=VGVsZWZlSEQ=",
-    "FOX SPORT 1 AR": "https://bolaloca.my/player/3/78",
-    "FOX SPORT 2 AR": "https://bolaloca.my/player/3/79",
-    "FOX SPORT 3 AR": "https://bolaloca.my/player/3/80",
-}
 
 # Links M3U Externos (Fase de unificación)
 URLS_M3U_EXTERNAS = [
@@ -91,12 +67,10 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL (páginas fuente)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL
 # ==========================================
 
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
-    """Entra a la página fuente de un canal, clickea cada botón de opción
-    y devuelve un dict {"NOMBRE (OPCION AUTO N)": url_iframe}."""
     opciones = {}
     enlaces_vistos = set()
     try:
@@ -108,7 +82,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
         print(f"[*] [{nombre_canal}] Se encontraron {cantidad_opciones} opciones en la fuente.")
 
         for i in range(cantidad_opciones):
-            # Re-localizar los botones en cada iteración (el DOM puede cambiar al clickear)
             botones_actuales = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
             if i >= len(botones_actuales):
                 break
@@ -116,7 +89,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
 
             try:
                 print(f"[*] [{nombre_canal}] Cliqueando opción {i + 1}...")
-                await boton.evaluate("el => el.click()")  # clic forzado por JS, por si hay overlays
+                await boton.evaluate("el => el.click()")
             except Exception as e:
                 print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
                 continue
@@ -128,7 +101,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
                 src = await iframe.get_attribute("src")
                 if src and src not in enlaces_vistos:
                     enlaces_vistos.add(src)
-                    nombre_opcion = f"{nombre_canal} (OPCION AUTO {len(enlaces_vistos)})"
+                    nombre_opcion = f"{nombre_canal} (OPCION {len(enlaces_vistos)})"
                     opciones[nombre_opcion] = src
                     print(f"[+] [{nombre_canal}] Enlace encontrado: {src}")
 
@@ -139,7 +112,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
 
 
 async def buscar_todas_las_opciones(fuentes):
-    """Recorre FUENTES_DEPORTES y arma el diccionario de canales a escanear."""
     if not fuentes:
         return {}
 
@@ -179,7 +151,7 @@ async def buscar_todas_las_opciones(fuentes):
 
 
 # ==========================================
-# 3. FASE 1: ESCANEO CON PLAYWRIGHT (ex script 2)
+# 3. FASE 1: ESCANEO CON PLAYWRIGHT
 # ==========================================
 
 async def intentar_autoclick_play(page, nombre_canal):
@@ -253,7 +225,6 @@ def cargar_m3u_existente(ruta_archivo):
 
 
 async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
-    """Escanea con Chrome/Playwright y genera/actualiza el m3u temporal de deportes."""
     print(f"--- FASE 1: Escaneando {len(diccionario_canales)} canales de deportes con Playwright ---")
     canales_finales = cargar_m3u_existente(ruta_archivo_salida)
     nuevos_resultados = {}
@@ -262,15 +233,13 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
         argumentos_lanzamiento = dict(
             headless=EN_GITHUB_ACTIONS,
             args=[
-                "--window-position=2000,2000",  # Fuera del área visible de la pantalla
+                "--window-position=2000,2000",
                 "--window-size=400,300",
                 "--mute-audio"
             ]
         )
         if not EN_GITHUB_ACTIONS:
-            # En tu PC usamos el Chrome real instalado (mejor para evitar detección anti-bot).
             argumentos_lanzamiento["channel"] = "chrome"
-        # En GitHub Actions usamos el Chromium que trae Playwright (instalado en el workflow).
         browser = await p.chromium.launch(**argumentos_lanzamiento)
 
         context = await browser.new_context(
@@ -331,11 +300,10 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
 
 
 # ==========================================
-# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (ex script 1)
+# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR
 # ==========================================
 
 def procesar_y_categorizar(contenido, outfile):
-    """Analiza contenido, limpia y asigna group-title"""
     lineas = contenido.splitlines()
     i = 0
     while i < len(lineas):
@@ -377,7 +345,6 @@ def procesar_y_categorizar(contenido, outfile):
 
 
 def unificar_todo():
-    """Une Scraper de deportes + Locales + Externos"""
     print("\n--- FASE 2: Unificando y Categorizando ---")
     ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
 
@@ -385,14 +352,12 @@ def unificar_todo():
         with open(ruta_final, 'w', encoding='utf-8') as outfile:
             outfile.write("#EXTM3U\n\n")
 
-            # 1. Procesar resultado del escaneo de deportes (Playwright)
             ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
             if os.path.exists(ruta_temp_scraper):
                 print("📦 Procesando canales de deportes...")
                 with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
                     procesar_y_categorizar(f.read(), outfile)
 
-            # 2. Procesar URLs externas
             for url in URLS_M3U_EXTERNAS:
                 print(f"🌐 Descargando externo: {url}")
                 try:
@@ -409,35 +374,37 @@ def unificar_todo():
 
 
 # ==========================================
-# 5. FASE 3: SUBIR A GITHUB (ex script 1)
+# 5. FASE 3: SUBIR A GITHUB (TOKEN AUTOMÁTICO)
 # ==========================================
 
 def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
     print(f"\n--- FASE 3: Subiendo a GitHub ---")
     try:
         if not token:
-            print("❌ Error GitHub: falta GITHUB_TOKEN (no está seteado en el entorno/Secret).")
+            print("❌ Error GitHub: falta GITHUB_TOKEN (no se leyó del entorno).")
             return
 
         auth = Auth.Token(token)
         g = Github(auth=auth)
 
-        try:
-            usuario = g.get_user()
-            login = usuario.login  # fuerza una llamada real para validar el token ya
-        except GithubException as e:
-            print(f"❌ Error GitHub: token inválido o sin permisos (status {e.status}): {e.data}")
-            return
+        # 1. Resolver el repositorio automáticamente
+        nombre_completo_repo = os.environ.get("GITHUB_REPOSITORY")
 
         try:
-            repo = usuario.get_repo(repo_nombre)
+            if nombre_completo_repo:
+                # Caso GitHub Actions: toma "usuario/prueba" directamente del entorno
+                repo = g.get_repo(nombre_completo_repo)
+            else:
+                # Caso ejecucion Local: arma "tu_usuario/prueba"
+                repo = g.get_repo(f"{USUARIO_GITHUB_LOCAL}/{repo_nombre}")
         except GithubException as e:
-            print(f"❌ Error GitHub: no se encontró el repo '{repo_nombre}' en la cuenta '{login}' (status {e.status}): {e.data}")
+            print(f"❌ Error GitHub: no se pudo obtener el repo (status {e.status}): {e.data}")
             return
 
         with open(archivo_local_path, 'r', encoding='utf-8') as f:
             contenido_nuevo = f.read()
 
+        # 2. Actualizar o crear el archivo
         try:
             contents = repo.get_contents(ruta_en_repo)
             if contents.decoded_content.decode('utf-8') != contenido_nuevo:
@@ -450,7 +417,8 @@ def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
                 repo.create_file(ruta_en_repo, "Initial IPTV List", contenido_nuevo)
                 print("🚀 Archivo creado en GitHub por primera vez.")
             else:
-                print(f"❌ Error GitHub al leer/crear el archivo (status {e.status}): {e.data}")
+                print(f"❌ Error GitHub al modificar/crear el archivo (status {e.status}): {e.data}")
+
     except Exception as e:
         print(f"❌ Error GitHub inesperado: {type(e).__name__}: {e}")
 
@@ -463,11 +431,14 @@ async def main():
     if not os.path.exists(CARPETA_LOCAL):
         os.makedirs(CARPETA_LOCAL)
 
-    # 1. Escanear canales deportivos con Playwright
-    ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
-    await escanear_canales_deportes(CANALES_DEPORTES, ruta_temp)
+    # 1. Buscar enlaces de fuentes
+    canales_a_escanear = await buscar_todas_las_opciones(FUENTES_DEPORTES)
 
-    # 2. Unificar y categorizar todo (deportes + externos), y subir a GitHub
+    # 2. Escanear redes
+    ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
+    await escanear_canales_deportes(canales_a_escanear, ruta_temp)
+
+    # 3. Unificar y subir
     if unificar_todo():
         ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
         subir_a_github(ruta_final, GITHUB_REPO_NAME, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
