@@ -1,83 +1,43 @@
 import asyncio
-import re
 import os
-import requests
-import nest_asyncio
+import re
 from playwright.async_api import async_playwright
-from github import Github, Auth
-from github import GithubException
-
-# Habilitar soporte para bucles anidados en Jupyter/Anaconda
-nest_asyncio.apply()
 
 # ==========================================
-# 1. CONFIGURACIÓN
+# CONFIGURACIÓN GENERAL
 # ==========================================
-EN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
+URL_BASE = "https://tvlibreonline.st/"  # Cambiar por tu sitio base
+CARPETA_SALIDA = "m3u_capturados"
+ARCHIVO_TXT_RESPALDO = os.path.join(CARPETA_SALIDA, "capturas_m3u8.txt")
+ARCHIVO_M3U_FINAL = os.path.join(CARPETA_SALIDA, "lista_canales.m3u")
 
-# Token de GitHub: se lee automáticamente del entorno
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+# Selectores DOM
+SELECTOR_BOTONES_OPCIONES = "a.btn-md"
 
-# Repositorio y archivo destino
-GITHUB_REPO_NAME = "prueba"
-NOMBRE_ARCHIVO_GITHUB = "lista.m3u"
+# Palabras clave para descartar iFrames publicitarios o de chat
+IGNORAR_IFRAMES = [
+    "sharethis.com", "chatbro.com", "facebook.com", 
+    "google.com", "analytics", "disqus.com"
+]
 
-# Si lo corres localmente en tu PC sin GITHUB_REPOSITORY, poné tu usuario de GitHub acá:
-USUARIO_GITHUB_LOCAL = "tu_usuario" 
-
-# Rutas Locales
-CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis listtas"
-ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"   # Generado por el escaneo Playwright
-ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
-
-# Fuentes a escanear
-FUENTES_DEPORTES = {
+# Canales a procesar (Nombre: URL de la página del canal)
+CANALES_A_PROCESAR = {
     "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
-    "TYC SPORT": "https://tvlibreonline.st/en-vivo/tyc-sports/",
-    "TNT SPORT PREMIUM": "https://tvlibreonline.st/en-vivo/tnt-sports/",
+    "TNT SPORTS": "https://tvlibreonline.st/en-vivo/tnt-sports/"
 }
 
-# Selector CSS de los botones de opciones
-SELECTOR_BOTONES_OPCIONES = "a.btn-md"
-ESPERA_TRAS_CLICK_SEGUNDOS = 2
-
-# Links M3U Externos (Fase de unificación)
-URLS_M3U_EXTERNAS = [
-    "https://iptv-org.github.io/iptv/regions/southam.m3u?fbclid=IwdGRjcAUdOZNjbGNrBR05eXBkb2YFZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEe8N84jKI0NhBNdeY1BGjzh_9cCP8VR4R_tJ59KrgjdVaMzJ9DZ642tSPADz8_aem_hNReBY1EZ79qC6NeFVID6g",
-    "https://telechancho.github.io/telechancho-iptv/telechancho-infinity.m3u",
-    "http://45.181.122.46:8090/playlist.m3u8",
-    "https://iptv-org.github.io/iptv/countries/ar.m3u",
-    "https://www.m3u.cl/lista/AR.m3u",
-    "https://radiosargentina.com.ar/TVAR.m3u",
-]
-
-# Categorías por país
-PAISES_OBJETIVO = ["ARGENTINA", "CHILE", "BRASIL", "ECUADOR", "URUGUAY"]
-
-STREAM_REGEX = re.compile(r'\.(m3u8|mpd)(\?.*)?$', re.IGNORECASE)
-
-SELECTORES_PLAY = [
-    ".vjs-big-play-button",
-    ".jw-display-icon-container",
-    ".plyr__control--overlaid",
-    "button[aria-label='Play']",
-    "[class*='play']",
-    "[id*='play']",
-    "text=Play",
-    "text=Reproducir"
-]
-
+os.makedirs(CARPETA_SALIDA, exist_ok=True)
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL
+# FASE 0: EXTRACCIÓN DE IFRAMES VÁLIDOS
 # ==========================================
-
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
     opciones = {}
     enlaces_vistos = set()
     try:
-        print(f"[*] [{nombre_canal}] Abriendo fuente: {url_fuente}")
-        await page.goto(url_fuente, wait_until="load", timeout=30000)
+        print(f"\n[*] [{nombre_canal}] Abriendo fuente: {url_fuente}")
+        await page.goto(url_fuente, wait_until="domcontentloaded", timeout=30000)
+        await asyncio.sleep(2)
 
         botones = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
         cantidad_opciones = len(botones)
@@ -90,363 +50,153 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
             boton = botones_actuales[i]
 
             try:
-                print(f"[*] [{nombre_canal}] Cliqueando opción {i + 1}...")
+                print(f"[*] [{nombre_canal}] Clic en opción {i + 1}...")
                 await boton.evaluate("el => el.click()")
             except Exception as e:
                 print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
                 continue
 
-            await asyncio.sleep(ESPERA_TRAS_CLICK_SEGUNDOS)
+            # Esperar a que el JS del sitio actualice el iFrame interno
+            await asyncio.sleep(3)
 
             iframes = await page.locator("iframe").all()
             for iframe in iframes:
                 src = await iframe.get_attribute("src")
                 if src and src not in enlaces_vistos:
+                    # Filtro de seguridad contra publicidad
+                    if any(ignorar in src.lower() for ignorar in IGNORAR_IFRAMES):
+                        continue
+                    
                     enlaces_vistos.add(src)
                     nombre_opcion = f"{nombre_canal} (OPCION {len(enlaces_vistos)})"
                     opciones[nombre_opcion] = src
-                    print(f"[+] [{nombre_canal}] Enlace encontrado: {src}")
+                    print(f"[+] [{nombre_canal}] iFrame válido detectado: {src}")
 
     except Exception as e:
-        print(f"[!] [{nombre_canal}] Error buscando opciones en la fuente: {e}")
+        print(f"[!] [{nombre_canal}] Error buscando opciones: {e}")
 
     return opciones
 
 
-async def buscar_todas_las_opciones(fuentes):
-    if not fuentes:
-        return {}
-
-    print(f"--- FASE 0: Buscando links de opciones para {len(fuentes)} canal(es) fuente ---")
-    todas_opciones = {}
-
-    async with async_playwright() as p:
-        argumentos_lanzamiento = dict(
-            headless=EN_GITHUB_ACTIONS,
-            args=[
-                "--window-position=2000,2000",
-                "--window-size=400,300",
-                "--mute-audio"
-            ]
-        )
-        if not EN_GITHUB_ACTIONS:
-            argumentos_lanzamiento["channel"] = "chrome"
-        browser = await p.chromium.launch(**argumentos_lanzamiento)
-
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        )
-
-        for nombre_canal, url_fuente in fuentes.items():
-            page = await context.new_page()
-            try:
-                opciones = await buscar_opciones_canal(page, nombre_canal, url_fuente)
-                todas_opciones.update(opciones)
-            finally:
-                await page.close()
-
-        await context.close()
-        await browser.close()
-
-    print(f"[***] FASE 0 completa: {len(todas_opciones)} links de opciones encontrados en total. [***]")
-    return todas_opciones
-
-
 # ==========================================
-# 3. FASE 1: ESCANEO CON PLAYWRIGHT
+# FASE 1: CAPTURA DE NETWORK Y HEADERS
 # ==========================================
+async def capturar_stream_con_headers(browser, nombre_opcion, url_iframe):
+    captura = None
 
-async def intentar_autoclick_play(page, nombre_canal):
-    print(f"[*] [{nombre_canal}] Ejecutando secuencia de auto-play...")
-    for intento in range(1, 3):
-        for selector in SELECTORES_PLAY:
-            try:
-                elemento = page.locator(selector).first
-                if await elemento.is_visible(timeout=1000):
-                    print(f"[>] [{nombre_canal}] [Intento {intento}] Botón detectado ({selector}). Haciendo clic...")
-                    await elemento.click(timeout=2000)
-                    await asyncio.sleep(1.5)
-                    break
-            except Exception:
-                continue
+    context = await browser.new_context(
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    )
+    page = await context.new_page()
 
+    async def interceptar_peticion(request):
+        nonlocal captura
+        url = request.url
+        if (".m3u8" in url or ".mpd" in url) and not captura:
+            headers = request.headers
+            referer = headers.get("referer", url_iframe)
+            user_agent = headers.get("user-agent", "")
+            
+            captura = {
+                "url": url,
+                "referer": referer,
+                "user_agent": user_agent
+            }
+            print(f"\n[!!!] ENLACE CAPTURADO [{nombre_opcion}]")
+            print(f"      URL: {url}")
+            print(f"      Referer: {referer}\n")
 
-async def interceptar_red(response, nombre_canal, stream_encontrado_event, resultados_m3u):
-    url = response.url
-    if stream_encontrado_event.is_set():
-        return
-
-    if STREAM_REGEX.search(url):
-        print(f"\n[+] [¡{nombre_canal} DETECTADO!]: {url}\n")
-        stream_encontrado_event.set()
-
-        request_headers = response.request.headers
-        referer = request_headers.get('referer', '')
-        origin = request_headers.get('origin', '')
-        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-        entrada_m3u = f"#EXTINF:-1,{nombre_canal}\n"
-        entrada_m3u += f"#EXTVLCOPT:http-user-agent={user_agent}\n"
-        if referer:
-            entrada_m3u += f"#EXTVLCOPT:http-referrer={referer}\n"
-        if origin:
-            entrada_m3u += f"#EXTVLCOPT:http-origin={origin}\n"
-        entrada_m3u += f"{url}\n"
-
-        resultados_m3u[nombre_canal] = entrada_m3u
-
-
-def cargar_m3u_existente(ruta_archivo):
-    canales_viejos = {}
-    if not os.path.exists(ruta_archivo):
-        return canales_viejos
-
-    print(f"[*] Cargando lista existente desde {ruta_archivo} para preservar canales...")
-    with open(ruta_archivo, "r", encoding="utf-8") as f:
-        lineas = f.readlines()
-
-    bloque_actual = ""
-    nombre_canal_actual = None
-
-    for linea in lineas:
-        if linea.startswith("#EXTM3U"):
-            continue
-        if linea.startswith("#EXTINF"):
-            if nombre_canal_actual and bloque_actual:
-                canales_viejos[nombre_canal_actual] = bloque_actual
-            match = re.search(r',(.+)$', linea)
-            nombre_canal_actual = match.group(1).strip() if match else "Canal Desconocido"
-            bloque_actual = linea
-        elif nombre_canal_actual:
-            bloque_actual += linea
-
-    if nombre_canal_actual and bloque_actual:
-        canales_viejos[nombre_canal_actual] = bloque_actual
-
-    return canales_viejos
-
-
-async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
-    print(f"--- FASE 1: Escaneando {len(diccionario_canales)} canales de deportes con Playwright ---")
-    canales_finales = cargar_m3u_existente(ruta_archivo_salida)
-    nuevos_resultados = {}
-
-    async with async_playwright() as p:
-        argumentos_lanzamiento = dict(
-            headless=EN_GITHUB_ACTIONS,
-            args=[
-                "--window-position=2000,2000",
-                "--window-size=400,300",
-                "--mute-audio"
-            ]
-        )
-        if not EN_GITHUB_ACTIONS:
-            argumentos_lanzamiento["channel"] = "chrome"
-        browser = await p.chromium.launch(**argumentos_lanzamiento)
-
-        context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        )
-
-        for nombre, url_objetivo in diccionario_canales.items():
-            print("\n" + "=" * 60)
-            print(f"[*] ESCANEANDO EN CHROME OCULTO: {nombre}")
-            print(f"[*] Origen: {url_objetivo}")
-            print("=" * 60 + "\n")
-
-            page = await context.new_page()
-            stream_encontrado_event = asyncio.Event()
-
-            page.on("response", lambda res, n=nombre, ev=stream_encontrado_event: asyncio.create_task(
-                interceptar_red(res, n, ev, nuevos_resultados)
-            ))
-
-            try:
-                await page.goto(url_objetivo, wait_until="load", timeout=45000)
-                await asyncio.sleep(2)
-
-                asyncio.create_task(intentar_autoclick_play(page, nombre))
-
-                contador_espera = 0
-                while not stream_encontrado_event.is_set() and contador_espera < 20:
-                    await asyncio.sleep(1)
-                    contador_espera += 1
-
-                if stream_encontrado_event.is_set():
-                    print(f"[+] Éxito con {nombre}. Enlace actualizado.")
-                    canales_finales[nombre] = nuevos_resultados[nombre]
-                    await asyncio.sleep(1)
-                else:
-                    print(f"[!] No se capturó flujo nuevo para '{nombre}'.")
-                    if nombre in canales_finales:
-                        print(f"[->] RESPALDO: Se conserva el stream anterior de '{nombre}'.")
-
-            except Exception as e:
-                print(f"[!] Error en canal {nombre}: {e}")
-                if nombre in canales_finales:
-                    print(f"[->] RESPALDO por Error: Conservando versión anterior de '{nombre}'.")
-            finally:
-                await page.close()
-
-        await context.close()
-        await browser.close()
-
-    if canales_finales:
-        with open(ruta_archivo_salida, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-            for bloque_canal in canales_finales.values():
-                f.write(bloque_canal)
-        print(f"\n[***] M3U ACTUALIZADO: {ruta_archivo_salida} (Total: {len(canales_finales)} canales) [***]")
-    else:
-        print("\n[!] No hay canales disponibles para escribir.")
-
-
-# ==========================================
-# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR
-# ==========================================
-
-def procesar_y_categorizar(contenido, outfile):
-    lineas = contenido.splitlines()
-    i = 0
-    while i < len(lineas):
-        linea = lineas[i].strip()
-        if linea.startswith("#EXTINF:"):
-            info_canal = linea
-            url_canal = ""
-
-            extras = []
-            next_idx = i + 1
-            while next_idx < len(lineas) and lineas[next_idx].startswith("#"):
-                if not lineas[next_idx].startswith("#EXTM3U"):
-                    extras.append(lineas[next_idx].strip())
-                next_idx += 1
-
-            if next_idx < len(lineas):
-                url_canal = lineas[next_idx].strip()
-
-            categoria = "VARIOS"
-            for pais in PAISES_OBJETIVO:
-                if pais.upper() in info_canal.upper():
-                    categoria = pais
-                    break
-
-            if 'group-title="' in info_canal:
-                inicio = info_canal.find('group-title="') + 13
-                fin = info_canal.find('"', inicio)
-                nueva_linea = info_canal[:inicio] + categoria + info_canal[fin:]
-            else:
-                nueva_linea = info_canal.replace("#EXTINF:-1", f'#EXTINF:-1 group-title="{categoria}"')
-
-            outfile.write(nueva_linea + "\n")
-            for ex in extras:
-                outfile.write(ex + "\n")
-            if url_canal:
-                outfile.write(url_canal + "\n\n")
-            i = next_idx
-        i += 1
-
-
-def unificar_todo():
-    print("\n--- FASE 2: Unificando y Categorizando ---")
-    ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
+    page.on("request", interceptar_peticion)
 
     try:
-        with open(ruta_final, 'w', encoding='utf-8') as outfile:
-            outfile.write("#EXTM3U\n\n")
-
-            ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
-            if os.path.exists(ruta_temp_scraper):
-                print("📦 Procesando canales de deportes...")
-                with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
-                    procesar_y_categorizar(f.read(), outfile)
-
-            for url in URLS_M3U_EXTERNAS:
-                print(f"🌐 Descargando externo: {url}")
-                try:
-                    r = requests.get(url, timeout=10)
-                    if r.status_code == 200:
-                        procesar_y_categorizar(r.text, outfile)
-                except Exception as e:
-                    print(f"⚠️ Error en URL {url}: {e}")
-
-        return True
-    except Exception as e:
-        print(f"❌ Error en unificación: {e}")
-        return False
-
-
-# ==========================================
-# 5. FASE 3: SUBIR A GITHUB (TOKEN AUTOMÁTICO)
-# ==========================================
-
-def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
-    print(f"\n--- FASE 3: Subiendo a GitHub ---")
-    try:
-        if not token:
-            print("❌ Error GitHub: falta GITHUB_TOKEN (no se leyó del entorno).")
-            return
-
-        auth = Auth.Token(token)
-        g = Github(auth=auth)
-
-        # 1. Resolver el repositorio automáticamente
-        nombre_completo_repo = os.environ.get("GITHUB_REPOSITORY")
-
-        try:
-            if nombre_completo_repo:
-                # Caso GitHub Actions: toma "usuario/prueba" directamente del entorno
-                repo = g.get_repo(nombre_completo_repo)
-            else:
-                # Caso ejecucion Local: arma "tu_usuario/prueba"
-                repo = g.get_repo(f"{USUARIO_GITHUB_LOCAL}/{repo_nombre}")
-        except GithubException as e:
-            print(f"❌ Error GitHub: no se pudo obtener el repo (status {e.status}): {e.data}")
-            return
-
-        with open(archivo_local_path, 'r', encoding='utf-8') as f:
-            contenido_nuevo = f.read()
-
-        # 2. Actualizar o crear el archivo
-        try:
-            contents = repo.get_contents(ruta_en_repo)
-            if contents.decoded_content.decode('utf-8') != contenido_nuevo:
-                repo.update_file(contents.path, "Update IPTV List", contenido_nuevo, contents.sha)
-                print("🚀 GitHub actualizado con éxito.")
-            else:
-                print("ℹ️ El contenido es idéntico, no se requiere subida.")
-        except GithubException as e:
-            if e.status == 404:
-                repo.create_file(ruta_en_repo, "Initial IPTV List", contenido_nuevo)
-                print("🚀 Archivo creado en GitHub por primera vez.")
-            else:
-                print(f"❌ Error GitHub al modificar/crear el archivo (status {e.status}): {e.data}")
+        # Pasa el Referer de la página padre al abrir el iFrame
+        await page.goto(url_iframe, referer=URL_BASE, wait_until="domcontentloaded", timeout=25000)
+        
+        # Esperar hasta 12 segundos para que el reproductor ejecute el stream
+        for _ in range(12):
+            if captura:
+                break
+            await asyncio.sleep(1)
 
     except Exception as e:
-        print(f"❌ Error GitHub inesperado: {type(e).__name__}: {e}")
+        print(f"[!] Timeout o error cargando {nombre_opcion}: {e}")
+
+    await context.close()
+    return captura
 
 
 # ==========================================
-# EJECUCIÓN
+# GUARDADO DE RESULTADOS (TXT Y M3U)
 # ==========================================
+def guardar_en_txt(nombre_opcion, captura):
+    with open(ARCHIVO_TXT_RESPALDO, "a", encoding="utf-8") as f:
+        f.write(f"=== {nombre_opcion} ===\n")
+        f.write(f"URL: {captura['url']}\n")
+        f.write(f"REFERER: {captura['referer']}\n")
+        f.write(f"USER-AGENT: {captura['user_agent']}\n")
+        f.write(f"OPCION KODI/IPTV: {captura['url']}|Referer={captura['referer']}&User-Agent={captura['user_agent']}\n")
+        f.write("-" * 60 + "\n\n")
 
+def guardar_en_m3u(resultados):
+    with open(ARCHIVO_M3U_FINAL, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n\n")
+        for res in resultados:
+            nombre = res["nombre"]
+            cap = res["captura"]
+            
+            # Formato estándar de directivas KODI / TiviMate / IPTV Smarters
+            f.write(f'#EXTINF:-1 tvg-name="{nombre}", {nombre}\n')
+            f.write(f'#EXTVLCOPT:http-referrer={cap["referer"]}\n')
+            f.write(f'#EXTVLCOPT:http-user-agent={cap["user_agent"]}\n')
+            # Formato de tubería inline (pipe format)
+            f.write(f'{cap["url"]}|Referer={cap["referer"]}&User-Agent={cap["user_agent"]}\n\n')
+
+# ==========================================
+# FLUJO PRINCIPAL
+# ==========================================
 async def main():
-    if not os.path.exists(CARPETA_LOCAL):
-        os.makedirs(CARPETA_LOCAL)
+    # Limpiar archivo TXT previo si existe
+    if os.path.exists(ARCHIVO_TXT_RESPALDO):
+        os.remove(ARCHIVO_TXT_RESPALDO)
 
-    # 1. Buscar enlaces de fuentes
-    canales_a_escanear = await buscar_todas_las_opciones(FUENTES_DEPORTES)
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page_fase0 = await browser.new_page()
 
-    # 2. Escanear redes
-    ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
-    await escanear_canales_deportes(canales_a_escanear, ruta_temp)
+        todas_las_opciones = {}
+        
+        # 1. Ejecutar Fase 0
+        for canal, url in CANALES_A_PROCESAR.items():
+            opciones = await buscar_opciones_canal(page_fase0, canal, url)
+            todas_las_opciones.update(opciones)
 
-    # 3. Unificar y subir
-    if unificar_todo():
-        ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
-        subir_a_github(ruta_final, GITHUB_REPO_NAME, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
+        await page_fase0.close()
 
-    print("\n--- ¡PROCESO TERMINADO! ---")
+        # 2. Ejecutar Fase 1
+        print(f"\n[Fase 1] Iniciando escaneo de {len(todas_las_opciones)} iFrames capturados...")
+        resultados_finales = []
 
+        for nombre_opcion, url_iframe in todas_las_opciones.items():
+            print(f"[*] Analizando stream para: {nombre_opcion}")
+            captura = await capturar_stream_con_headers(browser, nombre_opcion, url_iframe)
+            
+            if captura:
+                guardar_en_txt(nombre_opcion, captura)
+                resultados_finales.append({
+                    "nombre": nombre_opcion,
+                    "captura": captura
+                })
+
+        await browser.close()
+
+        # 3. Generar M3U final
+        if resultados_finales:
+            guardar_en_m3u(resultados_finales)
+            print(f"\n[✔] Proceso completado exitosamente:")
+            print(f"    - TXT Respaldo: {ARCHIVO_TXT_RESPALDO}")
+            print(f"    - Lista M3U: {ARCHIVO_M3U_FINAL}")
+        else:
+            print("\n[!] No se pudieron capturar enlaces válidos.")
 
 if __name__ == "__main__":
     asyncio.run(main())
