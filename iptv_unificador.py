@@ -4,7 +4,7 @@ import sys
 from urllib.parse import urljoin
 from playwright.async_api import async_playwright
 
-# Forzar flush directo en consola de GitHub Actions
+# Forzar salida en consola sin buffer en tiempo real
 sys.stdout.reconfigure(line_buffering=True)
 
 # ==========================================
@@ -30,7 +30,7 @@ CANALES_A_PROCESAR = {
 os.makedirs(CARPETA_SALIDA, exist_ok=True)
 
 # ==========================================
-# FASE 0: EXTRACCIÓN DE IFRAMES
+# FASE 0: EXTRACCIÓN Y NORMALIZACIÓN DE IFRAMES
 # ==========================================
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
     opciones = {}
@@ -39,7 +39,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
         print(f"\n[*] [{nombre_canal}] Cargando: {url_fuente}", flush=True)
         response = await page.goto(url_fuente, wait_until="domcontentloaded", timeout=30000)
         
-        print(f"[*] [{nombre_canal}] Código de respuesta HTTP: {response.status if response else 'Sin respuesta'}", flush=True)
+        print(f"[*] [{nombre_canal}] Código HTTP: {response.status if response else 'Sin respuesta'}", flush=True)
         await asyncio.sleep(3)
 
         botones = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
@@ -56,7 +56,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
                 print(f"[*] [{nombre_canal}] Clic Opción {i + 1}...", flush=True)
                 await boton.evaluate("el => el.click()")
             except Exception as e:
-                print(f"[!] [{nombre_canal}] Error al cliquear Opción {i + 1}: {e}", flush=True)
+                print(f"[!] [{nombre_canal}] Error en clic Opción {i + 1}: {e}", flush=True)
                 continue
 
             await asyncio.sleep(3)
@@ -65,6 +65,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
             for iframe in iframes:
                 src = await iframe.get_attribute("src")
                 if src:
+                    # Convierte URLs relativas (/html/fl/...) en absolutas (https://...)
                     src_absoluta = urljoin(page.url, src)
 
                     if src_absoluta and src_absoluta not in enlaces_vistos:
@@ -82,12 +83,11 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
     return opciones
 
 # ==========================================
-# FASE 1: INTERCEPTACIÓN DE STREAMS
+# FASE 1: INTERCEPTACIÓN DE RED Y CABECERAS
 # ==========================================
 async def capturar_stream_con_headers(browser, nombre_opcion, url_iframe):
     captura = None
 
-    # Contexto con User Agent real y bypass de banderas de automatización
     context = await browser.new_context(
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         viewport={"width": 1280, "height": 720}
@@ -129,7 +129,7 @@ async def capturar_stream_con_headers(browser, nombre_opcion, url_iframe):
     return captura
 
 # ==========================================
-# GUARDADO DE ARCHIVOS
+# ESCRITURA DE ARCHIVOS
 # ==========================================
 def guardar_en_txt(nombre_opcion, captura):
     with open(ARCHIVO_TXT_RESPALDO, "a", encoding="utf-8") as f:
@@ -153,7 +153,7 @@ def guardar_en_m3u(resultados):
             f.write(f'{cap["url"]}|Referer={cap["referer"]}&User-Agent={cap["user_agent"]}\n\n')
 
 # ==========================================
-# EJECUCIÓN PRINCIPAL
+# FLUJO PRINCIPAL
 # ==========================================
 async def main():
     print("=== INICIANDO SCRAPER IPTV EN GITHUB ACTIONS ===", flush=True)
@@ -162,7 +162,6 @@ async def main():
         os.remove(ARCHIVO_TXT_RESPALDO)
 
     async with async_playwright() as p:
-        # Argumentos anti-detección de headless en servidores de CI/CD
         browser = await p.chromium.launch(
             headless=True,
             args=[
