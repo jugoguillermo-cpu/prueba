@@ -5,6 +5,26 @@
 #EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE
 https://bestleague.life/isInstalled.mpd
 
+#EXTINF:-1 group-title="VARIOS",TYC SPORT (OPCION 7)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://a4a837f1bd9e4fccb46043fd30d4c437.dynproclaim.net/
+https://4n841w.awqb0f40a9yo.net:8443/hls/w09biadt2i56s.m3u8?s=nuyF_2aembFeL7e366i48g&e=1790211790
+
+#EXTINF:-1 group-title="VARIOS",TYC SPORT (OPCION 8)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=VHlDU3BvcnQ
+https://bestleague.life/isInstalled.mpd
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORT PREMIUM (OPCION 7)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://a4a837f1bd9e4fccb46043fd30d4c437.dynproclaim.net/
+https://4n841w.awqb0f40a9yo.net:8443/hls/5sc8foxkmhjyv.m3u8?s=EP5HL2OZ_k4j_wyDJzKTXg&e=1790211958
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORT PREMIUM (OPCION 8)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=VE5UX1Nwb3J0c19IRA
+https://bestleague.life/isInstalled.mpd
+
 #EXTINF:-1 tvg-id="3ABNInternational.us@SD" tvg-logo="https://i.imgur.com/IecOZHR.png" group-title="VARIOS",3ABN International (720p)
 https://3abn.bozztv.com/3abn2/Int_live/smil:Int_live.smil/playlist.m3u8
 
