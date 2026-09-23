@@ -42,10 +42,10 @@ ESPERA_TRAS_CLICK_SEGUNDOS = 2
 
 # Canales deportivos a escanear con Playwright (ex script 2 - con opciones de respaldo)
 CANALES_DEPORTES = {
-    "TYC SPORT": "https://bolaloca.my/player/3/77",
+    "TYC SPORT": "https://tvlibreonline.st/html/fl/?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
     "TYC SPORT (OPCION 2)": "https://la18hd.com/vivo/canales.php?stream=tycsports",
     "TYC SPORT (OPCION 3)": "https://welivesports.cfd/embed/tycsportarg.php",
-    "ESPN PREMIUM": "https://bolaloca.my/player/3/76",
+    "ESPN PREMIUM": "https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
     "ESPN PREMIUM (OPCION 2)": "https://la18hd.com/vivo/canales.php?stream=espnpremium",
     "ESPN PREMIUM (OPCION 3)": "https://welivesports.cfd/embed/tycsportarg.php",
     "TNT SPORT": "https://bolaloca.my/player/3/75",
