@@ -1,12 +1,12 @@
 import asyncio
 import os
-import re
+from urllib.parse import urljoin
 from playwright.async_api import async_playwright
 
 # ==========================================
 # CONFIGURACIÓN GENERAL
 # ==========================================
-URL_BASE = "https://tvlibreonline.st/"  # Cambiar por tu sitio base
+URL_BASE = "https://tvlibreonline.st/"
 CARPETA_SALIDA = "m3u_capturados"
 ARCHIVO_TXT_RESPALDO = os.path.join(CARPETA_SALIDA, "capturas_m3u8.txt")
 ARCHIVO_M3U_FINAL = os.path.join(CARPETA_SALIDA, "lista_canales.m3u")
@@ -14,13 +14,13 @@ ARCHIVO_M3U_FINAL = os.path.join(CARPETA_SALIDA, "lista_canales.m3u")
 # Selectores DOM
 SELECTOR_BOTONES_OPCIONES = "a.btn-md"
 
-# Palabras clave para descartar iFrames publicitarios o de chat
+# Dominios a ignorar (filtros anti-publicidad / chats)
 IGNORAR_IFRAMES = [
     "sharethis.com", "chatbro.com", "facebook.com", 
     "google.com", "analytics", "disqus.com"
 ]
 
-# Canales a procesar (Nombre: URL de la página del canal)
+# Canales a procesar
 CANALES_A_PROCESAR = {
     "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
     "TNT SPORTS": "https://tvlibreonline.st/en-vivo/tnt-sports/"
@@ -29,7 +29,7 @@ CANALES_A_PROCESAR = {
 os.makedirs(CARPETA_SALIDA, exist_ok=True)
 
 # ==========================================
-# FASE 0: EXTRACCIÓN DE IFRAMES VÁLIDOS
+# FASE 0: EXTRACCIÓN Y NORMALIZACIÓN DE IFRAMES
 # ==========================================
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
     opciones = {}
@@ -53,33 +53,34 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
                 print(f"[*] [{nombre_canal}] Clic en opción {i + 1}...")
                 await boton.evaluate("el => el.click()")
             except Exception as e:
-                print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
+                print(f"[!] [{nombre_canal}] Error al cliquear opción {i + 1}: {e}")
                 continue
 
-            # Esperar a que el JS del sitio actualice el iFrame interno
             await asyncio.sleep(3)
 
             iframes = await page.locator("iframe").all()
             for iframe in iframes:
                 src = await iframe.get_attribute("src")
-                if src and src not in enlaces_vistos:
-                    # Filtro de seguridad contra publicidad
-                    if any(ignorar in src.lower() for ignorar in IGNORAR_IFRAMES):
-                        continue
-                    
-                    enlaces_vistos.add(src)
-                    nombre_opcion = f"{nombre_canal} (OPCION {len(enlaces_vistos)})"
-                    opciones[nombre_opcion] = src
-                    print(f"[+] [{nombre_canal}] iFrame válido detectado: {src}")
+                if src:
+                    # Corrección de URLs relativas (/html/fl/...) a absolutas (https://...)
+                    src_absoluta = urljoin(page.url, src)
+
+                    if src_absoluta and src_absoluta not in enlaces_vistos:
+                        if any(ignorar in src_absoluta.lower() for ignorar in IGNORAR_IFRAMES):
+                            continue
+                        
+                        enlaces_vistos.add(src_absoluta)
+                        nombre_opcion = f"{nombre_canal} (OPCION {len(enlaces_vistos)})"
+                        opciones[nombre_opcion] = src_absoluta
+                        print(f"[+] [{nombre_canal}] iFrame válido: {src_absoluta}")
 
     except Exception as e:
-        print(f"[!] [{nombre_canal}] Error buscando opciones: {e}")
+        print(f"[!] [{nombre_canal}] Error en Fase 0: {e}")
 
     return opciones
 
-
 # ==========================================
-# FASE 1: CAPTURA DE NETWORK Y HEADERS
+# FASE 1: INTERCEPTACIÓN DE RED Y CABECERAS
 # ==========================================
 async def capturar_stream_con_headers(browser, nombre_opcion, url_iframe):
     captura = None
@@ -109,24 +110,21 @@ async def capturar_stream_con_headers(browser, nombre_opcion, url_iframe):
     page.on("request", interceptar_peticion)
 
     try:
-        # Pasa el Referer de la página padre al abrir el iFrame
         await page.goto(url_iframe, referer=URL_BASE, wait_until="domcontentloaded", timeout=25000)
         
-        # Esperar hasta 12 segundos para que el reproductor ejecute el stream
         for _ in range(12):
             if captura:
                 break
             await asyncio.sleep(1)
 
     except Exception as e:
-        print(f"[!] Timeout o error cargando {nombre_opcion}: {e}")
+        print(f"[!] Error procesando {nombre_opcion}: {e}")
 
     await context.close()
     return captura
 
-
 # ==========================================
-# GUARDADO DE RESULTADOS (TXT Y M3U)
+# ESCRITURA DE ARCHIVOS
 # ==========================================
 def guardar_en_txt(nombre_opcion, captura):
     with open(ARCHIVO_TXT_RESPALDO, "a", encoding="utf-8") as f:
@@ -134,7 +132,7 @@ def guardar_en_txt(nombre_opcion, captura):
         f.write(f"URL: {captura['url']}\n")
         f.write(f"REFERER: {captura['referer']}\n")
         f.write(f"USER-AGENT: {captura['user_agent']}\n")
-        f.write(f"OPCION KODI/IPTV: {captura['url']}|Referer={captura['referer']}&User-Agent={captura['user_agent']}\n")
+        f.write(f"PIPE FORMAT: {captura['url']}|Referer={captura['referer']}&User-Agent={captura['user_agent']}\n")
         f.write("-" * 60 + "\n\n")
 
 def guardar_en_m3u(resultados):
@@ -144,18 +142,15 @@ def guardar_en_m3u(resultados):
             nombre = res["nombre"]
             cap = res["captura"]
             
-            # Formato estándar de directivas KODI / TiviMate / IPTV Smarters
             f.write(f'#EXTINF:-1 tvg-name="{nombre}", {nombre}\n')
             f.write(f'#EXTVLCOPT:http-referrer={cap["referer"]}\n')
             f.write(f'#EXTVLCOPT:http-user-agent={cap["user_agent"]}\n')
-            # Formato de tubería inline (pipe format)
             f.write(f'{cap["url"]}|Referer={cap["referer"]}&User-Agent={cap["user_agent"]}\n\n')
 
 # ==========================================
-# FLUJO PRINCIPAL
+# MAIN
 # ==========================================
 async def main():
-    # Limpiar archivo TXT previo si existe
     if os.path.exists(ARCHIVO_TXT_RESPALDO):
         os.remove(ARCHIVO_TXT_RESPALDO)
 
@@ -165,15 +160,13 @@ async def main():
 
         todas_las_opciones = {}
         
-        # 1. Ejecutar Fase 0
         for canal, url in CANALES_A_PROCESAR.items():
             opciones = await buscar_opciones_canal(page_fase0, canal, url)
             todas_las_opciones.update(opciones)
 
         await page_fase0.close()
 
-        # 2. Ejecutar Fase 1
-        print(f"\n[Fase 1] Iniciando escaneo de {len(todas_las_opciones)} iFrames capturados...")
+        print(f"\n[Fase 1] Escaneando {len(todas_las_opciones)} iFrames...")
         resultados_finales = []
 
         for nombre_opcion, url_iframe in todas_las_opciones.items():
@@ -189,14 +182,9 @@ async def main():
 
         await browser.close()
 
-        # 3. Generar M3U final
         if resultados_finales:
             guardar_en_m3u(resultados_finales)
-            print(f"\n[✔] Proceso completado exitosamente:")
-            print(f"    - TXT Respaldo: {ARCHIVO_TXT_RESPALDO}")
-            print(f"    - Lista M3U: {ARCHIVO_M3U_FINAL}")
-        else:
-            print("\n[!] No se pudieron capturar enlaces válidos.")
+            print(f"\n[✔] Proceso finalizado exitosamente.")
 
 if __name__ == "__main__":
     asyncio.run(main())
