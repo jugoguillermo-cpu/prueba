@@ -33,6 +33,8 @@ ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 # Fuentes a escanear
 FUENTES_DEPORTES = {
     "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
+    "TYC SPORT": "https://tvlibreonline.st/en-vivo/tyc-sports/",
+    "TNT SPORT PREMIUM": "https://tvlibreonline.st/en-vivo/tnt-sports/",
 }
 
 # Selector CSS de los botones de opciones
