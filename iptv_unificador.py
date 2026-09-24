@@ -192,13 +192,24 @@ async def interceptar_red(response, nombre_canal, stream_encontrado_event, resul
         origin = request_headers.get('origin', '')
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
+        # Armamos la URL con los headers pegados (formato "pipe"), que es lo que
+        # entienden reproductores como TiviMate, GSE IPTV, Smarters o Kodi
+        # (VLC no lo necesita, pero no le molesta).
+        headers_pipe = []
+        if referer:
+            headers_pipe.append(f"Referer={referer}")
+        headers_pipe.append(f"User-Agent={user_agent}")
+        if origin:
+            headers_pipe.append(f"Origin={origin}")
+        url_con_headers = f"{url}|{'&'.join(headers_pipe)}" if headers_pipe else url
+
         entrada_m3u = f"#EXTINF:-1,{nombre_canal}\n"
         entrada_m3u += f"#EXTVLCOPT:http-user-agent={user_agent}\n"
         if referer:
             entrada_m3u += f"#EXTVLCOPT:http-referrer={referer}\n"
         if origin:
             entrada_m3u += f"#EXTVLCOPT:http-origin={origin}\n"
-        entrada_m3u += f"{url}\n"
+        entrada_m3u += f"{url_con_headers}\n"
 
         resultados_m3u[nombre_canal] = entrada_m3u
 
