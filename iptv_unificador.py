@@ -13,16 +13,12 @@ nest_asyncio.apply()
 # ==========================================
 # 1. CONFIGURACIÓN
 # ==========================================
-# Detecta si corre en GitHub Actions (esa variable la setea GitHub automáticamente)
+# Detecta si corre en GitHub Actions
 EN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
 
-# GitHub - el token SIEMPRE se lee del entorno, nunca escrito acá.
-# - En GitHub Actions: lo toma del Secret configurado en el workflow.
-# - En tu PC: seteálo antes de correr, ej. (CMD) set GITHUB_TOKEN=tu_token
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_OWNER = "jugoguillermo-cpu"  # tu usuario de GitHub
 GITHUB_REPO_NAME = "prueba"
-# GITHUB_REPOSITORY ya viene seteada automáticamente en GitHub Actions como "owner/repo".
 GITHUB_REPO_COMPLETO = os.environ.get("GITHUB_REPOSITORY", f"{GITHUB_OWNER}/{GITHUB_REPO_NAME}")
 NOMBRE_ARCHIVO_GITHUB = "lista.m3u"
 
@@ -31,22 +27,20 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 
-# Páginas "fuente": UNA sola URL por canal, que lista varias opciones (botones)
-# que al hacer clic revelan un iframe con el reproductor. El script entra ahí,
-# clickea cada opción y arma automáticamente "NOMBRE (OPCION 1)", "(OPCION 2)", etc.
-# Agregá más canales acá con el mismo formato: "NOMBRE": "url_de_la_pagina_fuente"
+# Páginas "fuente"
 FUENTES_DEPORTES = {
-    
+    "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
 }
 
-# Selector CSS de los botones de opciones en la página fuente (ajustalo si cambia el sitio)
+# Selector CSS de los botones de opciones en la página fuente
 SELECTOR_BOTONES_OPCIONES = "a.btn-md"
 ESPERA_TRAS_CLICK_SEGUNDOS = 2
 
-
 # Links M3U Externos (Fase de unificación)
 URLS_M3U_EXTERNAS = [
+    "https://iptv-org.github.io/iptv/regions/southam.m3u?fbclid=IwdGRjcAUdOZNjbGNrBR05eXBkb2YFZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEe8N84jKI0NhBNdeY1BGjzh_9cCP8VR4R_tJ59KrgjdVaMzJ9DZ642tSPADz8_aem_hNReBY1EZ79qC6NeFVID6g",
     "https://telechancho.github.io/telechancho-iptv/telechancho-infinity.m3u",
+    "http://45.181.122.46:8090/playlist.m3u8",
     "https://iptv-org.github.io/iptv/countries/ar.m3u",
     "https://www.m3u.cl/lista/AR.m3u",
     "https://radiosargentina.com.ar/TVAR.m3u",
@@ -70,12 +64,10 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL (páginas fuente)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL
 # ==========================================
 
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
-    """Entra a la página fuente de un canal, clickea cada botón de opción
-    y devuelve un dict {"NOMBRE (OPCION N)": url_iframe}."""
     opciones = {}
     enlaces_vistos = set()
     try:
@@ -87,7 +79,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
         print(f"[*] [{nombre_canal}] Se encontraron {cantidad_opciones} opciones en la fuente.")
 
         for i in range(cantidad_opciones):
-            # Re-localizar los botones en cada iteración (el DOM puede cambiar al clickear)
             botones_actuales = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
             if i >= len(botones_actuales):
                 break
@@ -95,7 +86,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
 
             try:
                 print(f"[*] [{nombre_canal}] Cliqueando opción {i + 1}...")
-                await boton.evaluate("el => el.click()")  # clic forzado por JS, por si hay overlays
+                await boton.evaluate("el => el.click()")
             except Exception as e:
                 print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
                 continue
@@ -118,7 +109,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
 
 
 async def buscar_todas_las_opciones(fuentes):
-    """Recorre FUENTES_DEPORTES y arma el diccionario de canales a escanear."""
     if not fuentes:
         return {}
 
@@ -158,7 +148,7 @@ async def buscar_todas_las_opciones(fuentes):
 
 
 # ==========================================
-# 3. FASE 1: ESCANEO CON PLAYWRIGHT (ex script 2)
+# 3. FASE 1: ESCANEO CON PLAYWRIGHT
 # ==========================================
 
 async def intentar_autoclick_play(page, nombre_canal):
@@ -190,9 +180,6 @@ async def interceptar_red(response, nombre_canal, stream_encontrado_event, resul
         origin = request_headers.get('origin', '')
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
-        # Armamos la URL con los headers pegados (formato "pipe"), que es lo que
-        # entienden reproductores como TiviMate, GSE IPTV, Smarters o Kodi
-        # (VLC no lo necesita, pero no le molesta).
         headers_pipe = []
         if referer:
             headers_pipe.append(f"Referer={referer}")
@@ -243,7 +230,6 @@ def cargar_m3u_existente(ruta_archivo):
 
 
 async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
-    """Escanea con Chrome/Playwright y genera/actualiza el m3u temporal de deportes."""
     print(f"--- FASE 1: Escaneando {len(diccionario_canales)} canales de deportes con Playwright ---")
     canales_finales = cargar_m3u_existente(ruta_archivo_salida)
     nuevos_resultados = {}
@@ -252,15 +238,13 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
         argumentos_lanzamiento = dict(
             headless=EN_GITHUB_ACTIONS,
             args=[
-                "--window-position=2000,2000",  # Fuera del área visible de la pantalla
+                "--window-position=2000,2000",
                 "--window-size=400,300",
                 "--mute-audio"
             ]
         )
         if not EN_GITHUB_ACTIONS:
-            # En tu PC usamos el Chrome real instalado (mejor para evitar detección anti-bot).
             argumentos_lanzamiento["channel"] = "chrome"
-        # En GitHub Actions usamos el Chromium que trae Playwright (instalado en el workflow).
         browser = await p.chromium.launch(**argumentos_lanzamiento)
 
         context = await browser.new_context(
@@ -321,11 +305,25 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
 
 
 # ==========================================
-# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (ex script 1)
+# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR
 # ==========================================
 
-def procesar_y_categorizar(contenido, outfile):
-    """Analiza contenido, limpia y asigna group-title"""
+def normalizar_texto(texto):
+    """Limpia tildes y convierte a mayúsculas para búsquedas flexibles."""
+    if not texto:
+        return ""
+    remplazos = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+                 'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U'}
+    for orig, dest in remplazos.items():
+        texto = texto.replace(orig, dest)
+    return texto.upper()
+
+def procesar_y_categorizar(contenido):
+    """
+    Analiza contenido, detecta 'Mar del Plata' (en cualquier variante) o países,
+    asigna group-title y retorna una lista de tuplas: (nombre_canal, texto_bloque).
+    """
+    lista_canales = []
     lineas = contenido.splitlines()
     i = 0
     while i < len(lineas):
@@ -344,12 +342,19 @@ def procesar_y_categorizar(contenido, outfile):
             if next_idx < len(lineas):
                 url_canal = lineas[next_idx].strip()
 
-            categoria = "VARIOS"
-            for pais in PAISES_OBJETIVO:
-                if pais.upper() in info_canal.upper():
-                    categoria = pais
-                    break
+            # Búsqueda flexible de Mar del Plata
+            texto_busqueda = normalizar_texto(f"{info_canal} {url_canal}")
+            
+            if "MAR DEL PLATA" in texto_busqueda or "MARDELPLATA" in texto_busqueda:
+                categoria = "MAR DEL PLATA"
+            else:
+                categoria = "VARIOS"
+                for pais in PAISES_OBJETIVO:
+                    if pais.upper() in info_canal.upper():
+                        categoria = pais
+                        break
 
+            # Asignación de grupo
             if 'group-title="' in info_canal:
                 inicio = info_canal.find('group-title="') + 13
                 fin = info_canal.find('"', inicio)
@@ -357,41 +362,58 @@ def procesar_y_categorizar(contenido, outfile):
             else:
                 nueva_linea = info_canal.replace("#EXTINF:-1", f'#EXTINF:-1 group-title="{categoria}"')
 
-            outfile.write(nueva_linea + "\n")
-            for ex in extras:
-                outfile.write(ex + "\n")
+            # Extraer el nombre del canal para ordenamiento A-Z
+            match_nombre = re.search(r',(.+)$', info_canal)
+            nombre_canal = match_nombre.group(1).strip() if match_nombre else "Canal Desconocido"
+
+            # Armar el bloque de texto completo del canal
+            bloque = [nueva_linea]
+            bloque.extend(extras)
             if url_canal:
-                outfile.write(url_canal + "\n\n")
+                bloque.append(url_canal)
+            bloque_texto = "\n".join(bloque) + "\n\n"
+
+            lista_canales.append((nombre_canal, bloque_texto))
             i = next_idx
         i += 1
+    return lista_canales
 
 
 def unificar_todo():
-    """Une Scraper de deportes + Locales + Externos"""
-    print("\n--- FASE 2: Unificando y Categorizando ---")
+    """Une Scraper de deportes + Locales + Externos, ordena de A a Z y guarda."""
+    print("\n--- FASE 2: Unificando, Categorizando y Ordenando A-Z ---")
     ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
+    canales_totales = []
 
     try:
+        # 1. Procesar resultado del escaneo de deportes
+        ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
+        if os.path.exists(ruta_temp_scraper):
+            print("📦 Procesando canales de deportes...")
+            with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
+                canales_totales.extend(procesar_y_categorizar(f.read()))
+
+        # 2. Procesar URLs externas
+        for url in URLS_M3U_EXTERNAS:
+            print(f"🌐 Descargando externo: {url}")
+            try:
+                r = requests.get(url, timeout=10)
+                if r.status_code == 200:
+                    canales_totales.extend(procesar_y_categorizar(r.text))
+            except Exception as e:
+                print(f"⚠️ Error en URL {url}: {e}")
+
+        # 3. Ordenar alfabéticamente de la A a la Z por nombre del canal
+        print("🔤 Ordenando canales alfabéticamente (A-Z)...")
+        canales_totales.sort(key=lambda x: x[0].upper())
+
+        # 4. Escribir el archivo final unificado
         with open(ruta_final, 'w', encoding='utf-8') as outfile:
             outfile.write("#EXTM3U\n\n")
+            for _, bloque_canal in canales_totales:
+                outfile.write(bloque_canal)
 
-            # 1. Procesar resultado del escaneo de deportes (Playwright)
-            ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
-            if os.path.exists(ruta_temp_scraper):
-                print("📦 Procesando canales de deportes...")
-                with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
-                    procesar_y_categorizar(f.read(), outfile)
-
-            # 2. Procesar URLs externas
-            for url in URLS_M3U_EXTERNAS:
-                print(f"🌐 Descargando externo: {url}")
-                try:
-                    r = requests.get(url, timeout=10)
-                    if r.status_code == 200:
-                        procesar_y_categorizar(r.text, outfile)
-                except Exception as e:
-                    print(f"⚠️ Error en URL {url}: {e}")
-
+        print(f"✅ Unificación y ordenamiento completados. Total canales: {len(canales_totales)}")
         return True
     except Exception as e:
         print(f"❌ Error en unificación: {e}")
@@ -399,7 +421,7 @@ def unificar_todo():
 
 
 # ==========================================
-# 5. FASE 3: SUBIR A GITHUB (ex script 1)
+# 5. FASE 3: SUBIR A GITHUB
 # ==========================================
 
 def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo):
@@ -453,7 +475,7 @@ async def main():
     ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
     await escanear_canales_deportes(canales_a_escanear, ruta_temp)
 
-    # 3. Unificar y categorizar todo (deportes + externos), y subir a GitHub
+    # 3. Unificar, categorizar, ordenar A-Z y subir a GitHub
     if unificar_todo():
         ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
         subir_a_github(ruta_final, GITHUB_REPO_COMPLETO, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
