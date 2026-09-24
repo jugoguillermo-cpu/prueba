@@ -20,7 +20,10 @@ EN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
 # - En GitHub Actions: lo toma del Secret configurado en el workflow.
 # - En tu PC: seteálo antes de correr, ej. (CMD) set GITHUB_TOKEN=tu_token
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+GITHUB_OWNER = "jugoguillermo-cpu"  # tu usuario de GitHub
 GITHUB_REPO_NAME = "prueba"
+# GITHUB_REPOSITORY ya viene seteada automáticamente en GitHub Actions como "owner/repo".
+GITHUB_REPO_COMPLETO = os.environ.get("GITHUB_REPOSITORY", f"{GITHUB_OWNER}/{GITHUB_REPO_NAME}")
 NOMBRE_ARCHIVO_GITHUB = "lista.m3u"
 
 # Rutas Locales
@@ -28,10 +31,18 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 
-# Canales deportivos a escanear con Playwright (ex script 2 - con opciones de respaldo)
-CANALES_DEPORTES = {
-
+# Páginas "fuente": UNA sola URL por canal, que lista varias opciones (botones)
+# que al hacer clic revelan un iframe con el reproductor. El script entra ahí,
+# clickea cada opción y arma automáticamente "NOMBRE (OPCION 1)", "(OPCION 2)", etc.
+# Agregá más canales acá con el mismo formato: "NOMBRE": "url_de_la_pagina_fuente"
+FUENTES_DEPORTES = {
+    
 }
+
+# Selector CSS de los botones de opciones en la página fuente (ajustalo si cambia el sitio)
+SELECTOR_BOTONES_OPCIONES = "a.btn-md"
+ESPERA_TRAS_CLICK_SEGUNDOS = 2
+
 
 # Links M3U Externos (Fase de unificación)
 URLS_M3U_EXTERNAS = [
@@ -59,7 +70,95 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 1: ESCANEO CON PLAYWRIGHT (ex script 2)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL (páginas fuente)
+# ==========================================
+
+async def buscar_opciones_canal(page, nombre_canal, url_fuente):
+    """Entra a la página fuente de un canal, clickea cada botón de opción
+    y devuelve un dict {"NOMBRE (OPCION N)": url_iframe}."""
+    opciones = {}
+    enlaces_vistos = set()
+    try:
+        print(f"[*] [{nombre_canal}] Abriendo fuente: {url_fuente}")
+        await page.goto(url_fuente, wait_until="load", timeout=30000)
+
+        botones = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
+        cantidad_opciones = len(botones)
+        print(f"[*] [{nombre_canal}] Se encontraron {cantidad_opciones} opciones en la fuente.")
+
+        for i in range(cantidad_opciones):
+            # Re-localizar los botones en cada iteración (el DOM puede cambiar al clickear)
+            botones_actuales = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
+            if i >= len(botones_actuales):
+                break
+            boton = botones_actuales[i]
+
+            try:
+                print(f"[*] [{nombre_canal}] Cliqueando opción {i + 1}...")
+                await boton.evaluate("el => el.click()")  # clic forzado por JS, por si hay overlays
+            except Exception as e:
+                print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
+                continue
+
+            await asyncio.sleep(ESPERA_TRAS_CLICK_SEGUNDOS)
+
+            iframes = await page.locator("iframe").all()
+            for iframe in iframes:
+                src = await iframe.get_attribute("src")
+                if src and src not in enlaces_vistos:
+                    enlaces_vistos.add(src)
+                    nombre_opcion = f"{nombre_canal} (OPCION {len(enlaces_vistos)})"
+                    opciones[nombre_opcion] = src
+                    print(f"[+] [{nombre_canal}] Enlace encontrado: {src}")
+
+    except Exception as e:
+        print(f"[!] [{nombre_canal}] Error buscando opciones en la fuente: {e}")
+
+    return opciones
+
+
+async def buscar_todas_las_opciones(fuentes):
+    """Recorre FUENTES_DEPORTES y arma el diccionario de canales a escanear."""
+    if not fuentes:
+        return {}
+
+    print(f"--- FASE 0: Buscando links de opciones para {len(fuentes)} canal(es) fuente ---")
+    todas_opciones = {}
+
+    async with async_playwright() as p:
+        argumentos_lanzamiento = dict(
+            headless=EN_GITHUB_ACTIONS,
+            args=[
+                "--window-position=2000,2000",
+                "--window-size=400,300",
+                "--mute-audio"
+            ]
+        )
+        if not EN_GITHUB_ACTIONS:
+            argumentos_lanzamiento["channel"] = "chrome"
+        browser = await p.chromium.launch(**argumentos_lanzamiento)
+
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+
+        for nombre_canal, url_fuente in fuentes.items():
+            page = await context.new_page()
+            try:
+                opciones = await buscar_opciones_canal(page, nombre_canal, url_fuente)
+                todas_opciones.update(opciones)
+            finally:
+                await page.close()
+
+        await context.close()
+        await browser.close()
+
+    print(f"[***] FASE 0 completa: {len(todas_opciones)} links de opciones encontrados en total. [***]")
+    return todas_opciones
+
+
+# ==========================================
+# 3. FASE 1: ESCANEO CON PLAYWRIGHT (ex script 2)
 # ==========================================
 
 async def intentar_autoclick_play(page, nombre_canal):
@@ -91,13 +190,24 @@ async def interceptar_red(response, nombre_canal, stream_encontrado_event, resul
         origin = request_headers.get('origin', '')
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
+        # Armamos la URL con los headers pegados (formato "pipe"), que es lo que
+        # entienden reproductores como TiviMate, GSE IPTV, Smarters o Kodi
+        # (VLC no lo necesita, pero no le molesta).
+        headers_pipe = []
+        if referer:
+            headers_pipe.append(f"Referer={referer}")
+        headers_pipe.append(f"User-Agent={user_agent}")
+        if origin:
+            headers_pipe.append(f"Origin={origin}")
+        url_con_headers = f"{url}|{'&'.join(headers_pipe)}" if headers_pipe else url
+
         entrada_m3u = f"#EXTINF:-1,{nombre_canal}\n"
         entrada_m3u += f"#EXTVLCOPT:http-user-agent={user_agent}\n"
         if referer:
             entrada_m3u += f"#EXTVLCOPT:http-referrer={referer}\n"
         if origin:
             entrada_m3u += f"#EXTVLCOPT:http-origin={origin}\n"
-        entrada_m3u += f"{url}\n"
+        entrada_m3u += f"{url_con_headers}\n"
 
         resultados_m3u[nombre_canal] = entrada_m3u
 
@@ -211,7 +321,7 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
 
 
 # ==========================================
-# 3. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (ex script 1)
+# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (ex script 1)
 # ==========================================
 
 def procesar_y_categorizar(contenido, outfile):
@@ -289,10 +399,10 @@ def unificar_todo():
 
 
 # ==========================================
-# 4. FASE 3: SUBIR A GITHUB (ex script 1)
+# 5. FASE 3: SUBIR A GITHUB (ex script 1)
 # ==========================================
 
-def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
+def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo):
     print(f"\n--- FASE 3: Subiendo a GitHub ---")
     try:
         if not token:
@@ -303,16 +413,9 @@ def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
         g = Github(auth=auth)
 
         try:
-            usuario = g.get_user()
-            login = usuario.login  # fuerza una llamada real para validar el token ya
+            repo = g.get_repo(repo_nombre_completo)
         except GithubException as e:
-            print(f"❌ Error GitHub: token inválido o sin permisos (status {e.status}): {e.data}")
-            return
-
-        try:
-            repo = usuario.get_repo(repo_nombre)
-        except GithubException as e:
-            print(f"❌ Error GitHub: no se encontró el repo '{repo_nombre}' en la cuenta '{login}' (status {e.status}): {e.data}")
+            print(f"❌ Error GitHub: no se pudo acceder al repo '{repo_nombre_completo}' (status {e.status}): {e.data}")
             return
 
         with open(archivo_local_path, 'r', encoding='utf-8') as f:
@@ -343,14 +446,17 @@ async def main():
     if not os.path.exists(CARPETA_LOCAL):
         os.makedirs(CARPETA_LOCAL)
 
-    # 1. Escanear canales deportivos con Playwright
-    ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
-    await escanear_canales_deportes(CANALES_DEPORTES, ruta_temp)
+    # 1. Buscar automáticamente los links de opciones desde las páginas fuente
+    canales_a_escanear = await buscar_todas_las_opciones(FUENTES_DEPORTES)
 
-    # 2. Unificar y categorizar todo (deportes + externos), y subir a GitHub
+    # 2. Escanear todo con Playwright y sacar los .m3u8 reales
+    ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
+    await escanear_canales_deportes(canales_a_escanear, ruta_temp)
+
+    # 3. Unificar y categorizar todo (deportes + externos), y subir a GitHub
     if unificar_todo():
         ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
-        subir_a_github(ruta_final, GITHUB_REPO_NAME, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
+        subir_a_github(ruta_final, GITHUB_REPO_COMPLETO, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
 
     print("\n--- ¡PROCESO TERMINADO! ---")
 
