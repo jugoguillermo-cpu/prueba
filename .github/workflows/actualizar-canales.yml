@@ -1,28 +1,16 @@
-name: Actualizar canales IPTV
+name: Actualizador M3U Automation
 
 on:
-  # Botón "Run workflow" en la app de GitHub / sitio web, desde donde quieras.
-  workflow_dispatch: {}
-
-  # Opcional: corre solo cada 5 minutos (el intervalo mínimo que permite GitHub Actions).
-  # OJO: en repos PRIVADOS esto consume muy rápido los 2000 minutos gratis/mes.
-  # En repos PÚBLICOS los minutos de Actions son gratis sin límite práctico.
-  # Borrá estas dos líneas si no querés que se ejecute automático.
   schedule:
-    - cron: '*/5 * * * *'
-
-concurrency:
-  group: actualizar-canales
-  cancel-in-progress: false   # deja terminar la corrida en curso; la siguiente espera en cola
-
-permissions:
-  contents: write   # necesario para que el token automático de Actions pueda pushear al repo
+    - cron: '0 */6 * * *' # Ejecución automática cada 6 horas
+  workflow_dispatch: # Permite dispararlo manualmente desde GitHub
 
 jobs:
-  actualizar:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Clonar repo
+      - name: Checkout del repositorio
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -30,15 +18,25 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependencias
+      - name: Instalar dependencias y Playwright
         run: |
-          pip install playwright nest_asyncio PyGithub requests
-          playwright install --with-deps chromium
+          python -m pip install --upgrade pip
+          pip install playwright requests
+          playwright install chromium
+          playwright install-deps chromium
 
-      - name: Ejecutar script
+      - name: Ejecutar Scraper de M3U
         env:
-          # Si "prueba" es ESTE mismo repo, dejá esta línea tal cual (token automático de Actions).
-          # Si es OTRO repo, creá un secret propio (ej. GH_TOKEN) y reemplazá:
-          # GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          PYTHONUNBUFFERED: 1
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python iptv_unificador.py
+
+      - name: Guardar y subir cambios al repositorio
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add m3u_capturados/
+          git diff-index --quiet HEAD || git commit -m "Auto-update listas M3U [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
