@@ -20,7 +20,10 @@ EN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
 # - En GitHub Actions: lo toma del Secret configurado en el workflow.
 # - En tu PC: seteálo antes de correr, ej. (CMD) set GITHUB_TOKEN=tu_token
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+GITHUB_OWNER = "jugoguillermo-cpu"  # tu usuario de GitHub
 GITHUB_REPO_NAME = "prueba"
+# GITHUB_REPOSITORY ya viene seteada automáticamente en GitHub Actions como "owner/repo".
+GITHUB_REPO_COMPLETO = os.environ.get("GITHUB_REPOSITORY", f"{GITHUB_OWNER}/{GITHUB_REPO_NAME}")
 NOMBRE_ARCHIVO_GITHUB = "lista.m3u"
 
 # Rutas Locales
@@ -390,7 +393,7 @@ def unificar_todo():
 # 5. FASE 3: SUBIR A GITHUB (ex script 1)
 # ==========================================
 
-def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
+def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo):
     print(f"\n--- FASE 3: Subiendo a GitHub ---")
     try:
         if not token:
@@ -401,16 +404,9 @@ def subir_a_github(archivo_local_path, repo_nombre, token, ruta_en_repo):
         g = Github(auth=auth)
 
         try:
-            usuario = g.get_user()
-            login = usuario.login  # fuerza una llamada real para validar el token ya
+            repo = g.get_repo(repo_nombre_completo)
         except GithubException as e:
-            print(f"❌ Error GitHub: token inválido o sin permisos (status {e.status}): {e.data}")
-            return
-
-        try:
-            repo = usuario.get_repo(repo_nombre)
-        except GithubException as e:
-            print(f"❌ Error GitHub: no se encontró el repo '{repo_nombre}' en la cuenta '{login}' (status {e.status}): {e.data}")
+            print(f"❌ Error GitHub: no se pudo acceder al repo '{repo_nombre_completo}' (status {e.status}): {e.data}")
             return
 
         with open(archivo_local_path, 'r', encoding='utf-8') as f:
@@ -451,7 +447,7 @@ async def main():
     # 3. Unificar y categorizar todo (deportes + externos), y subir a GitHub
     if unificar_todo():
         ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
-        subir_a_github(ruta_final, GITHUB_REPO_NAME, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
+        subir_a_github(ruta_final, GITHUB_REPO_COMPLETO, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
 
     print("\n--- ¡PROCESO TERMINADO! ---")
 
