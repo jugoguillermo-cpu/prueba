@@ -2397,6 +2397,31 @@ http://45.181.122.46:8090/play/a01j
 #EXTINF:-1 group-title="VARIOS",ESPN HD
 http://45.181.122.46:8090/play/a01m
 
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 4)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp-golden1.click/
+https://17.domhsd.com/global/espnpremium/index.m3u8?token=549f15754c349cfa351f440b0ddf005ce3dbca7e-eb-1790593055-1790539055&ip=20.168.103.6|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 5)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.com/
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=20.168.103.6&token=60f7682459e233d4b1d135b2164762c450f515d6-ea-1790593061-1790539061|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 6)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://dglvz29s.fubo18.com/espnpremium/mono.m3u8?token=606cb4cedc8cb0e3da019cb967c826faf5fe00cc-6a-1790565166-1790547166|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 7)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.com/
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=20.168.103.6&token=2c3415d2605fa6f2a8f7c8e8f834caf58cfc898e-40-1790593079-1790539079|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 8)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
 #EXTINF:-1 group-title="VARIOS",ESPN Premium HD
 http://45.181.122.46:8090/play/a015
 
