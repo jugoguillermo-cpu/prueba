@@ -2397,27 +2397,27 @@ http://45.181.122.46:8090/play/a01j
 #EXTINF:-1 group-title="VARIOS",ESPN HD
 http://45.181.122.46:8090/play/a01m
 
-#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 3)
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://streamtp-golden1.click/
-https://93.domhsd.com/global/espnpremium/index.m3u8?token=0743672da1d6b8a88f0bba92be34477942869776-69-1790514373-1790460373&ip=172.203.206.164|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 4)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://streamxhd.com/
-https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=172.203.206.164&token=40aa927b3209215dd4abb0b2788f763ece314ab5-6d-1790514376-1790460376|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp-golden1.click/
+https://93.domhsd.com/global/espnpremium/index.m3u8?token=d9df2fdca936ea70e6e8cea1a219c8f51cf0dedd-2a-1790533102-1790479102&ip=20.102.46.145|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 5)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://la18hd.su/
-https://b2zmawnpyww.fubo18.com/espnpremium/mono.m3u8?token=234f8e88df1184fd0ed92501f516e097990c66f1-b8-1790486480-1790468480|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.com/
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=20.102.46.145&token=3f3b066e3db55c73dabb0ff18061967815e7ca99-7f-1790533105-1790479105|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 6)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://streamxhd.com/
-https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=172.203.206.164&token=83022e6db1608bcfd0842108bb1725c29ccf830f-1d-1790514392-1790460392|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://b2zmawnpyww.fubo18.com/espnpremium/mono.m3u8?token=72793977fbdc1d74f97c2ea20a1b9c016fe6e018-f1-1790505209-1790487209|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 7)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.com/
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=20.102.46.145&token=d6a0260e07086a2d2e3051b6b3aa1807901562d2-13-1790533121-1790479121|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 8)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE
 https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
