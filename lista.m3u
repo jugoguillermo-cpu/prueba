@@ -116,6 +116,12 @@ http://170.83.16.50/AeE/index.m3u8
 #KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36
 https://g4.vxral-hor.transport.edge-access.net/a15/ngrp:a24-100056_all/a24-100056_360p.m3u8
 
+#EXTINF:-1 tvg-id="A24.ar@SD" tvg-logo="https://i.imgur.com/LnXQkIU.png" group-title="VARIOS",A24 (1080p)
+http://138.59.227.20:8000/play/a05u/index.m3u8
+
+#EXTINF:-1 tvg-id="A24.ar@SD" tvg-logo="https://i.imgur.com/LnXQkIU.png" group-title="VARIOS",A24 (1080p)
+http://138.59.227.20:8000/play/a05u/index.m3u8
+
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI---A24.png" group-title="ARGENTINA",A24 - 36.3TV - CABA TV TDA - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__36.3A24_______
 
@@ -1702,6 +1708,12 @@ https://jmp2.uk/plu-5f12111c9e6c2c00078ef3bb.m3u8
 #EXTINF:-1 tvg-id="CineTerror.us@LatAm" tvg-logo="https://images.pluto.tv/channels/5f12111c9e6c2c00078ef3bb/colorLogoPNG.png" group-title="VARIOS",Cine Terror LatAm
 https://jmp2.uk/plu-5dcddf1ed95e740009fef7ab.m3u8
 
+#EXTINF:-1 tvg-id="CineAr.ar@SD" tvg-logo="https://i.imgur.com/Iozv4tT.png" group-title="VARIOS",Cine.Ar (1080p)
+http://181.209.105.115:2525/play/cinear/index.m3u8
+
+#EXTINF:-1 tvg-id="CineAr.ar@SD" tvg-logo="https://i.imgur.com/Iozv4tT.png" group-title="VARIOS",Cine.Ar (1080p)
+http://181.209.105.115:2525/play/cinear/index.m3u8
+
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VICINEAR.png" group-title="ARGENTINA",CINE.AR - 22.4TV - CABA TV TDA - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__22.4CINE.AR___
 
@@ -1854,14 +1866,6 @@ https://prepublish.f.qaotic.net/a07/americahls-100056/playlist_720p.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36
 https://prepublish.f.qaotic.net/a07/americahls-100056/playlist_720p.m3u8
 
-#EXTINF:-1 tvg-id="A24.ar@SD" tvg-logo="https://i.imgur.com/LnXQkIU.png" http-user-agent="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36" group-title="VARIOS",A24 (720p)
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36
-https://g5.vxral-slo.transport.edge-access.net/a12/ngrp:a24-100056_all/playlist.m3u8?sense=true
-
-#EXTINF:-1 tvg-id="A24.ar@SD" tvg-logo="https://i.imgur.com/LnXQkIU.png" http-user-agent="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36" group-title="VARIOS",A24 (720p)
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/112.0.0.0 Mobile Safari/537.36
-https://g5.vxral-slo.transport.edge-access.net/a12/ngrp:a24-100056_all/playlist.m3u8?sense=true
-
 #EXTINF:-1 tvg-id="ConcepcionTV.cl@SD" tvg-logo="https://i.imgur.com/9k0yAxj.jpeg" group-title="VARIOS",Concepcion TV (720p)
 https://stream.blserver.cl/hls/ctv/index.m3u8
 
@@ -1942,6 +1946,12 @@ https://5fc584f3f19c9.streamlock.net/cristovision/videocristovision/playlist.m3u
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VICRONIC.png" group-title="ARGENTINA",Cronica - 24.4TV - CABA TV TDA - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__24.4CRONICA___
+
+#EXTINF:-1 tvg-id="CronicaTV.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e8/Cr%C3%B3nica_TV_logotipo_%282008-2015%29.png" group-title="VARIOS",Cronica TV (1080p)
+http://181.209.105.115:2525/play/cronica/index.m3u8
+
+#EXTINF:-1 tvg-id="CronicaTV.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e8/Cr%C3%B3nica_TV_logotipo_%282008-2015%29.png" group-title="VARIOS",Cronica TV (1080p)
+http://181.209.105.115:2525/play/cronica/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/CrossingTV.png" group-title="VARIOS",Crossing TV
 https://stmv6.voxtvhd.com.br/crossingtv/crossingtv/playlist.m3u8?PlaylistM3UCL
@@ -2066,6 +2076,12 @@ https://tv2.bitstreaming.net:3539/live/deltanetlive.m3u8
 #EXTINF:-1 tvg-id="DemaisTV.br@SD" tvg-logo="https://i.imgur.com/Md3xibE.png" group-title="VARIOS",Demais TV (720p)
 https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/playlist.m3u8
 
+#EXTINF:-1 tvg-id="DeporTV.ar@SD" tvg-logo="https://i.imgur.com/THk9ARS.png" group-title="VARIOS",DeporTV (1080p)
+http://181.209.105.115:2525/play/deportv/index.m3u8
+
+#EXTINF:-1 tvg-id="DeporTV.ar@SD" tvg-logo="https://i.imgur.com/THk9ARS.png" group-title="VARIOS",DeporTV (1080p)
+http://181.209.105.115:2525/play/deportv/index.m3u8
+
 #EXTINF:-1 tvg-id="DespertarTV.br@HD" tvg-logo="https://res.cloudinary.com/dpkehkbpv/image/upload/v1721839192/logo/mixtv/despertar_tv_ieb2l3.png" group-title="VARIOS",Despertar TV (720p)
 https://br.conectmy.com.br/DespertarTV/index.m3u8
 
@@ -2189,8 +2205,8 @@ http://38.187.7.252:8000/play/a03d/index.m3u8
 #EXTINF:-1 tvg-id="DSports.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/DirecTV_Sports_Latin_America_%282018%29.png/960px-DirecTV_Sports_Latin_America_%282018%29.png" group-title="VARIOS",DSports (1080p)
 http://38.187.7.252:8000/play/a03d/index.m3u8
 
-#EXTINF:-1 tvg-id="DSports2.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/DIRECTV_Sports_2_Latin_America_%282018%29.svg/960px-DIRECTV_Sports_2_Latin_America_%282018%29.svg.png" group-title="VARIOS",DSports 2
-http://138.121.113.175:8000/play/a0ca/index.m3u8
+#EXTINF:-1 tvg-id="DSports2.us@Panregional" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/DIRECTV_Sports_2_Latin_America_%282018%29.svg/960px-DIRECTV_Sports_2_Latin_America_%282018%29.svg.png" group-title="VARIOS",DSports 2 (1080p)
+http://187.102.208.209:8000/play/a0bq/index.m3u8
 
 #EXTINF:-1 tvg-id="DTV.pe@SD" tvg-logo="https://i.imgur.com/OSvegAq.png" group-title="VARIOS",DTV (Peru) (720p)
 https://live-evg7.tv360.bitel.com.pe/bitel/sabormixtvSRT/playlist.m3u8
@@ -2366,6 +2382,12 @@ https://v1.tustreaming.cl/emociontv/index.m3u8
 #EXTINF:-1 tvg-id="EnLineaMaule.cl@SD" tvg-logo="https://enlineamaule.cl/wp-content/uploads/2025/08/En-linea-Maule841351465.png" group-title="VARIOS",En Linea Maule (720p)
 https://v2.tustreaming.cl/enlineamauletv/index.m3u8
 
+#EXTINF:-1 tvg-id="Encuentro.ar@SD" tvg-logo="https://i.imgur.com/uBBZR1X.png" group-title="VARIOS",Encuentro (720p)
+http://138.59.227.20:8000/play/a05s/index.m3u8
+
+#EXTINF:-1 tvg-id="Encuentro.ar@SD" tvg-logo="https://i.imgur.com/uBBZR1X.png" group-title="VARIOS",Encuentro (720p)
+http://138.59.227.20:8000/play/a05s/index.m3u8
+
 #EXTINF:-1 tvg-id="EnerGeekFAN.cl@SD" tvg-logo="https://cdn.energeek.cl/logos/EG-Fan-2025_pfp.png" group-title="VARIOS",EnerGeek FAN (1080p)
 https://backend.energeek.cl/webtv/egfanweb/index.m3u8?token=ZZDemoIPTVGH
 
@@ -2420,22 +2442,22 @@ http://45.181.122.46:8090/play/a01m
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 4)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://streamtp-golden1.click/
-https://99.domhsd.com/global/espnpremium/index.m3u8?token=e08d1147c6af4280a525694add3583d3ca1f9381-80-1790767214-1790713214&ip=104.209.10.232|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://17.domhsd.com/global/espnpremium/index.m3u8?token=8dc50011b8a610fae99d3ce5d16256ca1262cbae-34-1790777974-1790723974&ip=135.232.211.208|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 5)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://streamxhd.com/
-https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=104.209.10.232&token=cec0c5e9a291ee8132393521365e4825e254e454-f8-1790767219-1790713219|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=135.232.211.208&token=d71ed8aacb54ec054b2c18a0d4278871b9b6bb7c-70-1790777978-1790723978|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 6)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://la18hd.su/
-https://a2lja3m.fubo18.com/espnpremium/mono.m3u8?token=9b8edabd2666410ab3e5335f304e9b6b4d7a1404-e0-1790739324-1790721324|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://yxdlc29tzq.fubo18.com/espnpremium/mono.m3u8?token=28bff0b0458da51e0d00001b2ac4e715f104c294-f-1790750083-1790732083|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 7)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://streamxhd.com/
-https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=104.209.10.232&token=3f4e46df05cb54717d03c5ef8043d078f99315b9-6c-1790767236-1790713236|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=135.232.211.208&token=6a6f0c6d02da6f70daba84f260a2708cba6ed09d-50-1790777986-1790723986|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 8)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
@@ -4327,11 +4349,11 @@ https://vcp.myplaytv.com/oxigenotv/oxigenotv/playlist.m3u8
 #EXTINF:-1 tvg-id="OzonoTV.pe@SD" tvg-logo="https://i.imgur.com/Wkdibpv.png" group-title="VARIOS",Ozono TV (720p)
 https://live-evg8.tv360.bitel.com.pe/bitel/ozonotv/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Pakapaka.ar@SD" tvg-logo="https://i.imgur.com/GJbRWwH.png" group-title="VARIOS",Pakapaka
-https://xyktmobile00.s.gy/PPV910_PAKAKA_ARG
+#EXTINF:-1 tvg-id="Pakapaka.ar@SD" tvg-logo="https://i.imgur.com/GJbRWwH.png" group-title="VARIOS",Pakapaka (1080p)
+http://181.209.105.115:2525/play/pakapaka/index.m3u8
 
-#EXTINF:-1 tvg-id="Pakapaka.ar@SD" tvg-logo="https://i.imgur.com/GJbRWwH.png" group-title="VARIOS",Pakapaka
-https://xyktmobile00.s.gy/PPV910_PAKAKA_ARG
+#EXTINF:-1 tvg-id="Pakapaka.ar@SD" tvg-logo="https://i.imgur.com/GJbRWwH.png" group-title="VARIOS",Pakapaka (1080p)
+http://181.209.105.115:2525/play/pakapaka/index.m3u8
 
 #EXTINF:-1 tvg-id="PalenqueTV.bo@SD" tvg-logo="https://i.imgur.com/wAIBvaO.png" group-title="VARIOS",Palenque TV (576p)
 http://15.204.246.24:8080/PalenqueTVSD/index.m3u8
@@ -5668,6 +5690,9 @@ http://45.181.122.46:8090/play/a00h
 
 #EXTINF:-1 tvg-id="SPCCanal15.bo@SD" tvg-logo="https://i.imgur.com/8GzjELt.jpeg" group-title="VARIOS",SPC Canal 15 (720p)
 https://tv.centaurychile.com/magicatv/streams/22AdscM3Y6Un17Zo4747081346569358.m3u8
+
+#EXTINF:-1 tvg-id="SporTV.br@SD" tvg-logo="https://i.postimg.cc/gr9x3z71/Spor-TV-2021.png" group-title="VARIOS",SporTV (1080p)
+http://195.178.110.110/sportv/index.m3u8
 
 #EXTINF:-1 tvg-id="SporTV3.br@SD" tvg-logo="https://i.imgur.com/mWOR8pi.png" group-title="VARIOS",SporTV 3 (720p)
 http://170.83.49.66:8083/SPORTV3HD/index.m3u8
@@ -7219,6 +7244,9 @@ http://45.162.193.35/ZONALATINA/index.m3u8
 
 #EXTINF:-1 tvg-id="ZonaPlayTV.cl@SD" tvg-logo="https://i.imgur.com/GewcpHv.png" group-title="VARIOS",Zona Play TV (720p)
 https://tv1.mediacp.eu:3131/live/dilxbgxylive.m3u8
+
+#EXTINF:-1 tvg-id="ZonaSurTV.cl@SD" tvg-logo="https://i.imgur.com/b1OtwDg.png" group-title="VARIOS",Zona Sur TV (1080p)
+http://170.79.235.133:8002/play/a063/index.m3u8
 
 #EXTINF:-1 tvg-id="Zoom.co@SD" tvg-logo="https://i.imgur.com/euy5zp6.png" group-title="VARIOS",Zoom (Colombia) (1080p)
 http://138.121.15.230:9002/ZOOM/index.m3u8
