@@ -2442,22 +2442,22 @@ http://45.181.122.46:8090/play/a01m
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 4)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://streamtp-golden1.click/
-https://17.domhsd.com/global/espnpremium/index.m3u8?token=7e7fac0ffaf87183051255806bc5198c871ee2c4-e5-1790842671-1790788671&ip=40.76.191.131|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://17.domhsd.com/global/espnpremium/index.m3u8?token=f59c6d1e560a5871db35c453f467772a5b552c8a-41-1790855022-1790801022&ip=4.242.45.19|Referer=https://streamtp-golden1.click/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 5)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://streamxhd.com/
-https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=40.76.191.131&token=c0258ee7fc7e68be9e9aa1027363fd37b9e9d977-a6-1790842675-1790788675|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=4.242.45.19&token=a892e7c266961e38773f82fd3fd7ca453561512a-48-1790855028-1790801028|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 6)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://la18hd.su/
-https://am91cm5leq.fubo18.com/espnpremium/mono.m3u8?token=28a1ee034692a1a758e4983897321bcc68bc0b6c-37-1790814779-1790796779|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://bmf0aw9u.fubo18.com/espnpremium/mono.m3u8?token=44fe07d3850abf91d0caa6386f6ba919d7a8ba79-f2-1790827133-1790809133|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 7)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://streamxhd.com/
-https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=40.76.191.131&token=fbe1c86af079170aa53f89cf118ba5c95b8d0594-38-1790842683-1790788683|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=4.242.45.19&token=c307f8a4818939971b83a76cf591453c0031e666-d2-1790855046-1790801046|Referer=https://streamxhd.com/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (OPCION 8)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
@@ -3179,10 +3179,10 @@ https://tv.arkeo.cl:1936/enlacetv1/enlacetv1/playlist.m3u8
 http://cdn1tlinkgo.tlink.cl/laredhd/mono.m3u8
 
 #EXTINF:-1 group-title="VARIOS",La Red HD
-http://45.181.122.46:8090/play/a00n
+http://45.181.122.46:8090/play/a03w
 
 #EXTINF:-1 group-title="VARIOS",La Red HD
-http://45.181.122.46:8090/play/a03w
+http://45.181.122.46:8090/play/a00n
 
 #EXTINF:-1 tvg-id="LaTele.pe@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/LaTele_Per%C3%BA_2018_Logo.png/960px-LaTele_Per%C3%BA_2018_Logo.png" group-title="VARIOS",La Tele (1080p)
 http://190.93.224.42/LA-TELE/index.m3u8
@@ -6122,6 +6122,9 @@ https://videohd.live:19360/8008/8008.m3u8
 #EXTINF:-1 tvg-id="TLEstrella.bo@SD" tvg-logo="" group-title="VARIOS",TL Estrella (720p)
 https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/playlist.m3u8
 
+#EXTINF:-1 group-title="VARIOS",Tlnovelas
+http://45.181.122.46:8090/play/a05m
+
 #EXTINF:-1 tvg-id="TlnovelasLatinAmerica.mx@SD" tvg-logo="https://i.imgur.com/Rvm38Mu.png" group-title="VARIOS",Tlnovelas Latin America (1080p)
 http://209.14.115.253:8081/TELENOVELAS/index.m3u8
 
@@ -6156,10 +6159,10 @@ http://190.93.224.42/TNT-NOVELAS/index.m3u8
 http://45.162.64.114/TNT_NOVELAS/index.m3u8
 
 #EXTINF:-1 group-title="VARIOS",TNT Novelas HD
-http://45.181.122.46:8090/play/a04s
+http://45.181.122.46:8090/play/a00x
 
 #EXTINF:-1 group-title="VARIOS",TNT Novelas HD
-http://45.181.122.46:8090/play/a00x
+http://45.181.122.46:8090/play/a04s
 
 #EXTINF:-1 group-title="VARIOS",TNT Series HD
 http://45.181.122.46:8090/play/a01k
