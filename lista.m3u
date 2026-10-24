@@ -1265,6 +1265,10 @@ https://vivo.solumedia.com:19360/cardinal/cardinal.m3u8
 #EXTINF:-1 tvg-id="Canal99Miramar.ar@SD" tvg-logo="https://i.imgur.com/PblsZxz.jpeg" group-title="VARIOS",Canal 99 Miramar
 https://vivo.solumedia.com:19360/cardinal/cardinal.m3u8
 
+#EXTINF:-1 tvg-id="CanalALMA.uy@SD" tvg-logo="https://i.imgur.com/rB7iFUF.jpg" http-referrer="https://canalalma.tv" group-title="VARIOS",Canal ALMA
+#EXTVLCOPT:http-referrer=https://canalalma.tv
+https://stmv1.voxtvhd.com.br/canalalmatv/canalalmatv/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI-99BLU.png" group-title="ARGENTINA",Canal Blu - 29.1TV - San Juan  TV - SJ San Juan
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSJSAN_J__29.1CANALBLU__
 
@@ -1405,6 +1409,10 @@ http://170.82.202.31/OFF/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI--C11M.png" group-title="ARGENTINA",Canal Once - 11 TV - Machagai - CC Chaco
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCCMACHA___11_CANALONCE_
+
+#EXTINF:-1 tvg-id="CanalOncePlus.uy@SD" tvg-logo="https://i.imgur.com/TYiMGUD.png" http-referrer="https://canal11.uy" group-title="VARIOS",Canal Once Plus
+#EXTVLCOPT:http-referrer=https://canal11.uy
+https://5e50264bd6766.streamlock.net/canal11ury/videocanal11ury/playlist.m3u8
 
 #EXTINF:-1 tvg-id="CanalOracionConSon.co@SD" tvg-logo="https://i.imgur.com/rfnFqU3.png" group-title="VARIOS",Canal Oracion Con Son (1080p)
 https://canal.mediaserver.com.co/live/oracionconson.m3u8
@@ -2078,6 +2086,9 @@ http://158.172.155.130:8000/play/a09y/index.m3u8
 
 #EXTINF:-1 tvg-id="DeporTV.ar@SD" tvg-logo="https://i.imgur.com/THk9ARS.png" group-title="VARIOS",DeporTV (1080p)
 http://158.172.155.130:8000/play/a09y/index.m3u8
+
+#EXTINF:-1 tvg-id="DesdeElSurTV.uy@SD" tvg-logo="https://i.imgur.com/y3vNkEU.jpeg" group-title="VARIOS",Desde El Sur TV
+https://stmv.gmpro.top/surtv/surtv/playlist.m3u8
 
 #EXTINF:-1 tvg-id="DespertarTV.br@HD" tvg-logo="https://res.cloudinary.com/dpkehkbpv/image/upload/v1721839192/logo/mixtv/despertar_tv_ieb2l3.png" group-title="VARIOS",Despertar TV (720p)
 https://br.conectmy.com.br/DespertarTV/index.m3u8
@@ -3053,6 +3064,9 @@ https://unlimited1-cl-isp.dps.live/laclavetv/laclavetv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="LaComarcaTV.cl@SD" tvg-logo="https://cdn.m3u.cl/logo/1698_La_Comarca_TV.png" group-title="VARIOS",La Comarca TV (720p)
 https://v2.tustreaming.cl/lcomarcatv/index.m3u8
 
+#EXTINF:-1 tvg-id="LaElegidaTelevision.uy@SD" tvg-logo="https://i.imgur.com/zdrbjDc.png" group-title="VARIOS",La Elegida Television
+https://stmv.gmpro.top/laelegidatv/laelegidatv/playlist.m3u8
+
 #EXTINF:-1 tvg-id="LaFabulosaTV.pe@SD" tvg-logo="https://i.imgur.com/GjME5H0.png" group-title="VARIOS",La Fabulosa TV (720p)
 https://eu1.servers10.com:8081/8004/index.m3u8
 
@@ -3850,6 +3864,9 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARCOLOS_C_____IMILENNIOTV
 
 #EXTINF:-1 tvg-id="Millenium109FM.pe@SD" tvg-logo="https://i.imgur.com/sfNL6Bv.png" group-title="VARIOS",Millenium 109 FM
 https://videoserver.tmcreativos.com:19360/nqvnhujhrx/nqvnhujhrx.m3u8
+
+#EXTINF:-1 tvg-id="MisionVidaTV.uy@SD" tvg-logo="https://i.imgur.com/8JgBuTm.png" group-title="VARIOS",Mision Vida TV
+https://5bf8041cb3fed.streamlock.net/zoefm/zoefm/playlist.m3u8
 
 #EXTINF:-1 tvg-id="MisionesCuatro.ar@SD" tvg-logo="https://i.imgur.com/HXRpRlK.png" group-title="VARIOS",Misiones Cuatro
 https://iptv.ixfo.com.ar:30443/live-HD/MISIONES4/playlist.m3u8
@@ -6677,6 +6694,9 @@ https://644398c.ha.azioncdn.net/primary/tvuniversal_480p.sdp/playlist.m3u8
 
 #EXTINF:-1 tvg-id="TVUniversalEcuador.ec@SD" tvg-logo="https://i.imgur.com/TIsk5zN.png" group-title="ECUADOR",TV Universal Ecuador (720p)
 https://cdn.mycloudstream.io/hls/live/broadcast/uwcedjt2/index.m3u8
+
+#EXTINF:-1 tvg-id="TVUniversalUruguay.uy@SD" tvg-logo="https://i.imgur.com/KD4aZ7W.jpeg" group-title="URUGUAY",TV Universal Uruguay
+https://stream.universal.org.uy/hls/0/stream.m3u8
 
 #EXTINF:-1 tvg-id="TVUniversidad.ar@SD" tvg-logo="https://i.imgur.com/0MXsQ25.png" group-title="VARIOS",TV Universidad
 https://stratus.stream.cespi.unlp.edu.ar/hls/tvunlp.m3u8
