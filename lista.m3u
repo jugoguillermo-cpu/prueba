@@ -585,6 +585,9 @@ http://138.121.15.230:9002/BETHEL/index.m3u8
 #EXTINF:-1 tvg-id="BethelTV.pe@SD" tvg-logo="https://i.imgur.com/zCVh765.png" group-title="VARIOS",Bethel TV (720p)
 https://alfa.betheltv.tv/srt/3_abr/playlist.m3u8
 
+#EXTINF:-1 tvg-id="BicolorPlusPremium.pe@SD" tvg-logo="https://img-evg3.tv360.bitel.com.pe/peru-image/2026/09/24/00/1790183086681/1dff7002a22a_640_360.png" group-title="VARIOS",Bicolor+ Premium [Geo-blocked]
+https://live-evg10.tv360.bitel.com.pe/bitel/bicolorpremium_abr/bitel/bicolorpremium_720p/chunks.m3u8
+
 #EXTINF:-1 tvg-id="BioBioTV.cl@SD" tvg-logo="https://i.imgur.com/lhglEUP.png" group-title="VARIOS",Bio Bio TV (1080p)
 https://redirector.rudo.video/hls-video/339f69c6122f6d8f4574732c235f09b7683e31a5/bbtv/bbtv.smil/playlist.m3u8
 
@@ -659,9 +662,6 @@ https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8
 
 #EXTINF:-1 tvg-id="BTATV.ve@SD" tvg-logo="https://i.imgur.com/vygOosC.png" group-title="VARIOS",BTA TV (720p)
 https://cloud.fastchannel.es/manifiest/hls/prog9/btatv.m3u8
-
-#EXTINF:-1 tvg-id="BTLTV.nl@SD" tvg-logo="https://yt3.googleusercontent.com/ytc/APkrFKZYgQTsDhkbaqmPRCPZIf0UgZqF1wa6aG2eo8ti=s176-c-k-c0x00ffffff-no-rj-mo" group-title="VARIOS",BTL TV (Netherlands) (720p)
-https://livecdn.live247stream.com/btl/tv/playlist.m3u8
 
 #EXTINF:-1 tvg-id="BuenisimaRadioTV.co@SD" tvg-logo="https://i.imgur.com/URKDlOZ.png" group-title="VARIOS",Buenisima Radio TV
 https://canal.mediaserver.com.co/live/buenisimatv.m3u8
@@ -2774,6 +2774,9 @@ http://45.171.64.30:6060/play/a00i/index.m3u8
 #EXTINF:-1 tvg-id="HBOFamilyLatinAmerica.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/HBO_Family.svg/960px-HBO_Family.svg.png" group-title="VARIOS",HBO Family Latin America (1080p)
 http://45.171.64.30:6060/play/a00k/index.m3u8
 
+#EXTINF:-1 tvg-id="HBOPopLatinAmerica.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/HBO_Pop.svg/960px-HBO_Pop.svg.png" group-title="VARIOS",HBO Pop Latin America (1080p) [Geo-blocked]
+http://15.204.246.24:8080/HBOPOPHD/index.m3u8
+
 #EXTINF:-1 tvg-id="HBOPlusLatinAmerica.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Logohboplus2019.svg/960px-Logohboplus2019.svg.png" group-title="VARIOS",HBO+ Latin America (1080p)
 http://45.134.141.161:2200/ARG/HBO_HD/index.m3u8
 
@@ -3376,6 +3379,10 @@ https://video.welltecnologia.com.br/tvguarapari/tvguarapari/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36
 https://canalmasuruguay.com/hls/720p/index.m3u8
 
+#EXTINF:-1 tvg-id="DreamWorksChannelLatinAmerica.us@Panregional" tvg-logo="" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36" group-title="VARIOS",DreamWorks Channel Latin America (1080p)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+https://barinaslive1.boldmss.com/DREAMWORKS/DREAMWORKS.isml/index.m3u8
+
 #EXTINF:-1 tvg-id="CanalTROPlus.co@SD" tvg-logo="https://i.imgur.com/Vs1H6bK.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160" group-title="VARIOS",Canal TRO + (1080p) [Geo-blocked]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36 CrKey/1.44.191160
 https://liveingesta118.cdnmedia.tv/canaltro2live/smil:troplus.smil/playlist.m3u8
@@ -3755,8 +3762,8 @@ https://play.mbcbrasil.tv.br/playlist.m3u8
 #EXTINF:-1 tvg-id="MCITelevision.co@SD" tvg-logo="https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg" group-title="VARIOS",MCI Television (1080p)
 https://video.ejeserver.com/live/mcitelevision.m3u8
 
-#EXTINF:-1 tvg-id="MCMPop.fr@SD" tvg-logo="https://i.imgur.com/j31lBL7.png" group-title="VARIOS",MCM Pop (580p)
-http://188.115.15.121:8000/play/a014
+#EXTINF:-1 tvg-id="MCMPop.fr@SD" tvg-logo="https://i.imgur.com/j31lBL7.png" group-title="VARIOS",MCM Pop
+http://176.65.153.78:8201/play/a070/index.m3u8
 
 #EXTINF:-1 tvg-id="MCMTop.fr@SD" tvg-logo="https://i.imgur.com/EVtWQLd.png" group-title="VARIOS",MCM Top (France)
 http://185.228.163.146:8000/play/a00g/index.m3u8
@@ -3872,8 +3879,8 @@ http://190.128.214.97:64333/play/a046/index.m3u8
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI--MTVC.png" group-title="ARGENTINA",Mosconi TVC - 7CTV - General Mosconi - SA Salta
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSAGENER____7CMOSCONITVC
 
-#EXTINF:-1 tvg-id="Motorvision.de@SD" tvg-logo="https://i.imgur.com/v4kj8pI.png" group-title="VARIOS",Motorvision (1080p)
-https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8
+#EXTINF:-1 tvg-id="Motorvision.de@SD" tvg-logo="https://i.imgur.com/v4kj8pI.png" group-title="VARIOS",Motorvision (1080i)
+https://mvg-mv.otteravision.com/mvg/mv/mv_1080p.m3u8
 
 #EXTINF:-1 tvg-id="MovistarDeportes.pe@SD" tvg-logo="https://i.imgur.com/Zt3iE86.png" group-title="VARIOS",Movistar Deportes (1080p)
 http://170.244.209.30:8000/play/a1i8/index.m3u8
@@ -4165,7 +4172,7 @@ https://jmp2.uk/plu-6824cda00101510f9eeaa011.m3u8
 https://jmp2.uk/plu-6824ce10c5d53e1351ceb8d1.m3u8
 
 #EXTINF:-1 tvg-id="NickelodeonLatinAmerica.us@Panregional" tvg-logo="https://i.imgur.com/E84jnP8.png" group-title="VARIOS",Nickelodeon Latin America (1080p)
-http://15.204.246.24:8080/NickHD/index.m3u8
+http://181.78.79.131:8000/play/a0qm
 
 #EXTINF:-1 tvg-id="NickelodeonTeen.us@BR" tvg-logo="https://images.pluto.tv/channels/60f5fabf0721880007cd50e3/colorLogoPNG_1767888207915.png" group-title="VARIOS",Nickelodeon Teen (720p)
 https://jmp2.uk/plu-60f5fabf0721880007cd50e3.m3u8
@@ -5473,6 +5480,9 @@ https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8
 #EXTINF:-1 tvg-id="SBTRondonopolis.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d5/Logotipo_do_SBT_Rondon%C3%B3polis.png" group-title="VARIOS",SBT Rondonopolis (720p)
 https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8
 
+#EXTINF:-1 tvg-id="SenadoTV.py@SD" tvg-logo="https://i.imgur.com/LzgODUS.png" group-title="VARIOS",Senado TV (576p)
+https://vid.hls.protv.ro/liveibu6/liveibu6_highw/index.m3u8?1
+
 #EXTINF:-1 tvg-id="SenalColombia.co@SD" tvg-logo="https://i.imgur.com/Y9x16vl.png" group-title="VARIOS",Senal Colombia (1080p)
 http://138.121.15.230:9002/SENAL-COLOMBIA/index.m3u8
 
@@ -5796,6 +5806,9 @@ http://45.224.97.181:9999/TC/index.m3u8
 
 #EXTINF:-1 tvg-id="TCM10HD.br@SD" tvg-logo="https://i.imgur.com/aMuMVvB.png" group-title="VARIOS",TCM 10 HD (1080p)
 https://live.tcm10.com.br/tcm10hd/stream.m3u8
+
+#EXTINF:-1 tvg-id="TCMLatinAmerica.us@Panregional" tvg-logo="https://i.imgur.com/QpDkrmT.png" group-title="VARIOS",TCM Latin America (1080p)
+http://181.78.14.26:4000/play/a04d/index.m3u8
 
 #EXTINF:-1 tvg-id="TCMLatinAmerica.us@Chile" tvg-logo="https://i.imgur.com/QpDkrmT.png" group-title="CHILE",TCM Latin America Chile (1080p)
 https://streaming.onnethn.com/TCM_HD/playlist.m3u8
@@ -6756,8 +6769,8 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA_____CTVE24H____
 #EXTINF:-1 tvg-id="TVEBahia.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/960px-TVE_Bahia_logo.svg.png" group-title="VARIOS",TVE Bahia (1080p)
 http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
 
-#EXTINF:-1 tvg-id="TVEInternacionalAmerica.es@SD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="VARIOS",TVE Internacional America
-http://116.121.59.72:9981/stream/channel/75f703b52ec2465e4ed2934b98f0f77a
+#EXTINF:-1 tvg-id="TVEInternacionalAmerica.es@SD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="VARIOS",TVE Internacional America (720p)
+https://barinaslive1.boldmss.com/TVE/TVE.isml/index.m3u8
 
 #EXTINF:-1 tvg-id="TVEInternacionalAmerica.es@HD" tvg-logo="https://i.ibb.co/RpKLCMvp/tve.png" group-title="VARIOS",TVE Internacional America HD (1080p) [Geo-blocked]
 https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_1080.m3u8
