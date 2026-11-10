@@ -792,6 +792,12 @@ https://stream.arcast.net:4443/canal10/ngrp:canal10_all/playlist.m3u8
 #EXTINF:-1 tvg-id="Canal10Cordoba.ar@SD" tvg-logo="https://i.imgur.com/87WCHtd.png" group-title="VARIOS",Canal 10 Cordoba
 https://stream.arcast.net:4443/canal10/ngrp:canal10_all/playlist.m3u8
 
+#EXTINF:-1 tvg-id="Canal10Goya.ar@SD" tvg-logo="https://i.ibb.co/cySdXxP/unnamed-5.png" group-title="VARIOS",Canal 10 Goya (1080p)
+https://tv.streamcasthd.com:3637/live/canal10goyalive.m3u8
+
+#EXTINF:-1 tvg-id="Canal10Goya.ar@SD" tvg-logo="https://i.ibb.co/cySdXxP/unnamed-5.png" group-title="VARIOS",Canal 10 Goya (1080p)
+https://tv.streamcasthd.com:3637/live/canal10goyalive.m3u8
+
 #EXTINF:-1 tvg-id="Canal10MardelPlata.ar@SD" tvg-logo="https://i.imgur.com/bq29sfG.png" group-title="MAR DEL PLATA",Canal 10 Mar del Plata
 https://g1.mc-hor.transport.edge-access.net/a12/ngrp:canal10mdq-100044_all/Playlist.m3u8?sense=true
 
@@ -914,6 +920,14 @@ https://edge.enhdtv.com/nexthd/index.m3u8
 #EXTINF:-1 tvg-id="Canal2Quellon.cl@SD" tvg-logo="https://i.imgur.com/MOwLCwT.png" group-title="VARIOS",Canal 2 Quellon (1080p) [Not 24/7]
 https://pantera1-100gb-cl-movistar.dps.live/tvquellon/tvquellon.smil/playlist.m3u8
 
+#EXTINF:-1 tvg-id="Canal20VillaMaria.ar@SD" tvg-logo="https://i.imgur.com/PaQH5JM.png" http-referrer="https://www.canal20villamaria.com.ar/" group-title="VARIOS",Canal 20 Villa Maria (1080p)
+#EXTVLCOPT:http-referrer=https://www.canal20villamaria.com.ar/
+https://stmvideo3.livecastv.com/canal20/canal20/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Canal20VillaMaria.ar@SD" tvg-logo="https://i.imgur.com/PaQH5JM.png" http-referrer="https://www.canal20villamaria.com.ar/" group-title="VARIOS",Canal 20 Villa Maria (1080p)
+#EXTVLCOPT:http-referrer=https://www.canal20villamaria.com.ar/
+https://stmvideo3.livecastv.com/canal20/canal20/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI21POSA.png" group-title="ARGENTINA",Canal 21 - 21 TV - Posadas  TV - MI Misiones
 https://radiosargentina.com.ar/php/artvDI.php?id=ARMIPOSAD___21_CANAL21___
 
@@ -970,6 +984,14 @@ https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA__26.1CANAL26___
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI---C3T.png" group-title="ARGENTINA",Canal 3 - 3CTV - Tacural - ST Santa Fe
 https://radiosargentina.com.ar/php/artvDI.php?id=ARSTTACUR____3CCANAL3____
+
+#EXTINF:-1 tvg-id="Canal3Arroyito.ar@SD" tvg-logo="https://i.imgur.com/FHVdMwg.jpeg" http-referrer="https://canal3.cespalarroyito.coop/" group-title="VARIOS",Canal 3 Arroyito (1080p)
+#EXTVLCOPT:http-referrer=https://canal3.cespalarroyito.coop/
+https://envivo.cespalarroyito.coop/live/Canal3Arroyito.m3u8
+
+#EXTINF:-1 tvg-id="Canal3Arroyito.ar@SD" tvg-logo="https://i.imgur.com/FHVdMwg.jpeg" http-referrer="https://canal3.cespalarroyito.coop/" group-title="VARIOS",Canal 3 Arroyito (1080p)
+#EXTVLCOPT:http-referrer=https://canal3.cespalarroyito.coop/
+https://envivo.cespalarroyito.coop/live/Canal3Arroyito.m3u8
 
 #EXTINF:-1 tvg-id="Canal3Formosa.ar@SD" tvg-logo="https://i.imgur.com/rVDrNIy.png" group-title="VARIOS",Canal 3 Formosa
 https://stmvideo6.livecastv.com/agenfor/agenfor/playlist.m3u8
@@ -1261,6 +1283,14 @@ http://coninfo.net:1935/9linklivert/smil:9linkmultibr.smil/playlist.m3u8
 
 #EXTINF:-1 tvg-id="Canal9Resistencia.ar@SD" tvg-logo="https://i.imgur.com/xqgRFpC.png" group-title="VARIOS",Canal 9 Resistencia (720p)
 http://coninfo.net:1935/9linklivert/smil:9linkmultibr.smil/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Canal9RioCuarto.ar@SD" tvg-logo="https://i.imgur.com/0CmJqGe.png" http-referrer="https://canal9riocuarto.com.ar/" group-title="VARIOS",Canal 9 Rio Cuarto (1080p)
+#EXTVLCOPT:http-referrer=https://canal9riocuarto.com.ar/
+https://tv.streamcasthd.com:3249/live/canal9riocuartolive.m3u8
+
+#EXTINF:-1 tvg-id="Canal9RioCuarto.ar@SD" tvg-logo="https://i.imgur.com/0CmJqGe.png" http-referrer="https://canal9riocuarto.com.ar/" group-title="VARIOS",Canal 9 Rio Cuarto (1080p)
+#EXTVLCOPT:http-referrer=https://canal9riocuarto.com.ar/
+https://tv.streamcasthd.com:3249/live/canal9riocuartolive.m3u8
 
 #EXTINF:-1 tvg-logo="https://telechancho.github.io/tvlogos/9Televida.png" group-title="VARIOS",Canal 9 Televida Mendoza
 https://unlimited1-buenosaires.dps.live/televidaar/televidaar.smil/playlist.m3u8
@@ -2298,9 +2328,6 @@ https://stmv3.voxtvhd.com.br/conex2/conex2/playlist.m3u8
 #EXTINF:-1 tvg-id="El3deConce.cl@SD" tvg-logo="https://i.imgur.com/KvsrWyE.png" group-title="VARIOS",El 3 de Conce (1080p)
 https://5ff3d9babae13.streamlock.net/xedkektnqj/xedkektnqj/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VIELCALE.png" group-title="ARGENTINA",El Caletense - 98.5 TV - Caleta Olivia - SC Santa Cruz
-https://radiosargentina.com.ar/php/artvDI.php?id=ARSCCALET_98.5_ELCALETENS
-
 #EXTINF:-1 tvg-id="ElCanalFeliz.cl@SD" tvg-logo="https://i.imgur.com/UlmYraS.png" group-title="VARIOS",El Canal Feliz (720p)
 http://streaming.multicontenidos.cl:8081/live/canalfeliz/playlist.m3u8
 
@@ -3135,6 +3162,9 @@ http://190.93.224.42/LA-TELE/index.m3u8
 
 #EXTINF:-1 tvg-id="LaTeleTuya.ve@SD" tvg-logo="https://i.ibb.co/vvqk2hw/LOGO-HORIZONTAL-text.png" group-title="VARIOS",La Tele Tuya (576p)
 http://181.78.8.199:8000/play/a0fs/index.m3u8
+
+#EXTINF:-1 tvg-id="LaTremendaTV.pe@TDT62" tvg-logo="https://i.pinimg.com/736x/46/24/d3/4624d356bfdaa6254c2597f686108841.jpg" group-title="VARIOS",La Tremenda TV (1080p)
+https://iptv.latremenda.pe/LaTremendaTv/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VITRIBUN.png" group-title="ARGENTINA",La Tribuna - 103.5 TV - Mercedes - BA Buenos Aires
 https://radiosargentina.com.ar/php/artvDI.php?id=ARBAMERCE103.5_LATRIBUNA_
@@ -6264,6 +6294,9 @@ http://181.78.79.131:8000/play/a0q9
 
 #EXTINF:-1 tvg-id="TNTSportsPremium.cl@ArgentinaHD" tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/TNT_Sports_Premium_%28Argentina%29.png/960px-TNT_Sports_Premium_%28Argentina%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail" group-title="ARGENTINA",TNT Sports Premium ArgentinaHD (1080p)
 http://181.78.79.131:8000/play/a0q9
+
+#EXTINF:-1 tvg-id="TNTSportsPremium.cl@HD" tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/TNT_Sports_Premium_%28Argentina%29.png/960px-TNT_Sports_Premium_%28Argentina%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail" group-title="ARGENTINA",TNT Sports Premium HD (1080p)
+http://205.235.6.29:8000/play/a104/index.m3u8
 
 #EXTINF:-1 tvg-id="TOIGlobal.in@SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/npnhm84gz9.png" group-title="VARIOS",TOI Global (1080p)
 https://live.sli.ke/live/npnhm84gz9/master.m3u8
