@@ -7,7 +7,7 @@ from playwright.async_api import async_playwright
 from github import Github, Auth
 from github import GithubException
 
-# Habilitar soporte para bucles anidados en Jupyter/Anaconda
+# Habilitar soporte para bucles anidados
 nest_asyncio.apply()
 
 # ==========================================
@@ -25,7 +25,7 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"
 
-# Páginas fuente de deportes actualizadas y operativas
+# Páginas fuente de deportes operativas
 FUENTES_DEPORTES = {
     "ESPN PREMIUM": "https://tvlibre.st/en-vivo/espn-premium/",
     "TNT SPORTS": "https://tvlibre.st/en-vivo/tnt-sports/",
@@ -68,7 +68,7 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES (SEGURO)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES
 # ==========================================
 
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
@@ -79,7 +79,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
         await page.goto(url_fuente, wait_until="load", timeout=30000)
         await asyncio.sleep(2)
 
-        # Extracción segura de atributos para evitar bloqueos por overlays publicitarios
         botones_data = await page.evaluate("""() => {
             const botones = document.querySelectorAll("a.btn-md");
             return Array.from(botones).map((btn, index) => {
@@ -91,7 +90,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
             });
         }""")
 
-        print(f"[*] [{nombre_canal}] Se encontraron {len(botones_data)} opciones en la fuente.")
+        print(f"[*] [{nombre_canal}] Se encontraron {len(botones_data)} opciones.")
 
         for i, op in enumerate(botones_data):
             texto_extra = f" ({op['texto']})" if op['texto'] else f" (OPCION {i+1})"
@@ -187,7 +186,6 @@ async def interceptar_red(response, nombre_canal, stream_encontrado_event, resul
         origin = request_headers.get('origin', '')
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
-        # Formato limpio compatible con VLC y reproductores estándar
         entrada_m3u = f"#EXTINF:-1 group-title=\"DEPORTES ARGENTINA\",{nombre_canal}\n"
         entrada_m3u += f"#EXTVLCOPT:http-user-agent={user_agent}\n"
         if referer:
@@ -204,7 +202,7 @@ def cargar_m3u_existente(ruta_archivo):
     if not os.path.exists(ruta_archivo):
         return canales_viejos
 
-    with open(ruta_archivo, "r", encoding="utf-8") as f:
+    with open(ruta_archivo, "r", encoding="utf-8", errors='ignore') as f:
         lineas = f.readlines()
 
     bloque_actual = ""
@@ -247,7 +245,7 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
         )
 
         for nombre, url_objetivo in diccionario_canales.items():
-            print(f"\n[*] ESCANEANDO: {nombre} ({url_objetivo})")
+            print(f"\n[*] ESCANEANDO: {nombre}")
             page = await context.new_page()
             stream_encontrado_event = asyncio.Event()
 
@@ -267,9 +265,6 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
 
                 if stream_encontrado_event.is_set():
                     canales_finales[nombre] = nuevos_resultados[nombre]
-                else:
-                    if nombre not in canales_finales:
-                        print(f"[!] Sin flujo para '{nombre}'.")
             except Exception as e:
                 print(f"[!] Error en {nombre}: {e}")
             finally:
@@ -279,14 +274,14 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
         await browser.close()
 
     if canales_finales:
-        with open(ruta_archivo_salida, "w", encoding="utf-8") as f:
+        with open(ruta_archivo_salida, "w", encoding="utf-8", newline='\n') as f:
             f.write("#EXTM3U\n")
             for bloque_canal in canales_finales.values():
                 f.write(bloque_canal)
 
 
 # ==========================================
-# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (CORREGIDO PARA VLC)
+# 4. FASE 2: PROCESAR Y UNIFICAR (OPTIMIZADO ANDROID)
 # ==========================================
 
 def normalizar_texto(texto):
@@ -317,7 +312,6 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
             extras = []
             next_idx = i + 1
             
-            # Recoger de forma limpia cualquier directiva extra (#EXTVLCOPT u otras)
             while next_idx < len(lineas) and (lineas[next_idx].startswith("#") or not lineas[next_idx].strip()):
                 l_sig = lineas[next_idx].strip()
                 if l_sig and not l_sig.startswith("#EXTM3U"):
@@ -341,7 +335,6 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
                         categoria = pais
                         break
 
-            # Limpieza y asignación correcta del group-title
             if 'group-title="' in info_canal:
                 inicio = info_canal.find('group-title="') + 13
                 fin = info_canal.find('"', inicio)
@@ -352,7 +345,6 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
             match_nombre = re.search(r',(.+)$', info_canal)
             nombre_canal = match_nombre.group(1).strip() if match_nombre else "Canal Desconocido"
 
-            # Construir el bloque con estructura M3U estricta y limpia
             bloque_partes = [nueva_linea]
             bloque_partes.extend(extras)
             if url_canal:
@@ -366,7 +358,7 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
 
 
 def unificar_todo():
-    print("\n--- FASE 2: Unificando, Categorizando y Ordenando ---")
+    print("\n--- FASE 2: Unificando, Categorizando y Optimizando para Android ---")
     ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
     
     deportes_propios = []
@@ -374,48 +366,46 @@ def unificar_todo():
     otros_canales = []
 
     try:
-        # 1. Canales scrapeados propios
         ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
         if os.path.exists(ruta_temp_scraper):
-            with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
+            with open(ruta_temp_scraper, 'r', encoding='utf-8', errors='ignore') as f:
                 resultado_scraper = procesar_y_categorizar(f.read(), es_nuestro_scraper=True)
                 deportes_propios.extend(resultado_scraper)
 
-        # 2. Listas M3U externas
         for url in URLS_M3U_EXTERNAS:
             print(f"🌐 Descargando externo: {url}")
             try:
                 r = requests.get(url, timeout=10)
                 if r.status_code == 200:
-                    canales_externos = procesar_y_categorizar(r.text, es_nuestro_scraper=False)
+                    contenido_ext = r.content.decode('utf-8', errors='ignore')
+                    canales_externos = procesar_y_categorizar(contenido_ext, es_nuestro_scraper=False)
                     for nombre, bloque, cat in canales_externos:
                         if cat == "DEPORTES ARGENTINA":
                             deportes_externos.append((nombre, bloque))
-                        else:
+                        elif cat == "MAR DEL PLATA" or cat == "ARGENTINA":
                             otros_canales.append((nombre, bloque, cat))
             except Exception as e:
                 print(f"⚠️ Error en URL externa: {e}")
 
-        # Ordenar correctamente
         deportes_propios_ordenados = sorted(deportes_propios, key=lambda x: x[0].upper())
         deportes_externos_ordenados = sorted(deportes_externos, key=lambda x: x[0].upper())
         todos_deportes_arg = deportes_propios_ordenados + deportes_externos_ordenados
 
-        print(f"⚽ Canales en 'DEPORTES ARGENTINA': {len(todos_deportes_arg)} (Propios: {len(deportes_propios_ordenados)}, Externos: {len(deportes_externos_ordenados)})")
+        print(f"⚽ Canales en 'DEPORTES ARGENTINA': {len(todos_deportes_arg)}")
 
         otros_canales.sort(key=lambda x: x[0].upper())
 
-        # Escritura estricta y limpia del archivo M3U final
-        with open(ruta_final, 'w', encoding='utf-8') as outfile:
+        # Escritura estricta UTF-8 optimizada para móviles
+        with open(ruta_final, 'w', encoding='utf-8', newline='\n') as outfile:
             outfile.write("#EXTM3U\n")
             
             for _, bloque, _ in todos_deportes_arg:
-                outfile.write(bloque)
+                outfile.write(bloque.strip() + "\n\n")
 
             for _, bloque, _ in otros_canales:
-                outfile.write(bloque)
+                outfile.write(bloque.strip() + "\n\n")
 
-        print(f"✅ Archivo unificado y corregido guardado en: {ruta_final}")
+        print(f"✅ Archivo optimizado guardado en: {ruta_final}")
         return True
     except Exception as e:
         print(f"❌ Error en unificación: {e}")
@@ -437,13 +427,13 @@ def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo
         g = Github(auth=auth)
         repo = g.get_repo(repo_nombre_completo)
 
-        with open(archivo_local_path, 'r', encoding='utf-8') as f:
+        with open(archivo_local_path, 'r', encoding='utf-8', errors='ignore') as f:
             contenido_nuevo = f.read()
 
         try:
             contents = repo.get_contents(ruta_en_repo)
             if contents.decoded_content.decode('utf-8') != contenido_nuevo:
-                repo.update_file(contents.path, "Update IPTV List (Corregido)", contenido_nuevo, contents.sha)
+                repo.update_file(contents.path, "Update IPTV List (Optimizado Android)", contenido_nuevo, contents.sha)
                 print("🚀 GitHub actualizado con éxito.")
             else:
                 print("ℹ️ El contenido es idéntico.")
