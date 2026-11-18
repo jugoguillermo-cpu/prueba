@@ -2,10 +2,14 @@ import asyncio
 import os
 import re
 import requests
+import urllib3
 import nest_asyncio
 from playwright.async_api import async_playwright
 from github import Github, Auth
 from github import GithubException
+
+# Desactivar advertencias de SSL por certificados autofirmados en fuentes externas
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Habilitar soporte para bucles anidados
 nest_asyncio.apply()
@@ -281,7 +285,7 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
 
 
 # ==========================================
-# 4. FASE 2: PROCESAR Y UNIFICAR (OPTIMIZADO ANDROID)
+# 4. FASE 2: PROCESAR Y UNIFICAR
 # ==========================================
 
 def normalizar_texto(texto):
@@ -301,7 +305,7 @@ def es_deporte_argentina(texto):
             return False
     return any(kw in texto_norm for kw in KEYWORDS_DEPORTES_AR)
 
-def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
+def procesar_y_categorizar(contenido):
     lista_canales = []
     lineas = contenido.splitlines()
     i = 0
@@ -324,7 +328,7 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
 
             texto_busqueda = normalizar_texto(f"{info_canal} {url_canal}")
             
-            if es_nuestro_scraper or es_deporte_argentina(texto_busqueda):
+            if es_deporte_argentina(texto_busqueda):
                 categoria = "DEPORTES ARGENTINA"
             elif "MAR DEL PLATA" in texto_busqueda or "MARDELPLATA" in texto_busqueda:
                 categoria = "MAR DEL PLATA"
@@ -366,27 +370,31 @@ def unificar_todo():
     otros_canales = []
 
     try:
+        # 1. Canales scrapeados propios
         ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
         if os.path.exists(ruta_temp_scraper):
             with open(ruta_temp_scraper, 'r', encoding='utf-8', errors='ignore') as f:
-                resultado_scraper = procesar_y_categorizar(f.read(), es_nuestro_scraper=True)
-                deportes_propios.extend(resultado_scraper)
+                resultado_scraper = procesar_y_categorizar(f.read())
+                for nombre, bloque, cat in resultado_scraper:
+                    deportes_propios.append((nombre, bloque))
 
+        # 2. Listas M3U externas (con verify=False para evitar el error SSL de radiosargentina)
         for url in URLS_M3U_EXTERNAS:
             print(f"🌐 Descargando externo: {url}")
             try:
-                r = requests.get(url, timeout=10)
+                r = requests.get(url, timeout=15, verify=False)
                 if r.status_code == 200:
                     contenido_ext = r.content.decode('utf-8', errors='ignore')
-                    canales_externos = procesar_y_categorizar(contenido_ext, es_nuestro_scraper=False)
+                    canales_externos = procesar_y_categorizar(contenido_ext)
                     for nombre, bloque, cat in canales_externos:
                         if cat == "DEPORTES ARGENTINA":
                             deportes_externos.append((nombre, bloque))
                         elif cat == "MAR DEL PLATA" or cat == "ARGENTINA":
-                            otros_canales.append((nombre, bloque, cat))
+                            otros_canales.append((nombre, bloque))
             except Exception as e:
                 print(f"⚠️ Error en URL externa: {e}")
 
+        # Ordenar correctamente alfabéticamente
         deportes_propios_ordenados = sorted(deportes_propios, key=lambda x: x[0].upper())
         deportes_externos_ordenados = sorted(deportes_externos, key=lambda x: x[0].upper())
         todos_deportes_arg = deportes_propios_ordenados + deportes_externos_ordenados
@@ -399,10 +407,10 @@ def unificar_todo():
         with open(ruta_final, 'w', encoding='utf-8', newline='\n') as outfile:
             outfile.write("#EXTM3U\n")
             
-            for _, bloque, _ in todos_deportes_arg:
+            for _, bloque in todos_deportes_arg:
                 outfile.write(bloque.strip() + "\n\n")
 
-            for _, bloque, _ in otros_canales:
+            for _, bloque in otros_canales:
                 outfile.write(bloque.strip() + "\n\n")
 
         print(f"✅ Archivo optimizado guardado en: {ruta_final}")
