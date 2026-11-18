@@ -27,16 +27,20 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 
-# Páginas "fuente" (Puedes agregar más canales aquí)
+# Páginas "fuente" de deportes principales
 FUENTES_DEPORTES = {
     "ESPN PREMIUM": "https://tvlibre.st/en-vivo/espn-premium/",
     "TNT SPORTS": "https://tvlibre.st/en-vivo/tnt-sports/",
     "TYC SPORTS": "https://tvlibre.st/en-vivo/tyc-sports/",
     "FOX SPORTS": "https://tvlibre.st/en-vivo/fox-sports/",
     "ESPN": "https://tvlibre.st/en-vivo/espn/",
-    "TELEFE": "https://tvlibre.st/en-vivo/telefe/",
-    "EL TRECE": "https://tvlibre.st/en-vivo/eltrece/"
 }
+
+# Palabras clave para detectar canales de deportes de Argentina en listas externas
+KEYWORDS_DEPORTES_AR = [
+    "ESPN", "TNT SPORTS", "TYC SPORTS", "FOX SPORTS", 
+    "DSORTS", "DIRECTV SPORTS", "DXTV", "DEPORTV"
+]
 
 # Selector CSS de los botones de opciones en la página fuente
 SELECTOR_BOTONES_OPCIONES = "a.btn-md"
@@ -70,7 +74,7 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL (EXTRACCIÓN SEGURA)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES (EXTRACCIÓN SEGURA)
 # ==========================================
 
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
@@ -81,7 +85,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
         await page.goto(url_fuente, wait_until="load", timeout=30000)
         await asyncio.sleep(2)
 
-        # Extraer atributos de forma segura para evitar bloqueos por overlays publicitarios (dontfoid)
+        # Extraer atributos de forma segura para evitar bloqueos por overlays publicitarios
         botones_data = await page.evaluate("""() => {
             const botones = document.querySelectorAll("a.btn-md");
             return Array.from(botones).map((btn, index) => {
@@ -101,7 +105,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
             
             url_encontrada = None
             
-            # Buscar URLs dentro del atributo onclick mediante Regex
             match_onclick = re.search(r"['\"](https?://[^'\"]+|/[^'\"]+)['\"]", op["onclick"])
             if match_onclick:
                 url_parcial = match_onclick.group(1)
@@ -333,10 +336,18 @@ def normalizar_texto(texto):
         texto = texto.replace(orig, dest)
     return texto.upper()
 
-def procesar_y_categorizar(contenido):
+def es_deporte_argentina(texto):
+    """Verifica si un canal pertenece a los deportes principales de Argentina."""
+    texto_norm = normalizar_texto(texto)
+    paises_excluidos = ["CHILE", "MEXICO", "PERU", "COLOMBIA", "URUGUAY"]
+    if any(p in texto_norm for p in paises_excluidos) and not "ARGENTINA" in texto_norm and not "AR" in texto_norm:
+        if "FOX SPORTS MX" in texto_norm or "ESPN CHILE" in texto_norm:
+            return False
+    return any(kw in texto_norm for kw in KEYWORDS_DEPORTES_AR)
+
+def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
     """
-    Analiza contenido, detecta 'Mar del Plata' (en cualquier variante) o países,
-    asigna group-title y retorna una lista de tuplas: (nombre_canal, texto_bloque).
+    Analiza contenido, asigna categorías inteligentes y prioridad a los deportes de Argentina.
     """
     lista_canales = []
     lineas = contenido.splitlines()
@@ -357,10 +368,12 @@ def procesar_y_categorizar(contenido):
             if next_idx < len(lineas):
                 url_canal = lineas[next_idx].strip()
 
-            # Búsqueda flexible de Mar del Plata
             texto_busqueda = normalizar_texto(f"{info_canal} {url_canal}")
             
-            if "MAR DEL PLATA" in texto_busqueda or "MARDELPLATA" in texto_busqueda:
+            # 1. Definir Categoría
+            if es_nuestro_scraper or es_deporte_argentina(texto_busqueda):
+                categoria = "DEPORTES ARGENTINA"
+            elif "MAR DEL PLATA" in texto_busqueda or "MARDELPLATA" in texto_busqueda:
                 categoria = "MAR DEL PLATA"
             else:
                 categoria = "VARIOS"
@@ -369,7 +382,7 @@ def procesar_y_categorizar(contenido):
                         categoria = pais
                         break
 
-            # Asignación de grupo
+            # Asignación de grupo en la línea EXTINF
             if 'group-title="' in info_canal:
                 inicio = info_canal.find('group-title="') + 13
                 fin = info_canal.find('"', inicio)
@@ -377,36 +390,39 @@ def procesar_y_categorizar(contenido):
             else:
                 nueva_linea = info_canal.replace("#EXTINF:-1", f'#EXTINF:-1 group-title="{categoria}"')
 
-            # Extraer el nombre del canal para ordenamiento A-Z
+            # Extraer el nombre del canal
             match_nombre = re.search(r',(.+)$', info_canal)
             nombre_canal = match_nombre.group(1).strip() if match_nombre else "Canal Desconocido"
 
-            # Armar el bloque de texto completo del canal
             bloque = [nueva_linea]
             bloque.extend(extras)
             if url_canal:
                 bloque.append(url_canal)
             bloque_texto = "\n".join(bloque) + "\n\n"
 
-            lista_canales.append((nombre_canal, bloque_texto))
+            lista_canales.append((nombre_canal, bloque_texto, categoria))
             i = next_idx
         i += 1
     return lista_canales
 
 
 def unificar_todo():
-    """Une Scraper de deportes + Locales + Externos, ordena de A a Z y guarda."""
-    print("\n--- FASE 2: Unificando, Categorizando y Ordenando A-Z ---")
+    """Une los canales, prioriza los propios arriba en DEPORTES ARGENTINA y ordena el resto A-Z."""
+    print("\n--- FASE 2: Unificando, Categorizando y Ordenando ---")
     ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
-    canales_totales = []
+    
+    deportes_propios = []
+    deportes_externos = []
+    otros_canales = []
 
     try:
-        # 1. Procesar resultado del escaneo de deportes
+        # 1. Procesar resultado del escaneo de deportes (Nuestros links scrapeados)
         ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
         if os.path.exists(ruta_temp_scraper):
-            print("📦 Procesando canales de deportes...")
+            print("📦 Procesando canales deportivos propios (scraper)...")
             with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
-                canales_totales.extend(procesar_y_categorizar(f.read()))
+                resultado_scraper = procesar_y_categorizar(f.read(), es_nuestro_scraper=True)
+                deportes_propios.extend(resultado_scraper)
 
         # 2. Procesar URLs externas
         for url in URLS_M3U_EXTERNAS:
@@ -414,21 +430,38 @@ def unificar_todo():
             try:
                 r = requests.get(url, timeout=10)
                 if r.status_code == 200:
-                    canales_totales.extend(procesar_y_categorizar(r.text))
+                    canales_externos = procesar_y_categorizar(r.text, es_nuestro_scraper=False)
+                    for nombre, bloque, cat in canales_externos:
+                        if cat == "DEPORTES ARGENTINA":
+                            deportes_externos.append((nombre, bloque))
+                        else:
+                            otros_canales.append((nombre, bloque, cat))
             except Exception as e:
                 print(f"⚠️ Error en URL {url}: {e}")
 
-        # 3. Ordenar alfabéticamente de la A a la Z por nombre del canal
-        print("🔤 Ordenando canales alfabéticamente (A-Z)...")
-        canales_totales.sort(key=lambda x: x[0].upper())
+        # 3. Ordenamiento inteligente
+        deportes_propios_ordenados = sorted(deportes_propios, key=lambda x: x[0].upper())
+        deportes_externos_ordenados = sorted(deportes_externos, key=lambda x: x[0].upper())
+        
+        todos_deportes_arg = deportes_propios_ordenados + deportes_externos_ordenados
+
+        print(f"⚽ Total canales en 'DEPORTES ARGENTINA': {len(todos_deportes_arg)} (Propios: {len(deportes_propios_ordenados)}, Externos: {len(deportes_externos_ordenados)})")
+
+        otros_canales.sort(key=lambda x: x[0].upper())
 
         # 4. Escribir el archivo final unificado
         with open(ruta_final, 'w', encoding='utf-8') as outfile:
             outfile.write("#EXTM3U\n\n")
-            for _, bloque_canal in canales_totales:
-                outfile.write(bloque_canal)
+            
+            # Escribir primero la categoría estrella: DEPORTES ARGENTINA
+            for _, bloque, _ in todos_deportes_arg:
+                outfile.write(bloque.replace('group-title="VARIOS"', 'group-title="DEPORTES ARGENTINA"'))
 
-        print(f"✅ Unificación y ordenamiento completados. Total canales: {len(canales_totales)}")
+            # Escribir el resto de canales categorizados
+            for _, bloque, _ in otros_canales:
+                outfile.write(bloque)
+
+        print(f"✅ Unificación completada con éxito en: {ruta_final}")
         return True
     except Exception as e:
         print(f"❌ Error en unificación: {e}")
@@ -490,7 +523,7 @@ async def main():
     ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
     await escanear_canales_deportes(canales_a_escanear, ruta_temp)
 
-    # 3. Unificar, categorizar, ordenar A-Z y subir a GitHub
+    # 3. Unificar, categorizar, ordenar y subir a GitHub
     if unificar_todo():
         ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
         subir_a_github(ruta_final, GITHUB_REPO_COMPLETO, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
