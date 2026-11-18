@@ -2440,6 +2440,26 @@ https://live-evg10.tv360.bitel.com.pe/bitel/epatv/playlist.m3u8
 #EXTINF:-1 tvg-id="ESPN.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png" group-title="VARIOS",ESPN (Brazil) (1080p)
 http://181.78.197.59:8000/play/a07z/index.m3u8
 
+#EXTINF:-1 group-title="VARIOS",ESPN (Opción 2)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp99a.sbs/
+https://93.domhsd.com/espn/mono.m3u8?token=5938951d6f473ba6eb58b76d950158761c7e3a8f-bd-1795033787-1795015787|Referer=https://streamtp99a.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN (Opción 3)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://ym9yzq.fubo18.com/espn/mono.m3u8?token=6a579d3b0e717ffdd71fef7daee77118e1912fe0-1e-1795033791-1795015791|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN (Opción 4)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.sbs/
+https://khala.futlivehd.com/global/espn/index.m3u8?ip=20.72.213.35&token=2a2ca88ece978801c5182453a4ce01ead5c58653-88-1795061695-1795007695|Referer=https://streamxhd.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN (Opción PC (Extensión))
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=RVNQTjJIRA
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=RVNQTjJIRA&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
 #EXTINF:-1 tvg-id="ESPN2LatinAmerica.us@South" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ESPN2_logo.svg/960px-ESPN2_logo.svg.png" group-title="VARIOS",ESPN 2 Latin America (1080p)
 https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8
 
@@ -2478,6 +2498,31 @@ http://45.134.141.161:2200/ARG/ESPN_Premium_Argentina_HD/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 tvg-id="ESPNPremium.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/ESPN_Premium_logo.svg/960px-ESPN_Premium_logo.svg.png" group-title="VARIOS",ESPN Premium
 http://45.134.141.161:2200/ARG/ESPN_Premium_Argentina_HD/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (Opción 2)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp99a.sbs/
+https://93.domhsd.com/espnpremium/mono.m3u8?token=cdd0a7251447e8effee56d1ca2d2ebc00bf47b4b-eb-1795033506-1795015506|Referer=https://streamtp99a.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (Opción 3)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.sbs/
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=20.72.213.35&token=a447a29427bf5a2cd9c8873e65fef61d7c7f1d11-09-1795061410-1795007410|Referer=https://streamxhd.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (Opción 4)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://y2fzdgxl.fubo18.com/espnpremium/mono.m3u8?token=07abf235662f954f802c4243ed26471292c148f2-93-1795033515-1795015515|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (Opción 5)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.sbs/
+https://khala.futlivehd.com/global/espnpremium/index.m3u8?ip=20.72.213.35&token=d1623eeae93e59f18d428e7ad45c1c8095547de8-70-1795061420-1795007420|Referer=https://streamxhd.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",ESPN PREMIUM (Opción PC (Extensión))
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 tvg-id="ESPNPremium.ar@HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/ESPN_Premium_logo.svg/960px-ESPN_Premium_logo.svg.png" group-title="VARIOS",ESPN Premium HD (1080p)
 http://158.172.155.130:8000/play/a0ao/index.m3u8
@@ -2650,6 +2695,26 @@ http://138.59.227.20:8000/play/a085/index.m3u8
 
 #EXTINF:-1 tvg-id="FoxSports.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/FOX_Sports_logo.svg/960px-FOX_Sports_logo.svg.png" group-title="VARIOS",Fox Sports (1080p)
 http://138.59.227.20:8000/play/a085/index.m3u8
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORTS (Opción 2)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp99a.sbs/
+https://93.domhsd.com/fox1ar/mono.m3u8?token=e67f832cb1955da9e2b2d6f36eef452a5689b43c-92-1795033705-1795015705|Referer=https://streamtp99a.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORTS (Opción 3)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://bgvnzw5k.fubo18.com/foxsports/mono.m3u8?token=c24abcf52beb13d35fa7c080acb299b02b4c0da4-f6-1795033717-1795015717|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORTS (Opción 4)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.sbs/
+https://khala.futlivehd.com/global/fox1ar/index.m3u8?ip=20.72.213.35&token=00f8420b58e430c0e112247cc395b2e89f1ca65c-43-1795061630-1795007630|Referer=https://streamxhd.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",FOX SPORTS (Opción PC (Extensión))
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=Rm94U3BvcnRz
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=Rm94U3BvcnRz&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 tvg-id="FoxSports.ar@HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/FOX_Sports_logo.svg/960px-FOX_Sports_logo.svg.png" group-title="VARIOS",Fox Sports HD
 http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/1552.m3u8
@@ -5973,6 +6038,11 @@ http://45.173.231.22:8000/play/a053/index.m3u8
 #EXTINF:-1 tvg-id="Telefe.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Telefe_%28nuevo_logo%29.png/960px-Telefe_%28nuevo_logo%29.png" group-title="VARIOS",Telefe (1080p)
 http://45.173.231.22:8000/play/a053/index.m3u8
 
+#EXTINF:-1 group-title="VARIOS",TELEFE (Opción PC (Extensión))
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=VGVsZWZlSEQ=
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=VGVsZWZlSEQ=&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
 #EXTINF:-1 tvg-id="TelefeBuenosAires.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Telefe_%28nuevo_logo%29.png/960px-Telefe_%28nuevo_logo%29.png" group-title="VARIOS",Telefe Buenos Aires (1080p)
 http://45.134.141.161:2200/ARG/TELEFE_HD/index.m3u8
 
@@ -6276,6 +6346,26 @@ http://181.78.79.131:8000/play/a0mo
 
 #EXTINF:-1 tvg-id="TNTSports.cl@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/TNT_Sports_2021_logo.svg/960px-TNT_Sports_2021_logo.svg.png" group-title="CHILE",TNT Sports (Chile) (480p)
 http://205.235.6.29:8000/play/a0xa/index.m3u8
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORTS (Opción 2)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp99a.sbs/
+https://93.domhsd.com/tntsports/mono.m3u8?token=b7c0635a57320ed8afc476d42729bb00af6e9bb0-20-1795033551-1795015551|Referer=https://streamtp99a.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORTS (Opción 3)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.sbs/
+https://khala.futlivehd.com/global/tntsports/index.m3u8?ip=20.72.213.35&token=86fc863346e99fb6d1bfcabdd1dfe356d78f8fae-7e-1795061454-1795007454|Referer=https://streamxhd.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORTS (Opción 4)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://bgvnzw5k.fubo18.com/tntsports/mono.m3u8?token=31f1b57d58380338a93fec22eaac59c2494e8f95-43-1795033574-1795015574|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",TNT SPORTS (Opción PC (Extensión))
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=VE5UX1Nwb3J0c19IRA
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=VE5UX1Nwb3J0c19IRA&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 tvg-id="TNTSportsPremium.cl@ArgentinaHD" tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/TNT_Sports_Premium_%28Argentina%29.png/960px-TNT_Sports_Premium_%28Argentina%29.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail" group-title="ARGENTINA",TNT Sports Premium ArgentinaHD (1080p)
 http://181.78.79.131:8000/play/a0q9
@@ -6923,6 +7013,26 @@ https://amg26268-amg26268c14-freelivesports-emea-10267.playouts.now.amagi.tv/ts-
 
 #EXTINF:-1 tvg-id="TyCSports.ar@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/TyC_Sports_logo.svg/960px-TyC_Sports_logo.svg.png" group-title="VARIOS",TyC Sports (1080p)
 https://amg26268-amg26268c14-freelivesports-emea-10267.playouts.now.amagi.tv/ts-us-e2-n2/playlist/amg26268-sportsstudio-tycsports-freelivesportsemea/playlist.m3u8
+
+#EXTINF:-1 group-title="VARIOS",TYC SPORTS (Opción 2)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://la18hd.su/
+https://a2lja3m.fubo18.com/tycsports/mono.m3u8?token=9fb9bc23175c01ee676341eb93e41b795d2f0b1d-2-1795033629-1795015629|Referer=https://la18hd.su/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",TYC SPORTS (Opción 3)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamxhd.sbs/
+https://khala.futlivehd.com/global/tycsports/index.m3u8?ip=20.72.213.35&token=b1d78d9aada026fe1e5fa7f83e34099c577d5414-12-1795061533-1795007533|Referer=https://streamxhd.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",TYC SPORTS (Opción 4)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://streamtp99a.sbs/
+https://93.domhsd.com/tycsports/mono.m3u8?token=cb039f8881421202dffe3e7f8b7576933e4463c1-15-1795033638-1795015638|Referer=https://streamtp99a.sbs/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+#EXTINF:-1 group-title="VARIOS",TYC SPORTS (Opción PC (Extensión))
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://bestleague.life/tok.html?get=VHlDU3BvcnQ
+https://bestleague.life/isInstalled.mpd|Referer=https://bestleague.life/tok.html?get=VHlDU3BvcnQ&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 
 #EXTINF:-1 tvg-logo="https://radiosargentina.com.ar/png/VI---TYC.png" group-title="ARGENTINA",TyC Sports - CTV - CABA TV Cable - CD Cd Aut Bs As
 https://radiosargentina.com.ar/php/artvDI.php?id=ARCD_CABA_____CTYCSPORTS_
