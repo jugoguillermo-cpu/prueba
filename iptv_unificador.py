@@ -29,6 +29,11 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"
 
+# CONFIGURACIÓN DE PROXY / VPN (Opcional)
+# Si tu VPN/Proxy te da una dirección (ej: "http://127.0.0.1:8080"), ponla aquí. 
+# Si dejas en blanco (""), Playwright usará la red predeterminada (si Proton VPN está abierta en tu PC, usará esa IP).
+PROXY_SERVER = os.environ.get("PROXY_SERVER", "") 
+
 # Páginas fuente de deportes operativas
 FUENTES_DEPORTES = {
     "ESPN PREMIUM": "https://tvlibre.st/en-vivo/espn-premium/",
@@ -48,7 +53,7 @@ ESPERA_TRAS_CLICK_SEGUNDOS = 2
 
 URLS_M3U_EXTERNAS = [
     "https://iptv-org.github.io/iptv/regions/southam.m3u",
-    "https://telechancho.github.io/telechancho-iptv/telechancho-infinity.m3u",
+    "https://telechancho.github.io/telechancho-infinity.m3u",
     "http://45.181.122.46:8090/playlist.m3u8",
     "https://iptv-org.github.io/iptv/countries/ar.m3u",
     "https://www.m3u.cl/lista/AR.m3u",
@@ -134,8 +139,12 @@ async def buscar_todas_las_opciones(fuentes):
             headless=EN_GITHUB_ACTIONS,
             args=["--window-position=2000,2000", "--window-size=400,300", "--mute-audio"]
         )
+        if PROXY_SERVER:
+            argumentos_lanzamiento["proxy"] = {"server": PROXY_SERVER}
+
         if not EN_GITHUB_ACTIONS:
             argumentos_lanzamiento["channel"] = "chrome"
+
         browser = await p.chromium.launch(**argumentos_lanzamiento)
 
         context = await browser.new_context(
@@ -240,8 +249,12 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
             headless=EN_GITHUB_ACTIONS,
             args=["--window-position=2000,2000", "--window-size=400,300", "--mute-audio"]
         )
+        if PROXY_SERVER:
+            argumentos_lanzamiento["proxy"] = {"server": PROXY_SERVER}
+
         if not EN_GITHUB_ACTIONS:
             argumentos_lanzamiento["channel"] = "chrome"
+
         browser = await p.chromium.launch(**argumentos_lanzamiento)
 
         context = await browser.new_context(
@@ -362,7 +375,7 @@ def procesar_y_categorizar(contenido):
 
 
 def unificar_todo():
-    print("\n--- FASE 2: Unificando, Categorizando y Optimizando para Android ---")
+    print("\n--- FASE 2: Unificando, Categorizando y Optimizando ---")
     ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
     
     deportes_propios = []
@@ -370,7 +383,6 @@ def unificar_todo():
     otros_canales = []
 
     try:
-        # 1. Canales scrapeados propios
         ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
         if os.path.exists(ruta_temp_scraper):
             with open(ruta_temp_scraper, 'r', encoding='utf-8', errors='ignore') as f:
@@ -378,7 +390,6 @@ def unificar_todo():
                 for nombre, bloque, cat in resultado_scraper:
                     deportes_propios.append((nombre, bloque))
 
-        # 2. Listas M3U externas (con verify=False para evitar el error SSL de radiosargentina)
         for url in URLS_M3U_EXTERNAS:
             print(f"🌐 Descargando externo: {url}")
             try:
@@ -394,7 +405,6 @@ def unificar_todo():
             except Exception as e:
                 print(f"⚠️ Error en URL externa: {e}")
 
-        # Ordenar correctamente alfabéticamente
         deportes_propios_ordenados = sorted(deportes_propios, key=lambda x: x[0].upper())
         deportes_externos_ordenados = sorted(deportes_externos, key=lambda x: x[0].upper())
         todos_deportes_arg = deportes_propios_ordenados + deportes_externos_ordenados
@@ -403,7 +413,6 @@ def unificar_todo():
 
         otros_canales.sort(key=lambda x: x[0].upper())
 
-        # Escritura estricta UTF-8 optimizada para móviles
         with open(ruta_final, 'w', encoding='utf-8', newline='\n') as outfile:
             outfile.write("#EXTM3U\n")
             
@@ -413,7 +422,7 @@ def unificar_todo():
             for _, bloque in otros_canales:
                 outfile.write(bloque.strip() + "\n\n")
 
-        print(f"✅ Archivo optimizado guardado en: {ruta_final}")
+        print(f"✅ Archivo guardado en: {ruta_final}")
         return True
     except Exception as e:
         print(f"❌ Error en unificación: {e}")
@@ -441,7 +450,7 @@ def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo
         try:
             contents = repo.get_contents(ruta_en_repo)
             if contents.decoded_content.decode('utf-8') != contenido_nuevo:
-                repo.update_file(contents.path, "Update IPTV List (Optimizado Android)", contenido_nuevo, contents.sha)
+                repo.update_file(contents.path, "Update IPTV List (VPN Ready)", contenido_nuevo, contents.sha)
                 print("🚀 GitHub actualizado con éxito.")
             else:
                 print("ℹ️ El contenido es idéntico.")
