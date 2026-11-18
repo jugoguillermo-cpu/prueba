@@ -1,6 +1,6 @@
 import asyncio
-import re
 import os
+import re
 import requests
 import nest_asyncio
 from playwright.async_api import async_playwright
@@ -27,9 +27,15 @@ CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis 
 ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
 ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
 
-# Páginas "fuente"
+# Páginas "fuente" (Puedes agregar más canales aquí)
 FUENTES_DEPORTES = {
-    "ESPN PREMIUM": "https://tvlibreonline.st/en-vivo/espn-premium/",
+    "ESPN PREMIUM": "https://tvlibre.st/en-vivo/espn-premium/",
+    "TNT SPORTS": "https://tvlibre.st/en-vivo/tnt-sports/",
+    "TYC SPORTS": "https://tvlibre.st/en-vivo/tyc-sports/",
+    "FOX SPORTS": "https://tvlibre.st/en-vivo/fox-sports/",
+    "ESPN": "https://tvlibre.st/en-vivo/espn/",
+    "TELEFE": "https://tvlibre.st/en-vivo/telefe/",
+    "EL TRECE": "https://tvlibre.st/en-vivo/eltrece/"
 }
 
 # Selector CSS de los botones de opciones en la página fuente
@@ -64,7 +70,7 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES POR CANAL (EXTRACCIÓN SEGURA)
 # ==========================================
 
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
@@ -73,34 +79,43 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
     try:
         print(f"[*] [{nombre_canal}] Abriendo fuente: {url_fuente}")
         await page.goto(url_fuente, wait_until="load", timeout=30000)
+        await asyncio.sleep(2)
 
-        botones = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
-        cantidad_opciones = len(botones)
-        print(f"[*] [{nombre_canal}] Se encontraron {cantidad_opciones} opciones en la fuente.")
+        # Extraer atributos de forma segura para evitar bloqueos por overlays publicitarios (dontfoid)
+        botones_data = await page.evaluate("""() => {
+            const botones = document.querySelectorAll("a.btn-md");
+            return Array.from(botones).map((btn, index) => {
+                return {
+                    texto: btn.innerText.trim(),
+                    onclick: btn.getAttribute("onclick") || "",
+                    href: btn.getAttribute("href") || ""
+                };
+            });
+        }""")
 
-        for i in range(cantidad_opciones):
-            botones_actuales = await page.locator(SELECTOR_BOTONES_OPCIONES).all()
-            if i >= len(botones_actuales):
-                break
-            boton = botones_actuales[i]
+        print(f"[*] [{nombre_canal}] Se encontraron {len(botones_data)} opciones en la fuente.")
 
-            try:
-                print(f"[*] [{nombre_canal}] Cliqueando opción {i + 1}...")
-                await boton.evaluate("el => el.click()")
-            except Exception as e:
-                print(f"[!] [{nombre_canal}] No se pudo cliquear la opción {i + 1}: {e}")
-                continue
+        for i, op in enumerate(botones_data):
+            texto_extra = f" ({op['texto']})" if op['texto'] else f" (OPCION {i+1})"
+            nombre_opcion = f"{nombre_canal}{texto_extra}"
+            
+            url_encontrada = None
+            
+            # Buscar URLs dentro del atributo onclick mediante Regex
+            match_onclick = re.search(r"['\"](https?://[^'\"]+|/[^'\"]+)['\"]", op["onclick"])
+            if match_onclick:
+                url_parcial = match_onclick.group(1)
+                if url_parcial.startswith("http"):
+                    url_encontrada = url_parcial
+                else:
+                    url_encontrada = f"https://tvlibre.st{url_parcial}"
+            elif op["href"] and op["href"] != "#" and not op["href"].startswith("#"):
+                url_encontrada = op["href"]
 
-            await asyncio.sleep(ESPERA_TRAS_CLICK_SEGUNDOS)
-
-            iframes = await page.locator("iframe").all()
-            for iframe in iframes:
-                src = await iframe.get_attribute("src")
-                if src and src not in enlaces_vistos:
-                    enlaces_vistos.add(src)
-                    nombre_opcion = f"{nombre_canal} (OPCION {len(enlaces_vistos)})"
-                    opciones[nombre_opcion] = src
-                    print(f"[+] [{nombre_canal}] Enlace encontrado: {src}")
+            if url_encontrada and url_encontrada not in enlaces_vistos:
+                enlaces_vistos.add(url_encontrada)
+                opciones[nombre_opcion] = url_encontrada
+                print(f"[+] [{nombre_canal}] Enlace de reproductor extraído: {url_encontrada}")
 
     except Exception as e:
         print(f"[!] [{nombre_canal}] Error buscando opciones en la fuente: {e}")
