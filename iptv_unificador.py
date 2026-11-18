@@ -13,21 +13,19 @@ nest_asyncio.apply()
 # ==========================================
 # 1. CONFIGURACIÓN
 # ==========================================
-# Detecta si corre en GitHub Actions
 EN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
-GITHUB_OWNER = "jugoguillermo-cpu"  # tu usuario de GitHub
+GITHUB_OWNER = "jugoguillermo-cpu"
 GITHUB_REPO_NAME = "prueba"
 GITHUB_REPO_COMPLETO = os.environ.get("GITHUB_REPOSITORY", f"{GITHUB_OWNER}/{GITHUB_REPO_NAME}")
 NOMBRE_ARCHIVO_GITHUB = "lista.m3u"
 
-# Rutas Locales
 CARPETA_LOCAL = "./listas" if EN_GITHUB_ACTIONS else r"C:/Users/gui/Desktop/mis listtas"
-ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"  # Generado por el escaneo Playwright
-ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"     # El que se sube a GitHub
+ARCHIVO_SCRAPER_TEMPORAL = "canales_extraidos.m3u"
+ARCHIVO_FINAL_UNIFICADO = "lista_unificada.m3u"
 
-# Páginas "fuente" de deportes principales
+# Páginas fuente de deportes actualizadas y operativas
 FUENTES_DEPORTES = {
     "ESPN PREMIUM": "https://tvlibre.st/en-vivo/espn-premium/",
     "TNT SPORTS": "https://tvlibre.st/en-vivo/tnt-sports/",
@@ -36,19 +34,16 @@ FUENTES_DEPORTES = {
     "ESPN": "https://tvlibre.st/en-vivo/espn/",
 }
 
-# Palabras clave para detectar canales de deportes de Argentina en listas externas
 KEYWORDS_DEPORTES_AR = [
     "ESPN", "TNT SPORTS", "TYC SPORTS", "FOX SPORTS", 
     "DSORTS", "DIRECTV SPORTS", "DXTV", "DEPORTV"
 ]
 
-# Selector CSS de los botones de opciones en la página fuente
 SELECTOR_BOTONES_OPCIONES = "a.btn-md"
 ESPERA_TRAS_CLICK_SEGUNDOS = 2
 
-# Links M3U Externos (Fase de unificación)
 URLS_M3U_EXTERNAS = [
-    "https://iptv-org.github.io/iptv/regions/southam.m3u?fbclid=IwdGRjcAUdOZNjbGNrBR05eXBkb2YFZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMzUwNjg1NTMxNzI4AAEe8N84jKI0NhBNdeY1BGjzh_9cCP8VR4R_tJ59KrgjdVaMzJ9DZ642tSPADz8_aem_hNReBY1EZ79qC6NeFVID6g",
+    "https://iptv-org.github.io/iptv/regions/southam.m3u",
     "https://telechancho.github.io/telechancho-iptv/telechancho-infinity.m3u",
     "http://45.181.122.46:8090/playlist.m3u8",
     "https://iptv-org.github.io/iptv/countries/ar.m3u",
@@ -56,7 +51,6 @@ URLS_M3U_EXTERNAS = [
     "https://radiosargentina.com.ar/TVAR.m3u",
 ]
 
-# Categorías por país
 PAISES_OBJETIVO = ["ARGENTINA", "CHILE", "BRASIL", "ECUADOR", "URUGUAY"]
 
 STREAM_REGEX = re.compile(r'\.(m3u8|mpd)(\?.*)?$', re.IGNORECASE)
@@ -74,7 +68,7 @@ SELECTORES_PLAY = [
 
 
 # ==========================================
-# 2. FASE 0: BUSCAR LINKS DE OPCIONES (EXTRACCIÓN SEGURA)
+# 2. FASE 0: BUSCAR LINKS DE OPCIONES (SEGURO)
 # ==========================================
 
 async def buscar_opciones_canal(page, nombre_canal, url_fuente):
@@ -85,7 +79,7 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
         await page.goto(url_fuente, wait_until="load", timeout=30000)
         await asyncio.sleep(2)
 
-        # Extraer atributos de forma segura para evitar bloqueos por overlays publicitarios
+        # Extracción segura de atributos para evitar bloqueos por overlays publicitarios
         botones_data = await page.evaluate("""() => {
             const botones = document.querySelectorAll("a.btn-md");
             return Array.from(botones).map((btn, index) => {
@@ -104,7 +98,6 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
             nombre_opcion = f"{nombre_canal}{texto_extra}"
             
             url_encontrada = None
-            
             match_onclick = re.search(r"['\"](https?://[^'\"]+|/[^'\"]+)['\"]", op["onclick"])
             if match_onclick:
                 url_parcial = match_onclick.group(1)
@@ -118,10 +111,10 @@ async def buscar_opciones_canal(page, nombre_canal, url_fuente):
             if url_encontrada and url_encontrada not in enlaces_vistos:
                 enlaces_vistos.add(url_encontrada)
                 opciones[nombre_opcion] = url_encontrada
-                print(f"[+] [{nombre_canal}] Enlace de reproductor extraído: {url_encontrada}")
+                print(f"[+] [{nombre_canal}] Enlace extraído: {url_encontrada}")
 
     except Exception as e:
-        print(f"[!] [{nombre_canal}] Error buscando opciones en la fuente: {e}")
+        print(f"[!] [{nombre_canal}] Error buscando opciones: {e}")
 
     return opciones
 
@@ -136,11 +129,7 @@ async def buscar_todas_las_opciones(fuentes):
     async with async_playwright() as p:
         argumentos_lanzamiento = dict(
             headless=EN_GITHUB_ACTIONS,
-            args=[
-                "--window-position=2000,2000",
-                "--window-size=400,300",
-                "--mute-audio"
-            ]
+            args=["--window-position=2000,2000", "--window-size=400,300", "--mute-audio"]
         )
         if not EN_GITHUB_ACTIONS:
             argumentos_lanzamiento["channel"] = "chrome"
@@ -161,7 +150,7 @@ async def buscar_todas_las_opciones(fuentes):
         await context.close()
         await browser.close()
 
-    print(f"[***] FASE 0 completa: {len(todas_opciones)} links de opciones encontrados en total. [***]")
+    print(f"[***] FASE 0 completa: {len(todas_opciones)} links encontrados. [***]")
     return todas_opciones
 
 
@@ -176,7 +165,7 @@ async def intentar_autoclick_play(page, nombre_canal):
             try:
                 elemento = page.locator(selector).first
                 if await elemento.is_visible(timeout=1000):
-                    print(f"[>] [{nombre_canal}] [Intento {intento}] Botón detectado ({selector}). Haciendo clic...")
+                    print(f"[>] [{nombre_canal}] [Intento {intento}] Botón detectado ({selector}). Clic...")
                     await elemento.click(timeout=2000)
                     await asyncio.sleep(1.5)
                     break
@@ -198,21 +187,14 @@ async def interceptar_red(response, nombre_canal, stream_encontrado_event, resul
         origin = request_headers.get('origin', '')
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
-        headers_pipe = []
-        if referer:
-            headers_pipe.append(f"Referer={referer}")
-        headers_pipe.append(f"User-Agent={user_agent}")
-        if origin:
-            headers_pipe.append(f"Origin={origin}")
-        url_con_headers = f"{url}|{'&'.join(headers_pipe)}" if headers_pipe else url
-
-        entrada_m3u = f"#EXTINF:-1,{nombre_canal}\n"
+        # Formato limpio compatible con VLC y reproductores estándar
+        entrada_m3u = f"#EXTINF:-1 group-title=\"DEPORTES ARGENTINA\",{nombre_canal}\n"
         entrada_m3u += f"#EXTVLCOPT:http-user-agent={user_agent}\n"
         if referer:
             entrada_m3u += f"#EXTVLCOPT:http-referrer={referer}\n"
         if origin:
             entrada_m3u += f"#EXTVLCOPT:http-origin={origin}\n"
-        entrada_m3u += f"{url_con_headers}\n"
+        entrada_m3u += f"{url}\n"
 
         resultados_m3u[nombre_canal] = entrada_m3u
 
@@ -222,7 +204,6 @@ def cargar_m3u_existente(ruta_archivo):
     if not os.path.exists(ruta_archivo):
         return canales_viejos
 
-    print(f"[*] Cargando lista existente desde {ruta_archivo} para preservar canales...")
     with open(ruta_archivo, "r", encoding="utf-8") as f:
         lineas = f.readlines()
 
@@ -248,18 +229,14 @@ def cargar_m3u_existente(ruta_archivo):
 
 
 async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
-    print(f"--- FASE 1: Escaneando {len(diccionario_canales)} canales de deportes con Playwright ---")
+    print(f"--- FASE 1: Escaneando {len(diccionario_canales)} canales con Playwright ---")
     canales_finales = cargar_m3u_existente(ruta_archivo_salida)
     nuevos_resultados = {}
 
     async with async_playwright() as p:
         argumentos_lanzamiento = dict(
             headless=EN_GITHUB_ACTIONS,
-            args=[
-                "--window-position=2000,2000",
-                "--window-size=400,300",
-                "--mute-audio"
-            ]
+            args=["--window-position=2000,2000", "--window-size=400,300", "--mute-audio"]
         )
         if not EN_GITHUB_ACTIONS:
             argumentos_lanzamiento["channel"] = "chrome"
@@ -270,11 +247,7 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
         )
 
         for nombre, url_objetivo in diccionario_canales.items():
-            print("\n" + "=" * 60)
-            print(f"[*] ESCANEANDO EN CHROME OCULTO: {nombre}")
-            print(f"[*] Origen: {url_objetivo}")
-            print("=" * 60 + "\n")
-
+            print(f"\n[*] ESCANEANDO: {nombre} ({url_objetivo})")
             page = await context.new_page()
             stream_encontrado_event = asyncio.Event()
 
@@ -285,7 +258,6 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
             try:
                 await page.goto(url_objetivo, wait_until="load", timeout=45000)
                 await asyncio.sleep(2)
-
                 asyncio.create_task(intentar_autoclick_play(page, nombre))
 
                 contador_espera = 0
@@ -294,18 +266,12 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
                     contador_espera += 1
 
                 if stream_encontrado_event.is_set():
-                    print(f"[+] Éxito con {nombre}. Enlace actualizado.")
                     canales_finales[nombre] = nuevos_resultados[nombre]
-                    await asyncio.sleep(1)
                 else:
-                    print(f"[!] No se capturó flujo nuevo para '{nombre}'.")
-                    if nombre in canales_finales:
-                        print(f"[->] RESPALDO: Se conserva el stream anterior de '{nombre}'.")
-
+                    if nombre not in canales_finales:
+                        print(f"[!] Sin flujo para '{nombre}'.")
             except Exception as e:
-                print(f"[!] Error en canal {nombre}: {e}")
-                if nombre in canales_finales:
-                    print(f"[->] RESPALDO por Error: Conservando versión anterior de '{nombre}'.")
+                print(f"[!] Error en {nombre}: {e}")
             finally:
                 await page.close()
 
@@ -317,17 +283,13 @@ async def escanear_canales_deportes(diccionario_canales, ruta_archivo_salida):
             f.write("#EXTM3U\n")
             for bloque_canal in canales_finales.values():
                 f.write(bloque_canal)
-        print(f"\n[***] M3U ACTUALIZADO: {ruta_archivo_salida} (Total: {len(canales_finales)} canales) [***]")
-    else:
-        print("\n[!] No hay canales disponibles para escribir.")
 
 
 # ==========================================
-# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR
+# 4. FASE 2: PROCESAR, CATEGORIZAR Y UNIFICAR (CORREGIDO PARA VLC)
 # ==========================================
 
 def normalizar_texto(texto):
-    """Limpia tildes y convierte a mayúsculas para búsquedas flexibles."""
     if not texto:
         return ""
     remplazos = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
@@ -337,7 +299,6 @@ def normalizar_texto(texto):
     return texto.upper()
 
 def es_deporte_argentina(texto):
-    """Verifica si un canal pertenece a los deportes principales de Argentina."""
     texto_norm = normalizar_texto(texto)
     paises_excluidos = ["CHILE", "MEXICO", "PERU", "COLOMBIA", "URUGUAY"]
     if any(p in texto_norm for p in paises_excluidos) and not "ARGENTINA" in texto_norm and not "AR" in texto_norm:
@@ -346,9 +307,6 @@ def es_deporte_argentina(texto):
     return any(kw in texto_norm for kw in KEYWORDS_DEPORTES_AR)
 
 def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
-    """
-    Analiza contenido, asigna categorías inteligentes y prioridad a los deportes de Argentina.
-    """
     lista_canales = []
     lineas = contenido.splitlines()
     i = 0
@@ -356,21 +314,22 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
         linea = lineas[i].strip()
         if linea.startswith("#EXTINF:"):
             info_canal = linea
-            url_canal = ""
-
             extras = []
             next_idx = i + 1
-            while next_idx < len(lineas) and lineas[next_idx].startswith("#"):
-                if not lineas[next_idx].startswith("#EXTM3U"):
-                    extras.append(lineas[next_idx].strip())
+            
+            # Recoger de forma limpia cualquier directiva extra (#EXTVLCOPT u otras)
+            while next_idx < len(lineas) and (lineas[next_idx].startswith("#") or not lineas[next_idx].strip()):
+                l_sig = lineas[next_idx].strip()
+                if l_sig and not l_sig.startswith("#EXTM3U"):
+                    extras.append(l_sig)
                 next_idx += 1
 
+            url_canal = ""
             if next_idx < len(lineas):
                 url_canal = lineas[next_idx].strip()
 
             texto_busqueda = normalizar_texto(f"{info_canal} {url_canal}")
             
-            # 1. Definir Categoría
             if es_nuestro_scraper or es_deporte_argentina(texto_busqueda):
                 categoria = "DEPORTES ARGENTINA"
             elif "MAR DEL PLATA" in texto_busqueda or "MARDELPLATA" in texto_busqueda:
@@ -382,7 +341,7 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
                         categoria = pais
                         break
 
-            # Asignación de grupo en la línea EXTINF
+            # Limpieza y asignación correcta del group-title
             if 'group-title="' in info_canal:
                 inicio = info_canal.find('group-title="') + 13
                 fin = info_canal.find('"', inicio)
@@ -390,16 +349,16 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
             else:
                 nueva_linea = info_canal.replace("#EXTINF:-1", f'#EXTINF:-1 group-title="{categoria}"')
 
-            # Extraer el nombre del canal
             match_nombre = re.search(r',(.+)$', info_canal)
             nombre_canal = match_nombre.group(1).strip() if match_nombre else "Canal Desconocido"
 
-            bloque = [nueva_linea]
-            bloque.extend(extras)
+            # Construir el bloque con estructura M3U estricta y limpia
+            bloque_partes = [nueva_linea]
+            bloque_partes.extend(extras)
             if url_canal:
-                bloque.append(url_canal)
-            bloque_texto = "\n".join(bloque) + "\n\n"
-
+                bloque_partes.append(url_canal)
+            
+            bloque_texto = "\n".join(bloque_partes) + "\n"
             lista_canales.append((nombre_canal, bloque_texto, categoria))
             i = next_idx
         i += 1
@@ -407,7 +366,6 @@ def procesar_y_categorizar(contenido, es_nuestro_scraper=False):
 
 
 def unificar_todo():
-    """Une los canales, prioriza los propios arriba en DEPORTES ARGENTINA y ordena el resto A-Z."""
     print("\n--- FASE 2: Unificando, Categorizando y Ordenando ---")
     ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
     
@@ -416,15 +374,14 @@ def unificar_todo():
     otros_canales = []
 
     try:
-        # 1. Procesar resultado del escaneo de deportes (Nuestros links scrapeados)
+        # 1. Canales scrapeados propios
         ruta_temp_scraper = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
         if os.path.exists(ruta_temp_scraper):
-            print("📦 Procesando canales deportivos propios (scraper)...")
             with open(ruta_temp_scraper, 'r', encoding='utf-8') as f:
                 resultado_scraper = procesar_y_categorizar(f.read(), es_nuestro_scraper=True)
                 deportes_propios.extend(resultado_scraper)
 
-        # 2. Procesar URLs externas
+        # 2. Listas M3U externas
         for url in URLS_M3U_EXTERNAS:
             print(f"🌐 Descargando externo: {url}")
             try:
@@ -437,31 +394,28 @@ def unificar_todo():
                         else:
                             otros_canales.append((nombre, bloque, cat))
             except Exception as e:
-                print(f"⚠️ Error en URL {url}: {e}")
+                print(f"⚠️ Error en URL externa: {e}")
 
-        # 3. Ordenamiento inteligente
+        # Ordenar correctamente
         deportes_propios_ordenados = sorted(deportes_propios, key=lambda x: x[0].upper())
         deportes_externos_ordenados = sorted(deportes_externos, key=lambda x: x[0].upper())
-        
         todos_deportes_arg = deportes_propios_ordenados + deportes_externos_ordenados
 
-        print(f"⚽ Total canales en 'DEPORTES ARGENTINA': {len(todos_deportes_arg)} (Propios: {len(deportes_propios_ordenados)}, Externos: {len(deportes_externos_ordenados)})")
+        print(f"⚽ Canales en 'DEPORTES ARGENTINA': {len(todos_deportes_arg)} (Propios: {len(deportes_propios_ordenados)}, Externos: {len(deportes_externos_ordenados)})")
 
         otros_canales.sort(key=lambda x: x[0].upper())
 
-        # 4. Escribir el archivo final unificado
+        # Escritura estricta y limpia del archivo M3U final
         with open(ruta_final, 'w', encoding='utf-8') as outfile:
-            outfile.write("#EXTM3U\n\n")
+            outfile.write("#EXTM3U\n")
             
-            # Escribir primero la categoría estrella: DEPORTES ARGENTINA
             for _, bloque, _ in todos_deportes_arg:
-                outfile.write(bloque.replace('group-title="VARIOS"', 'group-title="DEPORTES ARGENTINA"'))
+                outfile.write(bloque)
 
-            # Escribir el resto de canales categorizados
             for _, bloque, _ in otros_canales:
                 outfile.write(bloque)
 
-        print(f"✅ Unificación completada con éxito en: {ruta_final}")
+        print(f"✅ Archivo unificado y corregido guardado en: {ruta_final}")
         return True
     except Exception as e:
         print(f"❌ Error en unificación: {e}")
@@ -476,17 +430,12 @@ def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo
     print(f"\n--- FASE 3: Subiendo a GitHub ---")
     try:
         if not token:
-            print("❌ Error GitHub: falta GITHUB_TOKEN (no está seteado en el entorno/Secret).")
+            print("❌ Falta GITHUB_TOKEN.")
             return
 
         auth = Auth.Token(token)
         g = Github(auth=auth)
-
-        try:
-            repo = g.get_repo(repo_nombre_completo)
-        except GithubException as e:
-            print(f"❌ Error GitHub: no se pudo acceder al repo '{repo_nombre_completo}' (status {e.status}): {e.data}")
-            return
+        repo = g.get_repo(repo_nombre_completo)
 
         with open(archivo_local_path, 'r', encoding='utf-8') as f:
             contenido_nuevo = f.read()
@@ -494,18 +443,16 @@ def subir_a_github(archivo_local_path, repo_nombre_completo, token, ruta_en_repo
         try:
             contents = repo.get_contents(ruta_en_repo)
             if contents.decoded_content.decode('utf-8') != contenido_nuevo:
-                repo.update_file(contents.path, "Update IPTV List", contenido_nuevo, contents.sha)
+                repo.update_file(contents.path, "Update IPTV List (Corregido)", contenido_nuevo, contents.sha)
                 print("🚀 GitHub actualizado con éxito.")
             else:
-                print("ℹ️ El contenido es idéntico, no se requiere subida.")
+                print("ℹ️ El contenido es idéntico.")
         except GithubException as e:
             if e.status == 404:
                 repo.create_file(ruta_en_repo, "Initial IPTV List", contenido_nuevo)
-                print("🚀 Archivo creado en GitHub por primera vez.")
-            else:
-                print(f"❌ Error GitHub al leer/crear el archivo (status {e.status}): {e.data}")
+                print("🚀 Archivo creado en GitHub.")
     except Exception as e:
-        print(f"❌ Error GitHub inesperado: {type(e).__name__}: {e}")
+        print(f"❌ Error al subir a GitHub: {e}")
 
 
 # ==========================================
@@ -516,14 +463,10 @@ async def main():
     if not os.path.exists(CARPETA_LOCAL):
         os.makedirs(CARPETA_LOCAL)
 
-    # 1. Buscar automáticamente los links de opciones desde las páginas fuente
     canales_a_escanear = await buscar_todas_las_opciones(FUENTES_DEPORTES)
-
-    # 2. Escanear todo con Playwright y sacar los .m3u8 reales
     ruta_temp = os.path.join(CARPETA_LOCAL, ARCHIVO_SCRAPER_TEMPORAL)
     await escanear_canales_deportes(canales_a_escanear, ruta_temp)
 
-    # 3. Unificar, categorizar, ordenar y subir a GitHub
     if unificar_todo():
         ruta_final = os.path.join(CARPETA_LOCAL, ARCHIVO_FINAL_UNIFICADO)
         subir_a_github(ruta_final, GITHUB_REPO_COMPLETO, GITHUB_TOKEN, NOMBRE_ARCHIVO_GITHUB)
