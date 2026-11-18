@@ -4,7 +4,7 @@ on:
   # 1. Permite ejecución manual desde la pestaña Actions en GitHub
   workflow_dispatch: {}
 
-  # 2. Intento de ejecución nativa por temporizador (cada 15 minutos recomendado)
+  # 2. Ejecución automática por temporizador (cada 15 minutos)
   schedule:
     - cron: '*/15 * * * *'
 
