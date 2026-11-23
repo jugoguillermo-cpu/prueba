@@ -1,78 +1,47 @@
-on:
+name: Actualizar lista IPTV
 
 # 1. Permite ejecución manual desde la pestaña Actions en GitHub
+on:
+  workflow_dispatch: {}
 
-workflow_dispatch: {}
+  # 2. Intento de ejecución nativa por temporizador (cada 15 minutos)
+  schedule:
+    - cron: '*/15 * * * *'
 
-
-
-# 2. Intento de ejecución nativa por temporizador (cada 15 minutos recomendado)
-
-schedule:
-
-cron: '*/15 * * * *'
-
-
-# 3. Permite disparar la ejecución desde un servicio externo (ej. cron-job.org)
-
-repository_dispatch:
-
-types: [actualizar_iptv]
-
-
+  # 3. Permite disparar la ejecución desde un servicio externo (ej. cron-job.org)
+  repository_dispatch:
+    types: [actualizar_iptv]
 
 concurrency:
-
-group: actualizar-canales
-
-cancel-in-progress: false # Si hay un trabajo en ejecución, el siguiente espera en cola
-
-
+  group: actualizar-canales
+  cancel-in-progress: false   # si hay un trabajo en ejecución, el siguiente espera en cola
 
 permissions:
-
-contents: write # Permiso explícito de escritura para actualizar el repositorio
-
-
+  contents: write             # permiso explícito de escritura para actualizar el repositorio
 
 jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
 
-actualizar:
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
 
-runs-on: ubuntu-latest
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
 
+      - name: Instalar dependencias del sistema y Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright nest_asyncio PyGithub requests
+          playwright install --with-deps chromium
 
-
-steps:
-
-name: Clonar repositorio
-uses: actions/checkout@v4
-
-
-
-name: Configurar Python
-uses: actions/setup-python@v5
-
-with:
-
-python-version: '3.11'
-
-
-
-name: Instalar dependencias del sistema y Python
-run: |
-
-python -m pip install --upgrade pip
-
-pip install playwright nest_asyncio PyGithub requests
-
-playwright install --with-deps chromium
-
-
-
-name: Ejecutar script de actualización
-env:
-
-GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-run: python iptv_unificador.py 
+      - name: Ejecutar script de actualización
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYTHONUNBUFFERED: "1"
+        run: python iptv_unificador.py
